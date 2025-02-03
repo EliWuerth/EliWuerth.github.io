@@ -46,6 +46,7 @@ html {
 
 /* Dropdown container */
 .dropdown {
+    float: right;
     position: relative; /* This makes the dropdown content position relative to this container */
     /* overflow: hidden; */
 }
@@ -53,7 +54,7 @@ html {
 .dropdown-content {
     display: none; /* Hidden by default */
     position: absolute; /* Position it absolutely */
-    left: 0%; /* Align it to the left of the dropdown button */
+    right: 0; /* Align it to the left of the dropdown button */
     top: 100%;
     min-width: 160px; /* Minimum width */
     z-index: 1; /* Ensure it appears above other content */
@@ -72,7 +73,7 @@ html {
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
-    display: block; /* Show dropdown on hover */
+    display: block;/* Show dropdown on hover */
 }
 
 blockquote {
@@ -88,7 +89,7 @@ blockquote {
     font-weight: bold; /* Make text bold */
 }
 .menu-icon {
-    display: none; /* Show menu icon on mobile */
+    display: none !important; /* Show menu icon on mobile */
 }
 .logo {
     float: inline-start; /* Pushes the links to the right */

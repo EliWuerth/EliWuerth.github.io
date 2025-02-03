@@ -3,40 +3,50 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+html {
+    background-color: #676767;
 }
 
 /* Navbar styles */
 .navbar {
-    background-color: #333;
+    background-color: transparent;
     overflow: hidden;
     display: flex;
-    
     align-items: center;
+    /* justify-content: center; Space between items */
+    color: black;
+    /* Add padding for better spacing */
 }
 
 .navbar a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+    display: inline-block;
+    width: auto; /* Allow width to adjust based on content */
+    height: 50px; 
+    text-align: center; 
+    line-height: 50px;
+    color: black;
     text-decoration: none;
+    padding: 0 15px; /* Add horizontal padding */
+    transition: background-color 0.3s; /* Smooth transition for hover */
 }
 
 .navbar a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: #575757; /* Darker hover effect */
 }
 
 .navbar a.active {
     background-color: #4caf50;
-    color: white;
+    /* color: white; */
 }
 
 /* Dropdown container */
 .dropdown {
-    float: left;
-    overflow: hidden;
+    position: relative; /* Change to relative positioning */
+    display: inline-block; /* Ensure it behaves like an inline element */
 }
 
 /* Dropdown button */
@@ -46,54 +56,40 @@ body {
     border: none;
     outline: none;
     color: white;
-    padding: 14px 16px;
     background-color: inherit;
     font-family: inherit;
-    margin: 0;
 }
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
     display: none;
-    position: absolute;
+    position: absolute; /* Keep absolute positioning for dropdown content */
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-    float: none;
     color: black;
     padding: 12px 16px;
     text-decoration: none;
-    text-align: left;
+    display: block;
 }
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: #f1f1f1;
 }
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Clock styles */
-.clock {
-    color: white;               /* Text color */
-    padding: 14px 16px;        /* Padding around the clock */
-    text-align: center;        /* Center the text */
-    flex-grow: 1;              /* Allow the clock to take up available space */
-    display: flex;             /* Use flexbox for centering */
-    justify-content: center;    /* Center the clock horizontally */
+    display: block; /* Show dropdown on hover */
 }
 
 blockquote {
     font-family: Arial, sans-serif; /* Set the font for the blockquote */
-    margin: 20px;
+    /* margin: 20px; */
     padding: 10px;
     border-left: 4px solid #ccc; /* Add a left border */
 }
@@ -102,4 +98,40 @@ blockquote {
 }
 .bold {
     font-weight: bold; /* Make text bold */
+}
+.menu-icon {
+    display: none; /* Show menu icon on mobile */
+}
+.logo {
+    width: 600px;
+    justify-self: left;
+}
+
+img{
+    max-width: 25%;  /* Responsive width */
+    max-height: 25%; /* Limit height */
+    height: auto;
+    justify-items: left;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: inline-block; /* Stack items vertically */
+    }
+
+    .navbar a {
+        display: none; /* Hide navbar links by default */
+    }
+
+    .menu-icon {
+        display: block; /* Show menu icon on mobile */
+    }
+
+    .clock {
+        display: block; /* Show clock on mobile */
+    }
+
+    .nav-menu.active {
+        display: flex; /* Show menu when active */
+    }
 }

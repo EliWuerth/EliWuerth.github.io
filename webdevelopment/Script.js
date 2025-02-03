@@ -18,9 +18,53 @@ function updateClock() {
 
     document.getElementById('clock').textContent = timeString;
 }
+// Function to toggle dropdown menu on mobile
+function toggleDropdown() {
+    const menu = document.querySelector('.nav-menu');
+    menu.classList.toggle('active');
+}
 
 window.onload = function() {
     loadNavbar();
     setInterval(updateClock, 1000);
     updateClock(); 
 }
+    // Get all navigation links
+const navLinks = document.querySelectorAll('.nav-link');
+
+// Add click event listener to each link
+navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        // Remove 'active' class from all links
+        navLinks.forEach(nav => nav.classList.remove('active'));
+        
+        // Add 'active' class to the clicked link
+        this.classList.add('active');
+    });
+});
+
+
+
+let currentSlide = 0;
+const slides = document.querySelectorAll('.testimonial-item');
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+    });
+}
+
+function changeSlide(direction) {
+    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
+
+// Initialize the first slide
+showSlide(currentSlide);
+
+// Handle form submission
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Message sent!');
+    this.reset();
+});

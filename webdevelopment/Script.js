@@ -42,29 +42,3 @@ navLinks.forEach(link => {
         this.classList.add('active');
     });
 });
-
-
-
-let currentSlide = 0;
-const slides = document.querySelectorAll('.testimonial-item');
-
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-    });
-}
-
-function changeSlide(direction) {
-    currentSlide = (currentSlide + direction + slides.length) % slides.length;
-    showSlide(currentSlide);
-}
-
-// Initialize the first slide
-showSlide(currentSlide);
-
-// Handle form submission
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    alert('Message sent!');
-    this.reset();
-});

@@ -2,116 +2,81 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color:#ccc;
+    padding: 0; /* Changed to 0 for proper spacing */
+    background-color: #f0f0f0; /* Light gray background for the body */
     text-align: center;
 }
 
 html {
-    background-color: #676767;
-}
-
-/* Navbar styles */
-.navbar {
-    /* background-color: transparent; */
-    overflow: hidden;
-    align-items: center;
-    background-color: #38393a;
-    /* justify-content: center; Space between items */
-    color: white;
-    /* Add padding for better spacing */
-}
-
-.navbar a {
-    float: right;
-    display: block;
-    width: auto; /* Allow width to adjust based on content */
-    height: 50px; 
-    text-align: center; 
-    line-height: 50px;
-    color: white;
-    text-decoration: none;
-    padding: 0 15px; /* Add horizontal padding */
-    transition: background-color 0.3s; /* Smooth transition for hover */
-}
-
-.navbar a:hover {
-    background-color: #575757; /* Darker hover effect */
-}
-
-.navbar a.active {
-    background-color: #4caf50;
-    color: white;
-}
-
-/* Dropdown container */
-.dropdown {
-    float: right;
-    position: relative; /* This makes the dropdown content position relative to this container */
-    /* overflow: hidden; */
-}
-
-.dropdown-content {
-    display: none; /* Hidden by default */
-    position: absolute; /* Position it absolutely */
-    right: 0; /* Align it to the left of the dropdown button */
-    top: 100%;
-    min-width: 160px; /* Minimum width */
-    z-index: 1; /* Ensure it appears above other content */
-}
-
-/* Dropdown button */
-.dropdown .dropbtn {
-    cursor: pointer;
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: white;
-    background-color: inherit;
-    font-family: inherit;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;/* Show dropdown on hover */
+    background-color: #ffffff; /* White background for the HTML */
 }
 
 blockquote {
     font-family: Arial, sans-serif; /* Set the font for the blockquote */
-    /* margin: 20px; */
+    margin: 20px; /* Added margin for spacing */
     padding: 10px;
-    border-left: 4px solid #ccc; /* Add a left border */
+    border-left: 4px solid #007BFF; /* Blue left border for emphasis */
+    background-color: #f9f9f9; /* Light background for blockquote */
+    color: #333; /* Dark text color for readability */
 }
+
 .emphasis {
     font-style: italic; /* Italicize emphasized words */
+    color: #555; /* Slightly lighter gray for emphasis */
 }
+
 .bold {
     font-weight: bold; /* Make text bold */
-}
-.menu-icon {
-    display: none !important; /* Show menu icon on mobile */
-}
-.logo {
-    float: inline-start; /* Pushes the links to the right */
+    color: #333; /* Dark text color for bold text */
 }
 
-.logo-icon {
-    width: 200px; /* Adjust the size of the icon */
-    height: auto;
+/* Header/Blog Title */
+.header {
+    padding: 30px;
+    text-align: center;
+    background-image: linear-gradient(to bottom, #e0e0e0, #ffffff); /* Light gradient background */
+    color: #333; /* Dark text color for the header */
+    border-bottom: 2px solid #cd7f32; /* Blue bottom border for the header */
 }
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column; /* Stack items vertically on small screens */
-    }
-    .navbar-links {
-        flex-direction: column; /* Stack links vertically */
-    }
-    .menu-icon {
-        display: block; /* Show menu icon on mobile */
-    }
 
-    .nav-menu.active {
-        display: flex; /* Show menu when active */
-    }
+.footer {
+    background-color: #f9f9f9; /* Light background color */
+    color: #333; /* Dark text color for contrast */
+    padding: 40px 0; /* Increased padding for a spacious feel */
+    border-top: 1px solid #e0e0e0; /* Subtle top border */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.footer-column h3 {
+    color: #007BFF; /* Blue color for headings */
+    border-bottom: 2px solid #cd7f32; /* Blue border under headings */
+    padding-bottom: 10px;
+}
+
+.footer-column a {
+    color: #007BFF; /* Blue color for links */
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f1f1f1; /* Slightly darker background for the bottom */
+    color: #666; /* Lighter text color for the bottom */
+    font-size: 14px; /* Smaller font size for the copyright notice */
 }

@@ -7,38 +7,34 @@ function loadNavbar() {
         .catch(error => console.error('Error loading navbar:', error));
 }
 
-function updateClock() {
-    const now = new Date();
-    let hours = now.getHours();
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const ampm = hours >= 12 ? 'PM' : 'AM';
-    hours = hours % 12; // Convert to 12-hour format
-    hours = hours ? String(hours).padStart(2, '0') : '12'; // The hour '0' should be '12'
-    const timeString = `${hours}:${minutes} ${ampm}`;
+// Get the current URL
+const currentLocation = window.location.href;
 
-    document.getElementById('clock').textContent = timeString;
-}
-// Function to toggle dropdown menu on mobile
-function toggleDropdown() {
-    const menu = document.querySelector('.nav-menu');
-    menu.classList.toggle('active');
+// Get all links in the navbar
+const navLinks = document.querySelectorAll('nav ul li a');
+
+// Loop through the links and set the active class
+navLinks.forEach(link => {
+    if (link.href === currentLocation) {
+        link.classList.add('active');
+    } else {
+        link.classList.remove('active');
+    }
+});
+
+function loadFooter() {
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading footer:', error));
 }
 
 window.onload = function() {
     loadNavbar();
-    setInterval(updateClock, 1000);
-    updateClock(); 
-}
-    // Get all navigation links
-const navLinks = document.querySelectorAll('.nav-link');
+    loadFooter();
 
-// Add click event listener to each link
-navLinks.forEach(link => {
-    link.addEventListener('click', function() {
-        // Remove 'active' class from all links
-        navLinks.forEach(nav => nav.classList.remove('active'));
-        
-        // Add 'active' class to the clicked link
-        this.classList.add('active');
-    });
-});
+}
+
+

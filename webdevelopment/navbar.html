@@ -4,49 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
     <title>NavBar</title>
 </head>
 
 <body>
-    <nav>
-        <div class="navbar" id="myNavbar">
-            <div class="logo">
-                <img src="logo.png" alt="Logo" class="logo-icon"> <!-- Replace with your icon path -->
-            </div>
-            <a href="index.html" class="nav-link active">Home</a>
-            <a href="About.html" class="nav-link">About Me</a>
-            <div class="dropdown">
-                <a href="" class="nav-link dropbtn">Projects</a>
-                <div class="dropdown-content">
-                    <a href="Project1.html" class="dropdown-item">Project 1</a>
-                    <a href="Project2.html" class="dropdown-item">Project 2</a>
-                    <a href="Project3.html" class="dropdown-item">Project 3</a>
-                </div>
-            </div>
-            <a href="Reflection.html" class="nav-link">Reflection</a>
-            <a href="Contact.html" class="nav-link">Contact</a>
-            <div class="dropdown">
-                <button class="dropbtn">
-                    <span class="material-icons menu-icon">menu</span>
-                </button>
-                <div class="dropdown-content">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="About.html" class="nav-link">About Me</a>
-                    <div class="dropdown">
-                        <a href="Projects.html" class="dropbtn">Projects</a>
-                        <div class="dropdown-content">
-                            <a href="Project1.html" class="dropdown-item">Project 1</a>
-                            <a href="Project2.html" class="dropdown-item">Project 2</a>
-                            <a href="Project3.html" class="dropdown-item">Project 3</a>
-                        </div>
-                    </div>
-                    <a href="Reflection.html" class="nav-link">Reflection</a>
-                    <a href="Contact.html" class="nav-link">Contact</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <ul>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="About.html">About Me</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Projects</a>
+          <div class="dropdown-content">
+            <a href="Project1.html">Project 1</a>
+            <a href="Project2.html">Project 2</a>
+            <a href="Project3.html">Project 3</a>
+          </div>
+        </li>
+        <li><a href="Reflection.html">Reflection</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
     <script src="Script.js"></script>
 </body>
 </html>

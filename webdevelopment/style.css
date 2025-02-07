@@ -1,4 +1,15 @@
-/* Basic styles for the body */
+/* ========================= */
+/*      BASE STYLES        */
+/* ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #ffffff; /* White background for the HTML */
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,8 +18,108 @@ body {
     text-align: center;
 }
 
-html {
-    background-color: #ffffff; /* White background for the HTML */
+/* ========================= */
+/*          Header           */
+/* ========================= */
+
+.header {
+    padding: 30px;
+    text-align: center;
+    background-image: linear-gradient( #b0b0b0, #ffffff); /*Light gradient background*/
+    color: #333; /* Dark text color for the header */
+    border-bottom: 2px solid #cd7f32; /* Blue bottom border for the header */
+}
+
+/* ========================= */
+/*       Navagation Bar      */
+/* ========================= */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ffffff; /* White background for the navbar */
+    border-bottom: 2px solid #cd7f32; /* Bronze bottom border for the navbar */
+}
+
+li {
+    float: left;
+}
+
+.active {
+    background-color: #cd7f32; /* Bronze background for active link */
+    color: #333;
+}
+
+li a,
+.dropbtn {
+    display: inline-block;
+    color: #cd7f32; /* Dark text color for links */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s; /* Added color transition */
+}
+
+li a:hover,
+.dropdown:hover .dropbtn {
+    background-color: #e0e0e0; /* Light gray background on hover */
+    color: #cd7f32; /* Change text color to bronze on hover */
+}
+
+li.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff; /* White background for dropdown */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1); /* Subtle shadow for dropdown */
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #333; /* Dark text color for dropdown links */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1; /* Light gray background on hover for dropdown links */
+    color: #cd7f32; /* Change text color to bronze on hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+/* ========================= */
+/*         Index Page        */
+/* ========================= */
+
+.paragraph {
+    padding-top: 20px;
+}
+
+.circle {
+    width: 300px; /* Set the width of the circle */
+    height: 300px; /* Set the height of the circle */
+    border-radius: 50%; /* This makes it a circle */
+    overflow: hidden; /* This hides the overflow of the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle img {
+    width: 100%; /* Make the image fill the circle */
+    height: auto; /* Maintain aspect ratio */
 }
 
 blockquote {
@@ -30,21 +141,38 @@ blockquote {
     color: #333; /* Dark text color for bold text */
 }
 
-/* Header/Blog Title */
-.header {
-    padding: 30px;
-    text-align: center;
-    background-image: linear-gradient(to bottom, #e0e0e0, #ffffff); /* Light gradient background */
-    color: #333; /* Dark text color for the header */
-    border-bottom: 2px solid #cd7f32; /* Blue bottom border for the header */
+.leftcolumn {
+    padding: 50px 50px;
+    float: left;
+    width: 25%;
 }
 
-.footer {
-    background-color: #f9f9f9; /* Light background color */
-    color: #333; /* Dark text color for contrast */
-    padding: 40px 0; /* Increased padding for a spacious feel */
-    border-top: 1px solid #e0e0e0; /* Subtle top border */
+.rightcolumn {
+    float: right;
+    width: 75%;
+    padding: 20px 20px 20px 50px;
 }
+
+/* ========================= */
+/*          Footer           */
+/* ========================= */
+
+.footer {
+    color: #333; 
+    padding: 20px 0; 
+    border-top: 1px solid #cd7f32; 
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-image: linear-gradient( #ffffff, #b0b0b0);
+}
+
+/* .footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+} */
 
 .footer-container {
     display: flex;
@@ -59,13 +187,13 @@ blockquote {
 }
 
 .footer-column h3 {
-    color: #007BFF; /* Blue color for headings */
-    border-bottom: 2px solid #cd7f32; /* Blue border under headings */
+    color: #cd7f32; /* Blue color for headings */
+    /*border-bottom: 2px solid #cd7f32;  Blue border under headings */
     padding-bottom: 10px;
 }
 
 .footer-column a {
-    color: #007BFF; /* Blue color for links */
+    color: #cd7f32; /* Blue color for links */
     text-decoration: none;
 }
 
@@ -80,3 +208,40 @@ blockquote {
     color: #666; /* Lighter text color for the bottom */
     font-size: 14px; /* Smaller font size for the copyright notice */
 }
+
+/* ========================= */
+/*        Resume CSS         */
+/* ========================= */
+
+.top{
+    height: 15%;
+}
+
+.leftcolumn-resume {
+    /* padding: 50px 50px; */
+    background-color: #f0f0f0;
+    float: left;
+    width: 25%;
+    padding: 0px 50px 0px 50px;
+}
+
+.rightcolumn-resume {
+    background-color: #ffffff;
+    float: right;
+    width: 75%;
+}
+
+.resume-h2{
+    /* padding: 10px; */
+    border-bottom: 2px solid #cd7f32;
+}
+
+.ulRes, .ulRes2, .ulRes3{
+    background-color: #f0f0f0;
+    float: center;
+    border-bottom: none;
+}
+/* ========================= */
+/*       MEDIA QUERIES       */
+/* ========================= */
+

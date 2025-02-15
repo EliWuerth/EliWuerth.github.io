@@ -124,7 +124,7 @@ li.dropdown {
     padding-top: 20px;
 }
 
-.circle {
+.circle{
     width: 300px; /* Set the width of the circle */
     height: 300px; /* Set the height of the circle */
     border-radius: 50%; /* This makes it a circle */
@@ -132,6 +132,7 @@ li.dropdown {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto; 
 }
 
 .circle img {
@@ -141,10 +142,11 @@ li.dropdown {
 
 blockquote {
     font-family: Arial, sans-serif; /* Set the font for the blockquote */
-    margin: 20px; /* Added margin for spacing */
+    margin: 10px 250px 10px 250px; /* Added margin for spacing */
     padding: 10px;
     border-left: 4px solid #cd7f32; /* Blue left border for emphasis */
     background-color: #f9f9f9; /* Light background for blockquote */
+    border-bottom: 2px solid #bdbdbd;
     color: #333; /* Dark text color for readability */
     width: auto;
 }
@@ -169,6 +171,20 @@ blockquote {
     float: right;
     width: 75%;
     padding: 20px 20px 20px 50px;
+}
+
+.resumebuttonpadding{
+    padding: 20px;
+}
+
+.Resume-Button{
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #333333;
+    color: #cd7f32;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
 }
 
 /* ========================= */
@@ -217,12 +233,17 @@ blockquote {
     color: #333; 
     padding: 20px 0; 
     border-top: 1px solid #cd7f32; 
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     background-color: #d6d6d6;
     max-height: 15%;
     /* background-image: linear-gradient( #ffffff, #b0b0b0); */
+}
+
+.footer.fixed {
+    position: fixed;
+    bottom: 0;
 }
 
 .footer-container {
@@ -258,4 +279,9 @@ blockquote {
     background-color: #f1f1f1; /* Slightly darker background for the bottom */
     color: #666; /* Lighter text color for the bottom */
     font-size: 14px; /* Smaller font size for the copyright notice */
+}
+
+.linkedIn{
+    border: none;
+    background-color: #d6d6d6;
 }

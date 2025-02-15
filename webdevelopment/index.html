@@ -5,11 +5,12 @@
 
 <head>
     <!--
-    Title: About Me
-    Use: Page about the author/educator
+    Title: Home
+    Use: Index/Home page
     Author: Eli Wuerth
     School/Term: University of Missouri/Spring 2025
     Developed: 1/28/2025
+    Edited: 2/15/2025
     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,32 +22,83 @@
 
 <body>
     <!-- Header Img -->
-    <div id="header-container"></div>
-    <!-- Navigation Bar -->
-    <div id="navbar-container"></div>
-
-    <div class="card">
-    <!-- Main Content -->
-    <div class="rightcolumn">
-        <!-- Heading 1 -->
-        <h1>Welcome to my Portfolio!</h1>
-
-        <!-- Heading 2 -->
-        <h2>This is a comprehensive showcase of my achievements and endeavors. As I embark on the journey of career development, I recognize the significance of an accessible platform to present my professional profile.</h2>
-
-        <!-- Intro Paragraph -->
-        <p class="paragraph">My website is an online space where I show off what I've done and learned. It's not just a boring resume; it's a cool place that gives hiring folks a real look into my school and work experiences. The main idea is to go beyond the basics and let
-            people know the details of my projects and experiences. I want this site to always be updated with the latest info on my education, achievements, and ongoing projects. It's a way to stand out when I'm applying for jobs. Come check out my story,
-            and let's connect!</p>
-    </div>
-
-    <div class="leftcolumn"> 
-        <div class="circle">
-            <img src="./Images/Photo.png" alt="Image" />
+    <!-- <div id="header-container"></div> -->
+    <header>
+        <div class="header">
+            <img src="/webdevelopment/Images/logo.png" alt="logo">
         </div>
-    </div>
-    </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <!-- <div id="navbar-container"></div> -->
+    <nav>
+        <ul>
+            <li><a class="active" href="/webdevelopment/index.html">Home</a></li>
+            <li><a href="/webdevelopment/About.html">About Me</a></li>
     
-    <div id="footer-container"></div>
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">Projects</a>
+              <div class="dropdown-content">
+                <a href="/webdevelopment/Project1.html">Project 1</a>
+                <a href="/webdevelopment/Project2.html">Project 2</a>
+                <a href="/webdevelopment/Project3.html">Project 3</a>
+              </div>
+            </li>
+            <li><a href="/webdevelopment/Resume.html">Resume</a></li>
+            <li><a href="/webdevelopment/Reflection.html">Reflection</a></li>
+            <li><a href="/webdevelopment/Contact.html">Contact</a></li>
+          </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="card">
+            <!-- Main Content -->
+            <div class="rightcolumn">
+                <!-- Heading 1 -->
+                <h1>Welcome to my Portfolio!</h1>
+
+                <!-- Heading 2 -->
+                <h2>This is a comprehensive showcase of my achievements and endeavors. As I embark on the journey of career development, I recognize the significance of an accessible platform to present my professional profile.</h2>
+
+                <!-- Intro Paragraph -->
+                <p class="paragraph">My website is an online space where I show off what I've done and learned. It's not just a boring resume; it's a cool place that gives hiring folks a real look into my school and work experiences. The main idea is to go beyond the basics and let
+                    people know the details of my projects and experiences. I want this site to always be updated with the latest info on my education, achievements, and ongoing projects. It's a way to stand out when I'm applying for jobs. Come check out my story,
+                    and let's connect!</p>
+            </div>
+
+            <div class="leftcolumn"> 
+                <div class="circle">
+                    <img src="./Images/Photo.png" alt="Image" />
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <!-- <div id="footer-container"></div> -->
+    <footer class="footer fixed">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Phone</h3>
+                <p>812-480-4387</p>
+            </div>
+            <div class="footer-column">
+                <h3>Email</h3>
+                <p>Emwuerth216@gmail.com</p>
+                <p>Emwcd7@umsystem.edu</p>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Me</h3>
+                <p>
+                    <button class="linkedIn"><a href="https://www.linkedin.com/in/eliwuerth/" target="_blank"><img src="./Images/icons8-linkedin-16.png" alt="logo"></a></button>
+                </p>
+            </div>
+            <div class="footer-column">
+                <h3>Copyright</h3>
+                <p>&copy; 2025 Your Website. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

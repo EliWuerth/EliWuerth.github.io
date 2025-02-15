@@ -10,37 +10,101 @@
     Author: Eli Wuerth
     School/Term: University of Missouri/Spring 2025
     Developed: 1/28/2025
+    Edited: 2/15/2025
     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
     <link rel="stylesheet" href="style.css">
     <script src="Script.js" defer></script>
+    <title>About Me</title>
 </head>
 
 <body>
-    
     <!-- Header Img -->
-    <div id="header-container"></div>
+    <!-- <div id="header-container"></div> -->
+    <header>
+        <div class="header">
+            <img src="/webdevelopment/Images/logo.png" alt="logo">
+        </div>
+    </header>
 
     <!-- Navigation Bar -->
-    <div id="navbar-container"></div>
+    <!-- <div id="navbar-container"></div> -->
+    <nav>
+        <ul>
+            <li><a class="active" href="/webdevelopment/index.html">Home</a></li>
+            <li><a href="/webdevelopment/About.html">About Me</a></li>
+    
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Projects</a>
+                <div class="dropdown-content">
+                    <a href="/webdevelopment/Project1.html">Project 1</a>
+                    <a href="/webdevelopment/Project2.html">Project 2</a>
+                    <a href="/webdevelopment/Project3.html">Project 3</a>
+                </div>
+            </li>
+            <li><a href="/webdevelopment/Resume.html">Resume</a></li>
+            <li><a href="/webdevelopment/Reflection.html">Reflection</a></li>
+            <li><a href="/webdevelopment/Contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-    <div class="body-card">
-        <h1>Eli Wuerth</h1>
+    <!-- Main Content -->
+    <main>
+        <div class="body-card">
+            <h1>Eli Wuerth</h1>
 
-        <h3>My Background </h3>
+            <h3>My Background </h3>
 
-        <p>
-            Hello, my name is Eli Wuerth.
-            <br>
-            I am a senior in information technology. I was born in Indiana. There I lived with my parents, and my two older brothers. <br>During my senior year of high school, I decided to visit Mizzous campus. Immediately I fell in love with it. I am loving life in Missouri right now. <br>Missouri seems like Indiana but is a breath of fresh air. I came into Mizzou as a computer science major. <br>After my freshman year, I switched my major to information technology. I switched my major because I realized It was what I really wanted to do. <br>I am obtaining three information technology certificates. I plan to pursue a career in information technology. I am applying for jobs, <br>hoping to get some experience in the information technology field. More precisely I'm looking to work in either the graphic design or web development fields. <br>One of the top companies I would like to work for is Mastercard. My dream is to work in Florida someday because the weather is warm year round. <br>Someday I would love to start my own design business, designing web applications and graphics for media.
-        </p>
+            <p>
+                Hello, my name is Eli Wuerth.
+                <br>
+                I am a senior in information technology. I was born in Indiana. There I lived with my parents, and my two older brothers. <br>During my senior year of high school, I decided to visit Mizzous campus. Immediately I fell in love with it. I am loving life in Missouri right now. <br>Missouri seems like Indiana but is a breath of fresh air. I came into Mizzou as a computer science major. <br>After my freshman year, I switched my major to information technology. I switched my major because I realized It was what I really wanted to do. <br>I am obtaining three information technology certificates. I plan to pursue a career in information technology. I am applying for jobs, <br>hoping to get some experience in the information technology field. More precisely I'm looking to work in either the graphic design or web development fields. <br>One of the top companies I would like to work for is Mastercard. My dream is to work in Florida someday because the weather is warm year round. <br>Someday I would love to start my own design business, designing web applications and graphics for media.
+            </p>
 
-        <blockquote>
-            <p> "<span class="emphasis">Success</span> is never <b>final</b>, <span class="emphasis">Failure</span> is never <b>fatal</b>" - John Wooden</p>
-        </blockquote>
-    </div>
+            <!-- Profile Picture -->
+            <div class="circle">
+                <img src="./Images/Photo.png" alt="Image" />
+            </div>
 
+            <blockquote>
+                <p> "<span class="emphasis">Success</span> is never <b>final</b>, <span class="emphasis">Failure</span> is never <b>fatal</b>" - John Wooden</p>
+            </blockquote>
+        </div>
+
+        <!-- Resume video -->
+        <div class="video-container">
+            <iframe width="455" height="250" src="" allowfullscreen></iframe>
+        </div>
+        <!-- Resume Button -->
+        <div class="resumebuttonpadding">
+            <a href="Resume.html" target="_blank" class="Resume-Button">Click to see Resume</a>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Phone</h3>
+                <p>812-480-4387</p>
+            </div>
+            <div class="footer-column">
+                <h3>Personal & School Email</h3>
+                <p>Emwuerth216@gmail.com</p>
+                <p>Emwcd7@umsystem.edu</p>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Me</h3>
+                <p>
+                    <button class="linkedIn"><a href="https://www.linkedin.com/in/eliwuerth/" target="_blank"><img src="./Images/icons8-linkedin-16.png" alt="logo"></a></button>
+                </p>
+            </div>
+            <div class="footer-column">
+                <h3>Copyright</h3>
+                <p>&copy; 2025 Your Website. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

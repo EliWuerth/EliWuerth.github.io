@@ -173,6 +173,10 @@ blockquote {
     padding: 20px 20px 20px 50px;
 }
 
+.rightcolumn h1{
+    color:#cd7f32;
+}
+
 .resumebuttonpadding{
     padding: 20px;
 }

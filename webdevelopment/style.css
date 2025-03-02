@@ -32,25 +32,24 @@ body {
     padding: 30px;
     text-align: center;
     background-color: #d6d6d6;
-    /* background-image: linear-gradient( #b0b0b0, #ffffff); */
     color: #333; /* Dark text color for the header */
     border-bottom: 2px solid #cd7f32; /* Blue bottom border for the header */
 }
 
 /* ========================= */
-/*       Navagation Bar      */
+/*       Navigation Bar      */
 /* ========================= */
 
 #navbar-container {
     flex: 0 0 auto;
 }
 
-ul {
+.navbarul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333333; /* White background for the navbar   #ffffff */
+    background-color: #333333; /* White background for the navbar */
     border-bottom: 2px solid #cd7f32; /* Bronze bottom border for the navbar */
 }
 
@@ -81,7 +80,6 @@ li a:hover,
 
 li.dropdown {
     display: inline-block;
-    /* position: relative; */
 }
 
 .dropdown-content {
@@ -124,7 +122,7 @@ li.dropdown {
     padding-top: 20px;
 }
 
-.circle{
+.circle {
     width: 300px; /* Set the width of the circle */
     height: 300px; /* Set the height of the circle */
     border-radius: 50%; /* This makes it a circle */
@@ -173,15 +171,15 @@ blockquote {
     padding: 20px 20px 20px 50px;
 }
 
-.rightcolumn h1{
-    color:#cd7f32;
+.rightcolumn h1 {
+    color: #cd7f32;
 }
 
-.resumebuttonpadding{
+.resumebuttonpadding {
     padding: 20px;
 }
 
-.Resume-Button{
+.Resume-Button {
     text-align: center;
     padding: 10px 20px;
     background-color: #333333;
@@ -196,7 +194,6 @@ blockquote {
 /* ========================= */
 
 .leftcolumn-resume {
-    /* padding: 50px 50px; */
     background-color: #f0f0f0;
     float: left;
     width: 25%;
@@ -211,23 +208,65 @@ blockquote {
     width: 75%;
 }
 
-.resume-h2{
-    /* padding: 10px; */
+.resume-h2 {
     border-bottom: 2px solid #cd7f32;
 }
 
-.ulRes, .ulRes2, .ulRes3{
+.ulRes, .ulRes2, .ulRes3, .ulRes4 {
+    list-style-type: initial;
+    overflow: auto;
     background-color: #f0f0f0;
-    /* float: center; */
     border-bottom: none;
     padding: 0px;
+}
+
+.ulRes2 li, .ulRes3 li, .ulRes li, .ulRes4 li {
+    float: none;
+}
+
+.ulRes4 {
+    background-color: #ffffff;
 }
 
 /* ========================= */
 /*       MEDIA QUERIES       */
 /* ========================= */
 
+@media (max-width: 768px) {
+    .navbarul {
+        display: flex;
+        flex-direction: column;
+    }
 
+    li {
+        float: none; /* Stack items vertically */
+    }
+
+    .body-card {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .header{
+        display: none;
+    }
+
+    .navbarul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    li {
+        float: none; /* Stack items vertically */
+    }
+
+    .body-card {
+        padding: 5px; /* Further adjust padding for smaller screens */
+    }
+
+    
+}
 
 /* ========================= */
 /*          Footer           */
@@ -242,7 +281,6 @@ blockquote {
     width: 100%;
     background-color: #d6d6d6;
     max-height: 15%;
-    /* background-image: linear-gradient( #ffffff, #b0b0b0); */
 }
 
 .footer.fixed {
@@ -264,7 +302,6 @@ blockquote {
 
 .footer-column h3 {
     color: #cd7f32; /* Blue color for headings */
-    /*border-bottom: 2px solid #cd7f32;  Blue border under headings */
     padding-bottom: 10px;
 }
 
@@ -285,7 +322,7 @@ blockquote {
     font-size: 14px; /* Smaller font size for the copyright notice */
 }
 
-.linkedIn{
+.linkedIn {
     border: none;
     background-color: #d6d6d6;
 }

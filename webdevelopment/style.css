@@ -99,13 +99,17 @@ li.dropdown {
     text-align: left;
 }
 
-.dropdown-content a:hover {
+.dropdown-content a:hover  {
     background-color: #f1f1f1; /* Light gray background on hover for dropdown links */
     color: #cd7f32; /* Change text color to bronze on hover */
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content{
     display: block; /* Show dropdown on hover */
+}
+
+.dropbtn_menu-icon, .dropdown .dropbtn_menu-icon, .dropdown-content_menu, .dropdown:hover .dropdown-content_menu, .dropdown-content_menu a:hover, .dropdown-content_menu a{
+    display: none; /* hide menu icon */
 }
 
 /* ========================= */
@@ -269,6 +273,7 @@ blockquote {
         width: 100%; /* Full width for both columns */
         padding: 10px; /* Add some padding */
     }
+
     .header {
         display: none; /* Hide header on mobile */
     }
@@ -279,8 +284,6 @@ blockquote {
         padding: 0;
         font-size: smaller;
     }
-
-    .navbarul .li {display: none;}
 
     li {
         float: none; /* Stack items vertically */
@@ -302,6 +305,39 @@ blockquote {
     .footer{
         padding: 10px 0;
         font-size:xx-small;
+    }
+
+    li.dropdown .dropbtn_menu-icon, .dropdown {
+        display: inline-block; /* Show menu icon */
+        cursor: pointer;
+        min-width: 160px;
+        color: #cd7f32;
+        align-content: center;
+    }
+
+    li.reflect, li.about, li.contact, li.dropbdown, a.dropbtn, .dropdown-content, .dropdown-content a, .dropdown-content a:hover,  .dropdown:hover .dropdown-content {
+        display: none;
+
+    }
+
+    .dropdown-content_menu {
+        position: absolute;
+        background-color: #ffffff; /* White background for dropdown */
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1); /* Subtle shadow for dropdown */
+        z-index: 1;
+    }
+
+    .dropdown-content_menu a {
+        color: #cd7f32; /* Dark text color for dropdown links */
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .dropdown:hover .dropdown-content_menu{
+        display: block; /* Show dropdown on hover */
     }
 }
 

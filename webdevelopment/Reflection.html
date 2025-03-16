@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="nav.css">
-    <title>Projects</title>
+    <title>Reflection</title>
 </head>
 <body>
     <!-- Header Img -->
@@ -27,8 +27,14 @@
     <!-- Navigation Bar -->
     <!-- <div id="navbar-container"></div> -->
     <nav>
+        <input type="checkbox" id="toggle-menu" class="hamburger-menu">
+        <label for="toggle-menu" class="hamburger-menu-icon">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </label>
         <ul class="navbarul">
-            <li><a class="active" href="./index.html">Home</a></li>
+            <li class="home"><a href="index.html">Home</a></li>
             <li class="about"><a href="./About.html">About Me</a></li>
             <li class="dropdown">
                 <a href="Projects.html" class="dropbtn">Projects</a>
@@ -38,30 +44,51 @@
                     <a href="Project3.html">Project 3</a>
                 </div>
             </li>
-            <li class="reflect"><a href="Reflection.html">Reflection</a></li>
+            <li class="reflect"><a class="active" href="Reflection.html">Reflection</a></li>
             <li class="contact"><a href="Contact.html">Contact</a></li>
-            <li class="dropdown">
-                <a href="" class="dropbtn_menu-icon">&#9776;</a>
-                    <div class="dropdown-content_menu">
-                        <a href="./About.html">About Me</a>
-                        <a href="Project1.html">Project 1</a>
-                        <a href="Project2.html">Project 2</a>
-                        <a href="Project3.html">Project 3</a>
-                        <a href="./Reflection.html">Reflection</a>
-                        <a href="./Contact.html">Contact</a>
-                    </div>
-                </a>
-            </li>
         </ul>
     </nav>
     
     <!-- Main Content -->
     <main>
+        <article id="reflection">
 
+            <div class="reflection-container">
+                <!-- Heading 1 -->
+                <h1>Personal Reflection on My IT Journey</h1>
+                <!-- Heading 2 -->
+                <h2 class="headings">Building a Career in Coding</h2>
+                <!-- Intro Paragragh  -->
+                <p>
+                    Throughout my academic journey, I have had the opportunity to work on several impactful projects that have significantly shaped my skills and interests in technology. One of the most notable projects was the GroupP-FinalProject, 
+                    where I developed a Java-based Hangman game. This project allowed me to delve deep into software design and collaborative development. I was responsible for designing and implementing the core functionalities of the game, which included 
+                    developing the game logic, creating a user-friendly graphical interface using Swing, and integrating a JSON database for word retrieval. The successful completion of this project not only provided an engaging and interactive experience for users 
+                    but also reinforced my understanding of object-oriented programming principles and the importance of effective teamwork.
+                </p>
+                <!-- 2nd Paragragh  -->
+                <p>
+                    Another significant project was XClone, a mobile application developed for iOS using Swift. This project focused on streamlining task management for users, allowing them to create, edit, and delete tasks while setting reminders and categorizing 
+                    their activities. Working on XClone enhanced my technical proficiency in mobile application design and user experience. Collaborating with my team improved my communication and problem-solving skills as we navigated various challenges together. 
+                    This experience ignited my passion for creating intuitive applications that enhance user productivity and solidified my desire to pursue a career in software development.
+                </p>
+                <!-- 3rd Paragragh  -->
+                <p>
+                    In addition to these projects, I am currently involved in a project that focuses on tracking and landing drones on a robotic dog. This project has provided me with invaluable experience in robotics and programming. My role involves contributing 
+                    to the development of the platform and coding necessary functionalities. Collaborating with my team has allowed me to enhance my skills in problem-solving and technical communication, particularly as we tackle challenges related to drone navigation 
+                    and landing mechanisms. Integrating various technologies, including sensors and control systems, has deepened my understanding of robotics and sparked my interest in innovative applications within automation.
+                </p>
+                <!-- Conclusion Paragragh  -->
+                <p>
+                    Overall, these experiences have equipped me with essential skills that will be beneficial in my future endeavors in engineering and technology. I have learned the importance of teamwork, adaptability, and effective communication in achieving 
+                    project goals. Each project has contributed to my growth as a developer, reinforcing my commitment to continuous learning and professional development. As I move forward in my career, I am excited to apply the knowledge and skills I have gained 
+                    to create impactful solutions that address real-world challenges.
+                </p>
+            </div>
+        </article>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer reflexive">
         <div class="footer-container">
             <div class="footer-column">
                 <h3>Phone</h3>

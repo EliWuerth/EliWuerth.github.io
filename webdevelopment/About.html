@@ -31,9 +31,15 @@
     <!-- Navigation Bar -->
     <!-- <div id="navbar-container"></div> -->
     <nav>
+        <input type="checkbox" id="toggle-menu" class="hamburger-menu">
+        <label for="toggle-menu" class="hamburger-menu-icon">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </label>
         <ul class="navbarul">
-            <li><a class="active" href="./index.html">Home</a></li>
-            <li class="about"><a href="./About.html">About Me</a></li>
+            <li class="home"><a href="index.html">Home</a></li>
+            <li class="about"><a class="active" href="./About.html">About Me</a></li>
             <li class="dropdown">
                 <a href="Projects.html" class="dropbtn">Projects</a>
                 <div class="dropdown-content" name="nav-drop">
@@ -42,20 +48,8 @@
                     <a href="Project3.html">Project 3</a>
                 </div>
             </li>
-            <li class="reflect"><a href="Reflection.html">Reflection</a></li>
+            <li class="reflect"><a  href="Reflection.html">Reflection</a></li>
             <li class="contact"><a href="Contact.html">Contact</a></li>
-            <li class="dropdown">
-                <a href="" class="dropbtn_menu-icon">&#9776;</a>
-                    <div class="dropdown-content_menu">
-                        <a href="./About.html">About Me</a>
-                        <a href="Project1.html">Project 1</a>
-                        <a href="Project2.html">Project 2</a>
-                        <a href="Project3.html">Project 3</a>
-                        <a href="./Reflection.html">Reflection</a>
-                        <a href="./Contact.html">Contact</a>
-                    </div>
-                </a>
-            </li>
         </ul>
     </nav>
     
@@ -83,8 +77,8 @@
         </div>
 
         <!-- Resume video -->
-        <div class="video-container">
-            <iframe width="455" height="250" src="" allowfullscreen></iframe>
+        <div class="container">
+            <iframe class="responsive-iframe" src="" width="450" height="250"></iframe>
         </div>
         <!-- Resume Button -->
         <div class="resumebuttonpadding">

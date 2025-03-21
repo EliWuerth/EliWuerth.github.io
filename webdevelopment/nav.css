@@ -133,7 +133,7 @@ li.dropdown {
 }
 
 
-@media (min-width: 768px) and (max-width: 1156px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     .navbarul {
         display: flex;
         flex-direction: row; /* Stack navbar items vertically */

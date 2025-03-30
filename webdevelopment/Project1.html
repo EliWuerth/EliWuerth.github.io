@@ -27,8 +27,14 @@
     <!-- Navigation Bar -->
     <!-- <div id="navbar-container"></div> -->
     <nav>
+        <input type="checkbox" id="toggle-menu" class="hamburger-menu">
+        <label for="toggle-menu" class="hamburger-menu-icon">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </label>
         <ul class="navbarul">
-            <li><a href="index.html">Home</a></li>
+            <li class="home"><a class="active" href="index.html">Home</a></li>
             <li class="about"><a href="./About.html">About Me</a></li>
             <li class="dropdown">
                 <a href="Projects.html" class="dropbtn">Projects</a>
@@ -40,18 +46,21 @@
             </li>
             <li class="reflect"><a  href="Reflection.html">Reflection</a></li>
             <li class="contact"><a href="Contact.html">Contact</a></li>
-            <input type="checkbox" id="toggle-menu" class="hamburger-menu">
-            <label for="toggle-menu" class="hamburger-menu-icon">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </label>
         </ul>
     </nav>
 
     <!-- Main Content -->
     <main>
+        <div class="project">
+            <img src="placeholder.jpg" alt="Project 1">
+            <h3>Project 1</h3>
+            <p>Project 1 Description</p>
+            <p>The GroupP-FinalProject is a Java-based Hangman game that allows users to guess letters in words from various categories, including college majors, places, fictional characters, food, and companies. The game features a graphical user interface (GUI) built using Swing and retrieves words from a JSON database. In this project, I served as a developer responsible for designing and implementing the core functionalities of the Hangman game, with primary tasks including developing the game logic, creating the GUI, and integrating the word database, as well as contributing to testing and debugging to ensure a smooth user experience. The outcome was a fully functional Hangman game that provides an engaging and interactive experience for users, successfully tracking guesses, displaying the current state of the word, and informing users when they win or lose. The project was well-received, demonstrating effective collaboration and technical execution. I utilized several tools and methodologies, including Java as the primary programming language, Swing for the GUI, Maven for managing project dependencies, Gson for reading the word database, and JUnit/TestNG for testing. This experience enhanced my skills in Java programming, particularly in object-oriented programming and GUI development, as well as software design, version control using Git, and understanding software testing methodologies, all of which will be beneficial in my future endeavors.</p>
 
+            <p>Project 1 Reflection</p>
+            <p>Reflecting on the development of the GroupP-FinalProject, I gained significant insights into software design and collaborative development. Working on the Hangman game allowed me to enhance my skills in Java programming, particularly in GUI design using Swing and data management with JSON. The experience of integrating game logic with user interaction deepened my understanding of object-oriented programming principles. Additionally, collaborating with my team improved my communication and problem-solving abilities, as we navigated challenges together. Overall, this project solidified my passion for software development and provided a strong foundation for future endeavors in programming.</p>
+            <a href="Projects.html" class="button">Back</a>
+        </div>
     </main>
 
     <!-- Footer -->

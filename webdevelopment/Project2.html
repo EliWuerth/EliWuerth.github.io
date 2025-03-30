@@ -27,8 +27,14 @@
     <!-- Navigation Bar -->
     <!-- <div id="navbar-container"></div> -->
     <nav>
+        <input type="checkbox" id="toggle-menu" class="hamburger-menu">
+        <label for="toggle-menu" class="hamburger-menu-icon">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </label>
         <ul class="navbarul">
-            <li><a href="index.html">Home</a></li>
+            <li class="home"><a class="active" href="index.html">Home</a></li>
             <li class="about"><a href="./About.html">About Me</a></li>
             <li class="dropdown">
                 <a href="Projects.html" class="dropbtn">Projects</a>
@@ -40,18 +46,21 @@
             </li>
             <li class="reflect"><a  href="Reflection.html">Reflection</a></li>
             <li class="contact"><a href="Contact.html">Contact</a></li>
-            <input type="checkbox" id="toggle-menu" class="hamburger-menu">
-            <label for="toggle-menu" class="hamburger-menu-icon">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </label>
         </ul>
     </nav>
 
     <!-- Main Content -->
     <main>
-
+        <div class="project">
+            <img src="placeholder.jpg" alt="Project 2">
+            <h3>Project 2</h3>
+            <p>Xclone Description</p>
+            <p>Xclone is a mobile application developed for iOS using Swift, designed to streamline task management for users. The app features an intuitive interface that allows users to create, edit, and delete tasks effortlessly. Users can set reminders and categorize their tasks, enhancing organization and productivity. With a focus on user experience, XClone incorporates visually appealing design elements and smooth navigation, making it accessible for users of all ages. The application aims to help individuals manage their daily activities more effectively, ensuring that important tasks are never overlooked. XClone represents a significant step forward in personal productivity tools for mobile devices.</p>
+            
+            <p>Xclone Reflection</p>
+            <p>Reflecting on the development of the XClone project, I gained valuable insights into mobile application design and user experience. Collaborating with my team enhanced my communication and problem-solving skills, as we navigated challenges together. Utilizing Swift and Xcode deepened my technical proficiency, particularly in task management functionalities and UI design. This experience not only solidified my understanding of software development principles but also ignited my passion for creating intuitive applications that improve user productivity. Overall, this project was a significant step in my journey as a developer.</p>
+            <a href="Projects.html" class="button">Back</a>
+        </div>
     </main>
 
     <!-- Footer -->

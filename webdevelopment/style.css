@@ -19,6 +19,7 @@ body {
     display: flex;
     flex-direction: column;
     grid-template-columns: 1fr;
+
 }
 
 /* ========================= */
@@ -179,6 +180,59 @@ blockquote {
 /* ========================= */
 
 
+
+/* ========================= */
+/*        Projects CSS       */
+/* ========================= */
+
+.projects-container {
+    width: 100%;
+
+}
+
+.projects {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.project {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.project h3 {
+    margin-top: 10px;
+}
+
+.project p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
 
 /* ========================= */
 /*       Reflection CSS      */
@@ -363,6 +417,21 @@ blockquote {
             position: relative;
             bottom: 0;
         }
+
+        .project-list {
+            grid-template-columns: 1fr;
+        }
+
+        .project {
+            width: 90%;
+            margin: auto;
+        }
+
+        .project img {
+            order: -1;
+            width: 100%;
+            max-width: 300px;
+        }
     }
 
     @media (min-width: 768px) and (max-width:870px){
@@ -407,6 +476,26 @@ blockquote {
             position: relative;
             bottom: 0;
         }
+
+        .project-list {
+            grid-template-columns: 1fr;
+        }
+
+        .project {
+            width: 90%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            align-items: center;
+            gap: 20px;
+            text-align: left;
+        }
+
+        .project img {
+            width: 100%;
+            max-width: 300px;
+            order: -1;
+        }
     }
 
     @media (max-width: 767px){
@@ -450,10 +539,51 @@ blockquote {
             padding: 10px 0;
             font-size:xx-small;
         }
+
+        .project-list {
+            grid-template-columns: 1fr;
+        }
+
+        .project {
+            width: 90%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            align-items: center;
+            gap: 10px;
+            text-align: left;
+        }
+        
+        .project img {
+            width: 100%;
+            max-width: 300px;
+            align-self: flex-start;
+            order: -1;
+        }
     }
     @media (max-width: 340px){
         .footer-column {
             padding: 0px 10px;
+        }
+
+        .project-list {
+            grid-template-columns: 1fr;
+        }
+
+        .project {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+        }
+        
+        .project img {
+            width: 100%;
+            max-width: 300px;
+            align-self: flex-start;
+            order: -1;
         }
     }
 

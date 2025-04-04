@@ -311,7 +311,7 @@ blockquote {
 }
 
 .footer-column a {
-    color: #cd7f32; /* Blue color for links */
+    color: #cd7f32;
     text-decoration: none;
 }
 
@@ -325,6 +325,12 @@ blockquote {
     background-color: #f1f1f1; /* Slightly darker background for the bottom */
     color: #666; /* Lighter text color for the bottom */
     font-size: 14px; /* Smaller font size for the copyright notice */
+}
+
+.footer-icon {
+    width: 14px;
+    height: 14px;
+    background-color: #d6d6d6;
 }
 
 .linkedIn{
@@ -432,6 +438,12 @@ blockquote {
             width: 100%;
             max-width: 300px;
         }
+
+        .footer-icon {
+            width: 12px;
+            height: 12px;
+            background-color: #d6d6d6;
+        }
     }
 
     @media (min-width: 768px) and (max-width:870px){
@@ -495,6 +507,12 @@ blockquote {
             width: 100%;
             max-width: 300px;
             order: -1;
+        }
+
+        .footer-icon {
+            width: 11px;
+            height: 11px;
+            background-color: #d6d6d6;
         }
     }
 
@@ -560,7 +578,14 @@ blockquote {
             align-self: flex-start;
             order: -1;
         }
+
+        .footer-icon {
+            width: 9px;
+            height: 9px;
+            background-color: #d6d6d6;
+        }
     }
+
     @media (max-width: 340px){
         .footer-column {
             padding: 0px 10px;
@@ -576,6 +601,7 @@ blockquote {
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 10px;
             text-align: left;
         }
         
@@ -584,6 +610,11 @@ blockquote {
             max-width: 300px;
             align-self: flex-start;
             order: -1;
+        }
+        .footer-icon {
+            width: 9px;
+            height: 9px;
+            background-color: #d6d6d6;
         }
     }
 

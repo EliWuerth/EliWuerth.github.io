@@ -22,6 +22,31 @@ body {
 
 }
 
+@font-face {
+    font-family: 'PTSerif-Regular';
+    src: url('/PT_Serif/PTSerif-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'PTSerif-Bold';
+    src: url('/PT_Serif/PTSerif-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'PTSerif-Italic';
+    src: url('/PT_Serif/PTSerif-Italic.ttf') format('truetype');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'PTSerif-ItalicBold';
+    src: url('/PT_Serif/PTSerif-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+
 /* ========================= */
 /*          Header           */
 /* ========================= */
@@ -270,9 +295,11 @@ blockquote {
     padding: 20px 0; 
     border-top: 1px solid #cd7f32; 
     position: relative;
+    /* background-color: #d6d6d6; */
     bottom: 0;
     width: 100%;
-    background-color: #d6d6d6;
+    background-image: url('Images/AdobeStock_1235867548.jpeg');
+    background-size:cover;
     max-height: 15%;
 }
 
@@ -308,11 +335,14 @@ blockquote {
 .footer-column p{
     margin-top: 10px;
     margin-bottom: 15px;
+    color: #cd7f32;
 }
 
 .footer-column a {
     color: #cd7f32;
     text-decoration: none;
+    border: none;
+    overflow: hidden;
 }
 
 .footer-column a:hover {
@@ -322,20 +352,20 @@ blockquote {
 .footer-bottom {
     text-align: center;
     padding: 20px 0;
-    background-color: #f1f1f1; /* Slightly darker background for the bottom */
-    color: #666; /* Lighter text color for the bottom */
+    /* background-color: #f1f1f1; Slightly darker background for the bottom */
+    /* color: #666; Lighter text color for the bottom */
     font-size: 14px; /* Smaller font size for the copyright notice */
 }
 
 .footer-icon {
     width: 14px;
     height: 14px;
-    background-color: #d6d6d6;
+    color: #cd7f32; 
 }
 
 .linkedIn{
     border: none;
-    background-color: #d6d6d6;
+    
 }
 
 /* ========================= */
@@ -618,4 +648,21 @@ blockquote {
         }
     }
 
+    @media print {
+        body {
+            color: black;
+            font-family: serif;
+            margin: 1in;
+        }
+        h1,
+        p,
+        ul,
+        ol,
+        blockquote,
+        footer {
+            color: black;
+            font-family: 'PTSerif-Regular', serif;
+            page-break-inside: avoid;
+        }
+    }
 }

@@ -60,6 +60,8 @@ body {
     text-align: center;
     background-color: #d6d6d6;
     color: #333; /* Dark text color for the header */
+    background-image: url('Images/AdobeStock_643446376.jpeg');
+    background-size:cover;
     border-bottom: 2px solid #cd7f32; /* Blue bottom border for the header */
 }
 
@@ -298,7 +300,7 @@ blockquote {
     /* background-color: #d6d6d6; */
     bottom: 0;
     width: 100%;
-    background-image: url('Images/AdobeStock_1235867548.jpeg');
+    background-image: url('Images/AdobeStock_643446376.jpeg');
     background-size:cover;
     max-height: 15%;
 }
@@ -360,12 +362,12 @@ blockquote {
 .footer-icon {
     width: 14px;
     height: 14px;
-    color: #cd7f32; 
+    color: #cd7f32;
 }
 
 .linkedIn{
     border: none;
-    
+    background: none;
 }
 
 /* ========================= */

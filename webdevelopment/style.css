@@ -363,6 +363,14 @@ blockquote {
     width: 14px;
     height: 14px;
     color: #cd7f32;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 0 transparent);
+}
+
+.footer-icon:hover {
+    transform: scale(1.2);
+    color: #e6a040;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
 }
 
 .linkedIn{

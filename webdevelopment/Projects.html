@@ -40,9 +40,9 @@
             <li class="dropdown">
                 <a class="active" href="Projects.html" class="dropbtn">Projects</a>
                 <div class="dropdown-content" name="nav-drop">
-                    <a href="Project1.html">Project 1</a>
-                    <a href="Project2.html">Project 2</a>
-                    <a href="Project3.html">Project 3</a>
+                    <a href="#project1">Project 1</a>
+                    <a href="#project2">Project 2</a>
+                    <a href="#project3">Project 3</a>
                 </div>
             </li>
             <li class="reflect"><a  href="Reflection.html">Reflection</a></li>
@@ -56,28 +56,84 @@
             <div class="projects-container">
                 <h2>Projects</h2>
                 <div class="project-list">
-                    <div class="project">
+                    <div class="project" id="project1">
                         <img src="./Images/placeholder.jpg" alt="Project 1">
                         <div>
                             <h3>Project 1</h3>
-                            <p>The GroupP-FinalProject is a Java-based Hangman game that allows users to guess ....</p>
-                            <a href="Project1.html" class="button">Read More</a>
+                            <p class="short-description">The GroupP-FinalProject is a Java-based Hangman game that allows users to guess ....</p>
+                            <input type="checkbox" id="toggle1" class="read-more-toggle">
+                            <label for="toggle1" class="button read-more">Read More</label>
+                            <p class="full-description">
+                                <b>Hangman Description</b><br>
+                                The GroupP-FinalProject is a Java-based Hangman game that allows users to guess letters in words from various categories, including college majors, places, fictional characters, food, and companies. The game features a graphical user interface (GUI) built using Swing and retrieves words from a JSON database. In this project, I served as a developer responsible for designing and implementing the core functionalities of the Hangman game, with primary tasks including developing the game logic, creating the GUI, and integrating the word database, as well as contributing to testing and debugging to ensure a smooth user experience. The outcome was a fully functional Hangman game that provides an engaging and interactive experience for users, successfully tracking guesses, displaying the current state of the word, and informing users when they win or lose. The project was well-received, demonstrating effective collaboration and technical execution. I utilized several tools and methodologies, including Java as the primary programming language, Swing for the GUI, Maven for managing project dependencies, Gson for reading the word database, and JUnit/TestNG for testing. This experience enhanced my skills in Java programming, particularly in object-oriented programming and GUI development, as well as software design, version control using Git, and understanding software testing methodologies, all of which will be beneficial in my future endeavors.<br>
+                                <b>Hangman Tools and Methodologies</b><br>
+                                In the development of the Hangman game, I utilized several tools and methodologies to ensure a successful outcome. The primary programming language used was Java, which allowed for efficient object-oriented programming and GUI development. For the graphical user interface, I employed Swing, a powerful library for creating interactive applications.Maven was used for managing project dependencies, ensuring that all necessary libraries were included and up to date. To read the word database, I utilized Gson, a library for converting Java objects to JSON and vice versa. Testing was conducted using JUnit/TestNG, which provided a robust framework for unit testing and ensuring the reliability of the code. Additionally, version control was managed through Git, allowing for effective collaboration and tracking of changes throughout the development process.<br>
+                                <b>Hangman Skills and Experience</b><br>
+                                Through the development of the Hangman game, I gained valuable skills and experience that will be beneficial in my future endeavors. I enhanced my proficiency in Java programming, particularly in object-oriented design principles and GUI development using Swing. The project also provided me with hands-on experience in software design methodologies, including version control with Git, which is essential for collaborative development. Additionally, I improved my understanding of software testing methodologies through the use of JUnit/TestNG, ensuring the reliability and robustness of the code. Overall, this project solidified my passion for software development and provided a strong foundation for future projects.<br>
+                                <b>Hangman Challenges and Solutions</b><br>
+                                During the development of the Hangman game, I encountered several challenges that required creative problem-solving and collaboration with my team. One of the primary challenges was integrating the word database with the game logic, as ensuring seamless communication between the two components was crucial for a smooth user experience. To address this, I implemented a robust data retrieval system using Gson to read the JSON database efficiently. Another challenge was designing an intuitive and visually appealing GUI that would enhance user engagement. I conducted user testing and gathered feedback to refine the interface, ensuring it was user-friendly and met the project's goals. Additionally, debugging and testing were ongoing challenges, but by utilizing JUnit/TestNG, I was able to identify and resolve issues effectively, leading to a polished final product.<br>
+                                <b>Project Outcome</b><br>
+                                The Hangman game was a resounding success, providing an engaging and interactive experience for users. The game effectively tracked guesses, displayed the current state of the word, and informed users when they won or lost. The project demonstrated effective collaboration and technical execution, with all team members contributing to the successful outcome. The positive feedback received from users highlighted the game's enjoyable gameplay and user-friendly interface. Overall, the project achieved its goals and provided a valuable learning experience for all team members involved.<br>
+                                <b>Hangman Technologies Used</b><br>
+                                Java, Swing, Maven, Gson, JUnit/TestNG<br>
+                                <b>Hangman Project Link</b><br>
+                                <a href="https://github.com/TryConor/GroupP-FinalProject">Project Repository</a><br>
+                                <b>Hangman Future Improvements</b><br>
+                                Looking ahead, there are several potential improvements that could enhance the Hangman game further. One area for improvement is expanding the word database to include a wider variety of categories and difficulty levels, providing users with more options and challenges. Additionally, implementing a scoring system could add a competitive element to the game, allowing users to track their performance over time. Enhancing the GUI with animations and sound effects could also improve user engagement and create a more immersive experience.<br>
+                                <b>Hangman Reflection</b><br>
+                                Reflecting on the development of the GroupP-FinalProject, I gained significant insights into software design and collaborative development. Working on the Hangman game allowed me to enhance my skills in Java programming, particularly in GUI design using Swing and data management with JSON. The experience of integrating game logic with user interaction deepened my understanding of object-oriented programming principles. Additionally, collaborating with my team improved my communication and problem-solving abilities, as we navigated challenges together. Overall, this project solidified my passion for software development and provided a strong foundation for future endeavors in programming.<br>
+                            </p>
                         </div>
                     </div>
-                    <div class="project">
+                    <div class="project" id="project2">
                         <img src="./Images/placeholder.jpg" alt="Project 2">
                         <div>
                             <h3>Project 2</h3>
-                            <p>XClone is a mobile application developed for iOS using Swift, designed to streamline ....</p>
-                            <a href="Project2.html" class="button">Read More</a>
+                            <p class="short-description">XClone is a mobile application developed for iOS using Swift, designed to streamline ....</p>
+                            <input type="checkbox" id="toggle2" class="read-more-toggle">
+                            <label for="toggle2" class="button read-more">Read More</label>
+                            <p class="full-description"> 
+                            <b>XClone Description</b><br>
+                            XClone is a mobile application developed for iOS using Swift, designed to streamline task management for users. The app features an intuitive interface that allows users to create, edit, and delete tasks effortlessly. Users can set reminders and categorize their tasks, enhancing organization and productivity. With a focus on user experience, XClone incorporates visually appealing design elements and smooth navigation, making it accessible for users of all ages. The application aims to help individuals manage their daily activities more effectively, ensuring that important tasks are never overlooked. XClone represents a significant step forward in personal productivity tools for mobile devices.<br>
+                            <b>Project Goals</b><br>
+                            The primary goal of the XClone project was to create a user-friendly task management application that simplifies the process of organizing daily activities. The project aimed to enhance user productivity by providing an intuitive interface for task creation, editing, and categorization. Additionally, the app sought to incorporate features such as reminders and notifications to ensure users stay on top of their tasks. By focusing on usability and design, the project aimed to deliver a mobile application that meets the needs of individuals seeking an efficient way to manage their time and responsibilities.<br>
+                            <b>Project Challenges</b><br>
+                            During the development of XClone, several challenges were encountered. One significant challenge was ensuring the app's interface was both visually appealing and functional across various iOS devices. This required extensive testing and adjustments to maintain consistency in user experience. Another challenge involved implementing Core Data for task management, as it required a deep understanding of data persistence in iOS applications. Additionally, integrating local notifications posed difficulties in ensuring timely reminders without overwhelming users. Overcoming these challenges required collaboration within the team and a commitment to refining the app's features for optimal performance.<br>
+                            <b>Project Skills and Experience</b><br>
+                            Through the XClone project, I developed several key skills and gained valuable experience in mobile application development. I honed my proficiency in Swift programming, particularly in utilizing iOS frameworks for task management functionalities. The project enhanced my understanding of user interface design principles, allowing me to create an intuitive and visually appealing app. Additionally, I improved my problem-solving abilities by addressing challenges related to data persistence and notifications. Collaborating with my team fostered effective communication and teamwork skills, essential for successful project execution. Overall, this experience solidified my passion for mobile development and provided a strong foundation for future projects.<br>
+                            <b>Project Outcome</b><br>
+                            The XClone project successfully achieved its goals of creating a user-friendly task management application. The app features a clean and intuitive interface, allowing users to easily create, edit, and categorize tasks. Local notifications effectively remind users of upcoming tasks, enhancing their productivity. The integration of Core Data ensures that user data is securely stored and easily accessible. Overall, the project demonstrated the feasibility of developing a robust mobile application that meets the needs of users seeking an efficient way to manage their daily activities. The positive feedback received from users highlighted the app's effectiveness in improving task organization and time management.<br>
+                            <b>Project Technologies Used</b><br>
+                            Swift, Xcode, Core Data, UIKit, Local Notifications<br>
+                            <b>Project Link</b><br>
+                            <a href="http://github.com/EliWuerth/Xclone"></a>Project Repository<br>
+                            <b>Xclone Reflection</b><br>
+                            Reflecting on the development of the XClone project, I gained valuable insights into mobile application design and user experience. Collaborating with my team enhanced my communication and problem-solving skills, as we navigated challenges together. Utilizing Swift and Xcode deepened my technical proficiency, particularly in task management functionalities and UI design. This experience not only solidified my understanding of software development principles but also ignited my passion for creating intuitive applications that improve user productivity. Overall, this project was a significant step in my journey as a developer.</p>
                         </div>
                     </div>
-                    <div class="project">
+                    <div class="project" id="project3">
                         <img src="./Images/placeholder.jpg" alt="Project 3">
                         <div>
                             <h3>Project 3</h3>
-                            <p>The project involves tracking and landing drones on a robotic dog, with the goal of ....</p>
-                            <a href="Project3.html" class="button">Read More</a>
+                            <p class="short-description">The project involves tracking and landing drones on a robotic dog, with the goal of ....</p>
+                            <input type="checkbox" id="toggle3" class="read-more-toggle">
+                            <label for="toggle3" class="button read-more">Read More</label>
+                            <p class="full-description">
+                                <b>Spot's Aerial Assistant Description</b><br>
+                                The project involves tracking and landing drones on a robotic dog, with the goal of creating a platform and coding everything necessary for the project to function effectively. As part of a collaborative group, my role is to contribute to the development of this platform and the coding aspects of the project. The intended outcome is to successfully demonstrate the feasibility of tracking and landing drones on the robotic dog. Through this experience, I have enhanced my skills in teamwork by collaborating with others to achieve a common goal, problem-solving by overcoming challenges and finding creative solutions, communication by effectively interacting with team members, and adaptability by learning to use new technologies and tools. Overall, this project has provided me with valuable experience that will be beneficial in my future endeavors.<br>
+                                <b>Project Goals</b><br>
+                                The primary goal of this project is to successfully track and land drones on a robotic dog. This involves creating a platform that integrates the necessary hardware and software components to enable precise tracking and landing capabilities. The project aims to demonstrate the feasibility of this technology and its potential applications in various fields, such as logistics, surveillance, and search and rescue operations.<br>
+                                <b>Project Challenges</b><br>
+                                Throughout the project, we encountered several challenges, including ensuring accurate tracking of the drone's position, developing a reliable landing mechanism, and integrating the hardware and software components effectively. Additionally, we faced obstacles related to communication between the drone and the robotic dog, as well as environmental factors that could affect the tracking and landing process. Overcoming these challenges required teamwork, problem-solving skills, and adaptability to new technologies.<br>
+                                <b>Project Outcome</b><br>
+                                The project successfully demonstrated the ability to track and land drones on a robotic dog. We achieved this by developing a robust platform that integrated various technologies, including sensors, control systems, and software algorithms. The successful landing of the drone on the robotic dog showcased the potential of this technology for real-world applications. Overall, the project was a valuable learning experience that enhanced our skills in robotics, programming, and teamwork.<br>
+                                <b>Technologies Used</b><br>
+                                Python, OpenCV, Pillow, PyQt5, and NumPy<br>
+                                <b>Project Link</b><br>
+                                <a href="http://github.com/EliWuerth/Spots_Aerial_Assistant">Project Repository</a><br>
+                                <b>Project Reflection</b><br>
+                                Reflecting on the "Tracking and Landing Drones on a Robotic Dog" project, I gained invaluable experience in robotics and programming. Collaborating with my team allowed me to enhance my skills in problem-solving and technical communication as we tackled challenges related to drone navigation and landing mechanisms. I learned to integrate various technologies, including sensors and control systems, to achieve precise tracking and landing. This project not only deepened my understanding of robotics but also ignited my passion for innovative applications in automation. Overall, this experience has equipped me with essential skills that will be beneficial in my future endeavors in engineering and technology.<br>
+                            </p>
                         </div>
                     </div>
                 </div>

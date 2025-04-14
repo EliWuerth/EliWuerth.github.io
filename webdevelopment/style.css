@@ -261,6 +261,27 @@ blockquote {
     border-radius: 5px;
 }
 
+.full-description {
+    display: none; /* Initially hidden */
+}
+
+.read-more-toggle {
+    display: none; /* Hide the checkbox */
+}
+
+.read-more-toggle:checked + .read-more + .full-description {
+    display: block; /* Show the full description when checked */
+}
+
+.read-more {
+    cursor: pointer;
+    background-color: #007BFF; /* Example color */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
 /* ========================= */
 /*       Reflection CSS      */
 /* ========================= */

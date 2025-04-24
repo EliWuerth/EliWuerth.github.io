@@ -11,7 +11,7 @@ nav{
     border-bottom: 2px solid #cd7f32; /* Bronze bottom border for the navbar */
 }
 
-input{
+input[type="checkbox"]{
     display: none;
 }
 

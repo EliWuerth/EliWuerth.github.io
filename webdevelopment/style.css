@@ -206,7 +206,47 @@ blockquote {
 /*        Contact CSS        */
 /* ========================= */
 
+.main-content {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"],input[type="email"],textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: black;
+    background-color: #fff;
+}
+
+textarea {
+    resize: vertical;
+    /* Allow vertical resizing of textarea */
+}
+
+button[type="submit"] {
+    background-color: #df8a36;
+    color: #fff;
+    padding: 12px 20px;
+    border: 2px solid #cd7f32;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button[type="submit"]:hover {
+    background-color: #cd7f32;
+}
 
 /* ========================= */
 /*        Projects CSS       */

@@ -138,6 +138,43 @@ body {
 /*    Different Pages CSS    */
 /* ========================= */
 
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #cd7f32;
+    margin: 30px 0;
+    font-size: 1rem;
+    text-align: left;
+}
+
+  /* First and last rows styling */
+.styled-table thead tr, .styled-table tfoot tr {
+    background-color: #cd7f32;
+    color: white;
+}
+
+  /* Alternate row colors */
+.styled-table tbody tr:nth-child(odd) {
+    background-color: #fff9f3;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #fdf4ec;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+    border: 1px solid #cd7f32;
+}
+
+  /* Caption styling */
+figcaption {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #cd7f32;
+    margin: 20px 0 10px 0;
+}
+
 .body-card {
     flex: 1;
     padding: 20px;
@@ -716,13 +753,13 @@ button[type="submit"]:hover {
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
         }
 
-        .footer.reflexive .footer-slideshow-container, .footer.reflexive .footer-slideshow-bg .bg1, .footer.reflexive .footer-slideshow-bg .bg2, .footer.reflexive .footer-slideshow-bg .bg3, .footer.reflexive .footer-slideshow-bg .bg4{
+        .footer.reflexive .footer-slideshow-container, .footer.reflexive .footer-slideshow-bg .bg1, .footer.reflexive .footer-slideshow-bg .bg2, .footer.reflexive .footer-slideshow-bg .bg3, .footer.reflexive .footer-slideshow-bg .bg4, .footer.fixed .footer-slideshow-bg .bg4, .footer.fixed .footer-slideshow-bg .bg3, .footer.fixed .footer-slideshow-bg .bg2, .footer.fixed .footer-slideshow-bg .bg1, .footer.fixed .footer-slideshow-container{
             position:static;
-            height: 0px; /* Adjust the height to your preference */
+            height: 0px;
             bottom: 0;
             z-index: -1;
         }
-        
+
         #slideshow-container {
             display: none; /* Adjust the height to your preference */
         }
@@ -754,7 +791,7 @@ button[type="submit"]:hover {
             font-size:small;
         }
 
-        .footer.fixed {
+        .footer.fixed{
             position: relative;
         }
 
@@ -812,8 +849,21 @@ button[type="submit"]:hover {
             z-index: -1;
         }
 
+        .footer.fixed .footer-slideshow-bg .bg4, .footer.fixed .footer-slideshow-bg .bg3, .footer.fixed .footer-slideshow-bg .bg2, .footer.fixed .footer-slideshow-bg .bg1, .footer.fixed .footer-slideshow-container{
+            position:static;
+            height: 0px;
+            bottom: 0;
+            z-index: -1;
+        }
+
         #slideshow-container {
             display: none; /* Adjust the height to your preference */
+        }
+
+        .styled-table {
+            overflow-x: auto;
+            white-space: nowrap;
+            font-size: 0.95rem;
         }
     }
 
@@ -910,8 +960,26 @@ button[type="submit"]:hover {
             bottom: 0;
             z-index: -1;
         }
+
+        .footer.fixed .footer-slideshow-bg .bg4, .footer.fixed .footer-slideshow-bg .bg3, .footer.fixed .footer-slideshow-bg .bg2, .footer.fixed .footer-slideshow-bg .bg1, .footer.fixed .footer-slideshow-container{
+            position:static;
+            height: 0px;
+            bottom: 0;
+            z-index: -1;
+        }
+
         #slideshow-container {
             display: none; /* Adjust the height to your preference */
+        }
+
+        .styled-table {
+            overflow-x: auto;
+            white-space: nowrap;
+            font-size: 0.95rem;
+        }
+
+        .footer.fixed{
+            position: relative;
         }
     }
 
@@ -973,6 +1041,16 @@ button[type="submit"]:hover {
 
         #slideshow-container {
             display: none; /* Adjust the height to your preference */
+        }
+
+        .styled-table {
+            overflow-x: auto;
+            white-space: nowrap;
+            font-size: 0.95rem;
+        }
+
+        .footer.fixed{
+            position: relative;
         }
     }
 

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://eliwuerth.github.io/webdevelopment/</loc>
+  <lastmod>2025-05-08T01:22:55+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://eliwuerth.github.io/webdevelopment/index.html</loc>
+  <lastmod>2025-05-08T01:22:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://eliwuerth.github.io/webdevelopment/About.html</loc>
+  <lastmod>2025-05-08T01:22:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://eliwuerth.github.io/webdevelopment/Projects.html</loc>
+  <lastmod>2025-05-08T01:22:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://eliwuerth.github.io/webdevelopment/Reflection.html</loc>
+  <lastmod>2025-05-08T01:22:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://eliwuerth.github.io/webdevelopment/Contact.html</loc>
+  <lastmod>2025-05-08T01:22:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://eliwuerth.github.io/webdevelopment/Resume.html</loc>
+  <lastmod>2025-05-08T01:22:55+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://eliwuerth.github.io/webdevelopment/ExampleWebsites.html</loc>
+  <lastmod>2025-05-08T01:22:55+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eliwuerth.github.io/webdevelopment/WebsiteDesigns/site_1.html</loc>
+  <lastmod>2025-05-08T01:22:55+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://eliwuerth.github.io/webdevelopment/WebsiteDesigns/site_2.html</loc>
+  <lastmod>2025-05-08T01:22:55+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://eliwuerth.github.io/webdevelopment/WebsiteDesigns/site_3.html</loc>
+  <lastmod>2025-05-08T01:22:55+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://eliwuerth.github.io/webdevelopment/WebsiteDesigns/site_4.html</loc>
+  <lastmod>2025-05-08T01:22:55+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://eliwuerth.github.io/webdevelopment/WebsiteDesigns/site_5.html</loc>
+  <lastmod>2025-05-08T01:22:55+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://eliwuerth.github.io/webdevelopment/WebsiteDesigns/site_6.html</loc>
+  <lastmod>2025-05-08T01:22:55+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+
+
+</urlset>

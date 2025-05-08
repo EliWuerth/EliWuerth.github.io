@@ -1,0 +1,197 @@
+<!-- Example 6: Minimalist Landing Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Minimalist Landing Page</title>
+  <link rel="stylesheet" href="site_6.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .back-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #cd7f32;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1em;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s, transform 0.3s;
+      z-index: 999;
+    }
+
+    .back-button:hover {
+      background: #b76e2a;
+      transform: scale(1.05);
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: #222;
+      background: whitesmoke;
+      line-height: 1.6;
+    }
+
+    nav {
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2em 2em;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #cd7f32;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      color: #cd7f32;
+    }
+
+    header {
+      text-align: center;
+      padding: 120px 20px;
+      background: #e7e7e7;
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: auto;
+      color: #555;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background: #cd7f32;
+      color: white;
+      font-weight: bold;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background: #b86b2b;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .feature {
+      margin-bottom: 40px;
+    }
+
+    .feature h3 {
+      font-size: 1.4em;
+      margin-bottom: 10px;
+      color: #cd7f32;
+    }
+
+    .feature p {
+      color: #666;
+    }
+
+    #cta {
+      background: #111;
+      color: white;
+    }
+
+    #cta .button {
+      background: white;
+      color: #cd7f32;
+    }
+
+    #cta .button:hover {
+      background: #cd7f32;
+      color: white;
+    }
+
+    footer {
+      background: white;
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #eee;
+      color: #444;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <a href="../ExampleWebsites.html" class="back-button bottom-left" title="Back to Examples">&#8592; Back</a>
+
+  <nav>
+    <div class="logo">Eli Wuerth</div>
+    <ul>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#cta">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Simplicity, Delivered</h1>
+    <p>A clean and minimalist landing page that does exactly what you need—and nothing more.</p>
+    <a href="#cta" class="button">Start Now</a>
+  </header>
+
+  <section id="features">
+    <div class="feature">
+      <h3>Fast Load Time</h3>
+      <p>Built with speed in mind. No bloat, just performance.</p>
+    </div>
+    <div class="feature">
+      <h3>Fully Responsive</h3>
+      <p>Looks great on all devices, from mobile to desktop.</p>
+    </div>
+    <div class="feature">
+      <h3>Focus on Action</h3>
+      <p>Direct attention with zero distractions. Just results.</p>
+    </div>
+  </section>
+
+  <section id="cta">
+    <h2>Ready to Launch?</h2>
+    <p>Click below to get started or contact us to learn more.</p>
+    <a href="mailto:eliwuerth@example.com" class="button">Contact Us</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Eli Wuerth. Crafted with clarity.</p>
+  </footer>
+</body>
+</html>

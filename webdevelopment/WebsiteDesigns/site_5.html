@@ -1,0 +1,260 @@
+<!-- Example 5: Creative Blog -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Creative Blog – Code & Coffee</title>
+  <link rel="stylesheet" href="site_5.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .back-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #cd7f32;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1em;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s, transform 0.3s;
+      z-index: 999;
+    }
+
+    .back-button:hover {
+      background: #b76e2a;
+      transform: scale(1.05);
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: #fdfcf9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    nav {
+      background: #111;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .logo {
+      font-size: 1.4em;
+      color: #cd7f32;
+      font-weight: bold;
+    }
+
+    nav .logo span {
+      color: white;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #cd7f32;
+    }
+
+    header {
+      background: linear-gradient(to bottom right, #fff3e0, #ffffff);
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      color: #cd7f32;
+    }
+
+    header p {
+      font-style: italic;
+      color: #666;
+    }
+
+    /* POSTS */
+    #posts {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    #posts h2 {
+      color: #cd7f32;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .post {
+      background: white;
+      border-left: 6px solid #cd7f32;
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+
+    /* TAGS */
+    #categories {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    #categories h2 {
+      color: #cd7f32;
+      margin-bottom: 20px;
+    }
+
+    .tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .tag {
+      background: #cd7f32;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9em;
+    }
+
+    /* CONTACT */
+    #contact {
+      padding: 60px 20px;
+      background: #111;
+      color: white;
+      text-align: center;
+    }
+
+    #contact h2 {
+      margin-bottom: 10px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form input, form textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-family: inherit;
+    }
+
+    form button {
+      padding: 12px;
+      background: #cd7f32;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background: #b96d2c;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      color: #bbb;
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <a href="../ExampleWebsites.html" class="back-button bottom-left" title="Back to Examples">&#8592; Back</a>
+
+  <nav>
+    <div class="logo">Code & <span>Coffee</span></div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#posts">Posts</a></li>
+      <li><a href="#categories">Tags</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header id="home">
+    <h1>Creative Blog</h1>
+    <p>A space to share stories, code, and the art of building.</p>
+  </header>
+
+  <section id="posts">
+    <h2>Recent Posts</h2>
+    <div class="posts">
+      <article class="post">
+        <h3>🎨 Designing with Intuition</h3>
+        <p>Design isn't just about looks—it's about feel. Here's how I approach emotional UX.</p>
+      </article>
+      <article class="post">
+        <h3>🚁 Drones + Spot Integration</h3>
+        <p>Behind-the-scenes of building a drone that lands on a robotic dog. Yes, it’s as cool as it sounds.</p>
+      </article>
+      <article class="post">
+        <h3>📦 Why I Still Love Vanilla JS</h3>
+        <p>React is great. But sometimes, going vanilla keeps things faster, cleaner, and more fun.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="categories">
+    <h2>Tags</h2>
+    <div class="tags">
+      <span class="tag">UX</span>
+      <span class="tag">WebDev</span>
+      <span class="tag">JavaScript</span>
+      <span class="tag">Robotics</span>
+      <span class="tag">Storytelling</span>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Let’s Connect</h2>
+    <p>Have feedback or a project idea? I'd love to hear from you.</p>
+    <form action="submit_form.php" method="POST">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Your email" required />
+      <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Code & Coffee by Eli Wuerth</p>
+  </footer>
+</body>
+</html>

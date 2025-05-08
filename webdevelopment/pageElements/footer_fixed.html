@@ -5,25 +5,28 @@
 
 <head>
     <!--
-    Title: About Me
-    Use: Page about the author/educator
+    Title: Footer Fixed
+    Use: This page is used to create a fixed footer for a website.
     Author: Eli Wuerth
     School/Term: University of Missouri/Spring 2025
-    Developed: 1/28/2025
+    Developed: January 2025 - May 2025
     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <title>About Me</title>
     <link rel="stylesheet" href="../style.css">
     <script src="Script.js" defer></script>
+    <title>Footer Fixed</title>
 </head>
 
 <body>
-    
-
-
     <footer class="footer fixed">
+        <div class="footer-slideshow-container">
+            <div class="footer-slideshow-bg bg1"></div>
+            <div class="footer-slideshow-bg bg2"></div>
+            <div class="footer-slideshow-bg bg3"></div>
+            <div class="footer-slideshow-bg bg4"></div>
+        </div>
         <div class="footer-container">
             <div class="footer-column">
                 <h3>Phone</h3>
@@ -37,13 +40,14 @@
             <div class="footer-column">
                 <h3>Follow Me</h3>
                 <p>
-                    <button class="linkedIn"><a href="https://www.linkedin.com/in/eliwuerth/" target="_blank"><img src="./Images/icons8-linkedin-16.png" alt="logo"></a></button>
+                    <button class="linkedIn"><a href="https://www.linkedin.com/in/eliwuerth/" target="_blank"><img href="https://www.linkedin.com/in/eliwuerth/" src="./Images/icons8-linkedin-16.png" alt="logo" class="footer-icon"></a></button>
                 </p>
             </div>
             <div class="footer-column">
                 <h3>Copyright</h3>
-                <p>&copy; 2025 Your Website. All rights reserved.</p>
+                <p>&copy; 2025 My Website. All rights reserved.</p>
             </div>
+        </div>
         </div>
     </footer>
 </body>

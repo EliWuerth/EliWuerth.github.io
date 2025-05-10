@@ -68,8 +68,69 @@
       color: #cd7f32;
     }
 
+    .hero-slideshow {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+    }
+
+    .hero-slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: none;
+      z-index: 0;
+    }
+
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 120px 20px;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.8); /* Add strong shadow for contrast */
+      background: rgba(0, 0, 0, 0.35);           /* Optional: subtle overlay box */
+      max-width: 100%;
+    }
+
+    .hero-content .cta{
+      text-shadow: none;
+    }
+
+    .hero-text-box {
+      display: inline-block;
+      padding: 20px 30px;
+      border-radius: 12px;
+      /* box-shadow: 0 8px 24px rgba(0,0,0,0.4); */
+    }
+
+    .hero-content h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .hero-content p {
+      font-size: 1.2em;
+    }
+
+    .fade {
+      animation: fadeEffect 1s;
+    }
+
+    @keyframes fadeEffect {
+      from { opacity: 0.4; } 
+      to { opacity: 1; }
+    }
+
     .hero {
-      background: linear-gradient(to right, #cd7f32, #000);
+      /* background: linear-gradient(to right, #cd7f32, #000); */
       color: white;
       text-align: center;
       padding: 100px 20px;
@@ -166,7 +227,18 @@
       text-align: center;
       padding: 20px;
     }
-</style>
+  </style>
+  <script>
+    let heroIndex = 0;
+    function cycleHeroSlides() {
+      const slides = document.querySelectorAll(".hero-slide");
+      slides.forEach(slide => slide.style.display = "none");
+      heroIndex = (heroIndex + 1) > slides.length ? 1 : heroIndex + 1;
+      slides[heroIndex - 1].style.display = "block";
+      setTimeout(cycleHeroSlides, 5000);
+    }
+    window.addEventListener("DOMContentLoaded", cycleHeroSlides);
+  </script>
 </head>
 <body>
   <a href="../ExampleWebsites.html" class="back-button bottom-left" title="Back to Examples">&#8592; Back</a>
@@ -180,10 +252,41 @@
     </ul>
   </nav>
 
-  <header class="hero">
-    <h1>We Build Smart, Fast Websites</h1>
-    <p>Helping startups & creators scale with modern, responsive design.</p>
-    <a class="cta" href="#contact">Get Started</a>
+  <header class="hero-slideshow">
+    <div class="hero-slide fade">
+      <img src="../Images/AdobeStock_828224121.jpeg" alt="Slide 1" />
+    </div>
+    <div class="hero-slide fade">
+      <img src="../Images/AdobeStock_943393154.jpeg" alt="Slide 2" />
+    </div>
+    <div class="hero-slide fade">
+      <img src="../Images/AdobeStock_991558611.jpeg" alt="Slide 3" />
+    </div>
+    <div class="hero-slide fade">
+      <img src="../Images/AdobeStock_1215968101.jpeg" alt="Slide 4" />
+    </div>
+    <div class="hero-slide fade">
+      <img src="../Images/AdobeStock_1221806902.jpeg" alt="Slide 5" />
+    </div>
+    <div class="hero-slide fade">
+      <img src="../Images/AdobeStock_1234862083.jpeg" alt="Slide 6" />
+    </div>
+    <div class="hero-slide fade">
+      <img src="../Images/AdobeStock_585064452.jpeg" alt="Slide 7" />
+    </div>
+    <div class="hero-slide fade">
+      <img src="../Images/AdobeStock_720210981.jpeg" alt="Slide 8" />
+    </div>
+    <div class="hero-slide fade">
+      <img src="../Images/AdobeStock_760682197.jpeg" alt="Slide 9" />
+    </div>
+    <div class="hero-content">
+      <div class="hero-text-box">
+        <h1>We Build Smart, Fast Websites</h1>
+        <p>Helping startups & creators scale with modern, responsive design.</p>
+        <a class="cta" href="#contact">Get Started</a>
+      </div>
+    </div>
   </header>
 
   <section id="services">

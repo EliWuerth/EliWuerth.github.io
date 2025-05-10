@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Creative Portfolio – Eli Wuerth</title>
   <link rel="stylesheet" href="site_1.css" />
+  <link rel="icon" type="image/x-icon" href="../Images/favicon.ico">
   <style>
     * {
       box-sizing: border-box;
@@ -223,15 +224,15 @@
   <section id="work">
     <h2>Selected Projects</h2>
     <div class="projects">
-      <div class="card">
+      <div class="card" onclick="openModal('FJVNyUF6XeM')">
         <h3>Spot's Aerial Assistant</h3>
         <p>Drone tracking & autonomous landing system using OpenCV + Boston Dynamics Spot.</p>
       </div>
-      <div class="card">
+      <div class="card" onclick="openModal('dQw4w9WgXcQ')">
         <h3>Hangman Game</h3>
         <p>Interactive Java Swing game powered by JSON word banks and responsive UI.</p>
       </div>
-      <div class="card">
+      <div class="card" onclick="window.open('https://www.youtube.com/watch?v=FJVNyUF6XeM', '_blank')">
         <h3>Animated Resume</h3>
         <p>A no-voice 2D animated resume video with mouth-sync and slick transitions.</p>
       </div>
@@ -255,4 +256,19 @@
     <p>&copy; 2025 Eli Wuerth | Designed with code + creativity 💡</p>
   </footer>
 </body>
+<script>
+  function openModal(videoId) {
+    const modal = document.getElementById('videoModal');
+    const frame = document.getElementById('videoFrame');
+    frame.src = `https://www.youtube.com/embed/${videoId}`;
+    modal.style.display = 'flex';
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('videoModal');
+    const frame = document.getElementById('videoFrame');
+    frame.src = '';
+    modal.style.display = 'none';
+  }
+</script>
 </html>

@@ -1,0 +1,213 @@
+.back-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #cd7f32;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.3s;
+    z-index: 999;
+  }
+
+  .back-button:hover {
+    background: #b76e2a;
+    transform: scale(1.05);
+  }
+
+  body {
+    font-family: 'Georgia', serif;
+    background: #fffefc;
+    color: #333;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* Hidden Checkbox for SideNav */
+  .side-nav-toggle {
+    display: none;
+  }
+
+  /* Side Nav Menu Button (Hamburger Icon) */
+  .menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 85px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    color: #cd7f32;
+  }
+
+  .menu-btn:hover {
+    color: #b46f2b;
+  }
+
+  /* NAVBAR */
+  .side-nav {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden off-screen */
+    width: 200px;
+    height: 100%;
+    background: #111;
+    color: white;
+    padding-top: 60px;
+    transition: 0.3s;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .side-nav ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .side-nav ul li {
+    padding: 16px;
+    text-align: center;
+  }
+
+  .side-nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+  }
+
+  .side-nav ul li a:hover {
+    color: #cd7f32;
+  }
+
+  /* When the checkbox is checked, slide the menu in */
+  .side-nav-toggle:checked + .menu-btn + .side-nav {
+    left: 0;
+  }
+
+  /* HERO */
+  .hero {
+    background: #fff1e0;
+    padding: 80px 20px;
+    text-align: center;
+    border-top: solid 7px black;
+    border-bottom: solid 7px black;
+  }
+
+  .hero h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+  }
+
+  .hero p {
+    font-style: italic;
+    color: #666;
+  }
+
+  /* POSTS */
+  section {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 20px;
+  }
+
+  .posts .post {
+    margin-bottom: 40px;
+  }
+
+  .post h3 {
+    color: #cd7f32;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+
+  /* TAGS */
+  .category-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .tag {
+    background: #cd7f32;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+
+  /* ABOUT AUTHOR */
+  .about-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px auto;
+    max-width: 800px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    flex-wrap: wrap;
+    text-align: left;
+  }
+
+  .about-author img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #cd7f32;
+  }
+
+  .about-author p {
+    flex: 1;
+    font-size: 1.1em;
+    color: #444;
+    line-height: 1.6;
+    min-width: 200px;
+  }
+  
+  /* CONTACT FORM */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: auto;
+  }
+
+  form input, form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+  }
+
+  form button {
+    background: #cd7f32;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  form button:hover {
+    background: #b46a2a;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #111;
+    color: #ccc;
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+  }

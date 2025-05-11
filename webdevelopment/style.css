@@ -73,22 +73,22 @@ body {
 }
 
 .bg1 {
-    background-image: url('./Images/AdobeStock_828224121.jpeg');
+    background-image: url('./Images/Headers/AdobeStock_828224121.jpeg');
     animation-name: fade1;
 }
 
 .bg2 {
-    background-image: url('./Images/AdobeStock_943393154.jpeg');
+    background-image: url('./Images/Headers/AdobeStock_943393154.jpeg');
     animation-name: fade2;
 }
 
 .bg3 {
-    background-image: url('./Images/AdobeStock_991558611.jpeg');
+    background-image: url('./Images/Headers/AdobeStock_991558611.jpeg');
     animation-name: fade3;
 }
 
 .bg4 {
-    background-image: url('./Images/AdobeStock_828224121.jpeg'); /* Add more images as needed */
+    background-image: url('./Images/Headers/AdobeStock_828224121.jpeg'); /* Add more images as needed */
     animation-name: fade4;
 }
 
@@ -538,22 +538,22 @@ button[type="submit"]:hover {
 }
 
 .bg1 {
-    background-image: url('./Images/AdobeStock_828224121.jpeg'); /* Change to your own images */
+    background-image: url('./Images/Headers/AdobeStock_828224121.jpeg'); /* Change to your own images */
     animation-name: fade1-footer;
 }
 
 .bg2 {
-    background-image: url('./Images/AdobeStock_943393154.jpeg');
+    background-image: url('./Images/Headers/AdobeStock_943393154.jpeg');
     animation-name: fade2-footer;
 }
 
 .bg3 {
-    background-image: url('./Images/AdobeStock_991558611.jpeg');
+    background-image: url('./Images/Headers/AdobeStock_991558611.jpeg');
     animation-name: fade3-footer;
 }
 
 .bg4 {
-    background-image: url('./Images/AdobeStock_828224121.jpeg'); /* Add more images as needed */
+    background-image: url('./Images/Headers/AdobeStock_828224121.jpeg'); /* Add more images as needed */
     animation-name: fade4-footer;
 }
 
@@ -1029,6 +1029,15 @@ button[type="submit"]:hover {
     }
 }
 
+@media (max-width: 490px){
+    .styled-table {
+        overflow-x: auto;
+        white-space: nowrap;
+        font-size: xx-small;
+        
+    }
+}
+
 @media (max-width: 340px){
     .footer-column {
         padding: 0px 10px;
@@ -1092,7 +1101,8 @@ button[type="submit"]:hover {
     .styled-table {
         overflow-x: auto;
         white-space: nowrap;
-        font-size: 0.95rem;
+        font-size: xx-small;
+        display: list-item;
     }
 
     .footer.fixed{

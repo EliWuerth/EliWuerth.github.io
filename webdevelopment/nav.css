@@ -132,7 +132,6 @@ li.dropdown {
     width: 100%; /* Full width for each item */
 }
 
-
 @media (min-width: 768px) and (max-width: 1024px) {
     .navbarul {
         display: flex;

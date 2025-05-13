@@ -11,3 +11,17 @@ function incrementCount() {
 document.addEventListener('DOMContentLoaded', function () {
     incrementCount();
 });
+
+const toggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+  // Initialize based on previous setting
+if (localStorage.getItem('dark-mode') === 'true') {
+    body.classList.add('dark-mode');
+    toggle.checked = true;
+}
+
+toggle.addEventListener('change', () => {
+    body.classList.toggle('dark-mode');
+    localStorage.setItem('dark-mode', body.classList.contains('dark-mode'));
+});

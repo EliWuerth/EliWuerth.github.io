@@ -194,7 +194,6 @@ body.dark-mode html {
     background-color: #1e1e1e;
 }
 
-/* Global containers */
 body.dark-mode main,
 body.dark-mode section,
 body.dark-mode .index-main,
@@ -205,7 +204,6 @@ body.dark-mode .portfolio-wrapper {
     color: #f0f0f0;
 }
 
-/* Form fields */
 body.dark-mode input[type="text"],
 body.dark-mode input[type="email"],
 body.dark-mode textarea {
@@ -215,12 +213,11 @@ body.dark-mode textarea {
 }
 
 body.dark-mode .main-content,
-body.dark-mode .project{
+body.dark-mode .project {
     background-color: #2a2a2a;
     color: #f0f0f0;
 }
 
-/* Tables */
 body.dark-mode table,
 body.dark-mode th,
 body.dark-mode td {
@@ -229,13 +226,36 @@ body.dark-mode td {
     border-color: #444;
 }
 
+body.dark-mode .leftcolumn-resume{
+    background-color:#2a2a2a;
+    color:#f0f0f0;
+}
+
+body.dark-mode .ulRes,
+body.dark-mode .ulRes2,
+body.dark-mode .ulRes3,
+body.dark-mode .ulRes4,
+body.dark-mode .rightcolumn-resume p
+{
+    background-color: transparent;
+    color:#ffffff;
+}
+
+body.dark-mode .resume-h2{
+    color: white;
+}
+
+body.dark-mode .rightcolumn-resume{
+    background-color: #333333;
+    color:#f0f0f0;
+}
+
 body.dark-mode .styled-table thead tr,
 body.dark-mode .styled-table tfoot tr{
     background-color: #333333;
     color: #cd7f32;
 }
 
-/* Dropdowns */
 body.dark-mode .dropdown-content {
     background-color: #222;
 }
@@ -256,7 +276,6 @@ body.dark-mode .active{
     color: #e0e0e0;
     border: none;
 }
-
 
 body.dark-mode .button:hover,
 body.dark-mode .Resume-Button:hover,

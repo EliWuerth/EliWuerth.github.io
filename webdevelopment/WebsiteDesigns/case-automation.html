@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Automation Case Study</title>
+  <link rel="stylesheet" href="launchify.css"/>
+  <link rel="stylesheet" href="../CSS/modal.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../script.js" defer></script>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; }
+    .container { max-width: 900px; margin: 2em auto; padding: 1em; text-align: center; }
+    .gallery { display: flex; flex-wrap: wrap; gap: 1.5em; justify-content: center; }
+    .chart-card { background: white; border-radius: 10px; padding: 1em; box-shadow: 0 3px 10px rgba(0,0,0,0.05); width: 300px; }
+    canvas { width: 100% !important; height: 200px; }
+    .testimonial { font-style: italic; background: #f5f5f5; padding: 1em; border-radius: 10px; margin-top: 2em; }
+    body.dark-mode .chart-card { background: #1f1f1f; }
+    body.dark-mode .testimonial { background: #1f1f1f; color: white; }
+  </style>
+</head>
+<body>
+  <header><h1>Automation Case Study</h1></header>
+  <nav>
+    <a href='index.html'><span class='material-icons'>home</span>Home</a>
+    <a href='about.html'><span class='material-icons'>groups</span>About</a>
+    <a href='services.html'><span class='material-icons'>build</span>Services</a>
+    <a onclick="document.getElementById('modal1').style.display='block'"><span class="material-icons">contact_support</span>Contact</a>
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <span class="modal-close" onclick="document.getElementById('modal1').style.display='none'">&times;</span>
+        <h2>Contact Us</h2>
+        <form action="#" method="post" class="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" placeholder="you@example.com" required>
+          <textarea name="message" rows="4" placeholder="Your Message..." required></textarea>
+          <button style="margin-top: 10px;"type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <p>StartSuite cut 10 hours of manual onboarding work every week using our automation builder.</p>
+
+    <div class="gallery">
+      <div class="chart-card"><canvas id="chart1"></canvas></div>
+      <div class="chart-card"><canvas id="chart2"></canvas></div>
+      <div class="chart-card"><canvas id="chart3"></canvas></div>
+    </div>
+
+    <div class="testimonial">“Launchify eliminated repetitive tasks across 5 departments.” — Carlos Vega, Growth Lead</div>
+    <div id="metrics">
+      <h2>📊 Results Over Time</h2>
+      <canvas id="chart"></canvas>
+    </div>
+  </main>
+  <button class="toggle-btn" onclick="toggleDarkMode()">🌓</button>
+  <footer style="text-align:center;">&copy; 2025 Launchify</footer>
+
+  <script>
+    const isDark = () => document.body.classList.contains("dark-mode");
+    const dataMap = {
+      chart1: [50, 100, 200, 300],
+      chart2: [30, 60, 120, 180],
+      chart3: [20, 45, 90, 130]
+    };
+    const chartRefs = {};
+    function getChartOptions(label, data) {
+      const textColor = isDark() ? '#eee' : '#111';
+      const gridColor = isDark() ? '#444' : '#ccc';
+      const bgColor = isDark() ? 'rgba(57,73,171,0.2)' : 'rgba(57,73,171,0.1)';
+      return {
+        type: 'line',
+        data: {
+          labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+          datasets: [{
+            label,
+            data,
+            fill: true,
+            backgroundColor: bgColor,
+            borderColor: '#3949ab',
+            tension: 0.4
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              labels: { color: textColor }
+            }
+          },
+          scales: {
+            x: { ticks: { color: textColor }, grid: { color: gridColor } },
+            y: { ticks: { color: textColor }, grid: { color: gridColor }, beginAtZero: true }
+          }
+        }
+      };
+    }
+    function drawCharts() {
+      Object.keys(dataMap).forEach((id, idx) => {
+        const canvas = document.getElementById(id);
+        if (chartRefs[id]) chartRefs[id].destroy();
+        chartRefs[id] = new Chart(canvas, getChartOptions("Metric " + (idx+1), dataMap[id]));
+      });
+    }
+    drawCharts();
+    async function loadMetrics() {
+      const res = await fetch("metrics.json");
+      const data = await res.json();
+      const values = data["automation"];
+      new Chart(document.getElementById('chart'), {
+        type: 'line',
+        data: {
+          labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
+          datasets: [{
+            label: 'Users / Signups',
+            data: values,
+            fill: true,
+            backgroundColor: 'rgba(57,73,171,0.1)',
+            borderColor: '#3949ab',
+            tension: 0.3
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: { beginAtZero: true }
+          }
+        }
+      });
+    }
+    loadMetrics();
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+
+      // Redraw all charts in dark mode
+      drawCharts();
+
+      // Redraw strategy metrics chart
+      const ctx = document.getElementById("strategyChart");
+      if (window.strategyChart) window.strategyChart.destroy();
+      fetch("metrics.json")
+        .then(res => res.json())
+        .then(data => {
+          const values = data["strategy"] || [90, 180, 270, 360];
+          window.strategyChart = new Chart(ctx, getChartOptions("Users / Signups", values));
+        });
+      }
+  </script>
+</body>
+</html>

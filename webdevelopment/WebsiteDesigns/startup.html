@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Launchify – Startup Promo</title>
+  <link rel="stylesheet" href="../CSS/startup.css">
+  <link rel="stylesheet" href="../CSS/base_dark_mode.css">
+  <link rel="stylesheet" href="../CSS/modal.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="../script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Launchify</h1>
+    <p>Helping Startups Scale Smarter</p>
+    <button class="cta" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+      Get In Touch
+    </button>
+  </header>
+  
+  <nav>
+    <a href="#"><span class="material-icons">home</span>Home</a>
+    <a href="#"><span class="material-icons">insights</span>Services</a>
+    <a onclick="document.getElementById('modal1').style.display='block'"><span class="material-icons">contact_support</span>Contact</a>
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <span class="modal-close" onclick="document.getElementById('modal1').style.display='none'">&times;</span>
+        <h2>Contact Us</h2>
+        <form action="#" method="post" class="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" placeholder="you@example.com" required>
+          <textarea name="message" rows="4" placeholder="Your Message..." required></textarea>
+          <button style="margin-top: 10px;"type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <section>
+    <h2>Our Mission</h2>
+    <p>We help early-stage startups build fast, scalable web platforms with less friction.</p>
+  </section>
+  <section>
+    <h2>Our Services</h2>
+    <p>Launchify empowers startups with tools that grow as you grow.</p>
+    <div class="features">
+      <div class="feature">
+        <h3>📊 Analytics</h3>
+        <p>Real-time dashboards to track users, funnels, and churn.</p>
+      </div>
+      <div class="feature">
+        <h3>⚙️ Automation</h3>
+        <p>Marketing and onboarding flows that scale without extra staff.</p>
+      </div>
+      <div class="feature">
+        <h3>🧠 Strategy</h3>
+        <p>Expert consulting to turn your MVP into a market-ready product.</p>
+      </div>
+    </div>
+  </section>
+  <!-- Netlify Contact Form -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form name="contact" method="POST" data-netlify="true" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="4" placeholder="Your Message..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+  <a href="../ExampleWebsites.html" class="back-button bottom-left" title="Back to Examples">&#8592; Back</a>
+  <button class="toggle-btn" onclick="document.body.classList.toggle('dark-mode')">🌓</button>
+  <footer>
+    &copy; 2025 Launchify. All rights reserved.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Launchify – About</title>
+  <link rel="stylesheet" href="launchify.css">
+  <link rel="stylesheet" href="../CSS/modal.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="../script.js" defer></script>
+  <style>
+    main{
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Center vertically */
+      align-items: center;      /* Center horizontally */
+      padding: 2em;
+      box-sizing: border-box;
+    }
+    section{
+      min-height: 20vh;
+    }
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      margin-top: 2em;
+      flex-wrap: wrap;
+    }
+    .counter {
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #3949ab;
+    }
+    .label {
+      font-size: 1em;
+      color: #555;
+    }
+    [data-aos] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    [data-aos].aos-animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <a href="../ExampleWebsites.html" class="back-button bottom-left" title="Back to Examples">&#8592; Back</a>
+  <header>
+    <h1>About Launchify</h1>
+    <p>Who we are and what drives us</p>
+  </header>
+
+  <nav>
+    <a href="index.html"><span class="material-icons">home</span>Home</a>
+    <a href="about.html"><span class="material-icons">groups</span>About</a>
+    <a href="services.html"><span class="material-icons">build</span>Services</a>
+    <a onclick="document.getElementById('modal1').style.display='block'"><span class="material-icons">contact_support</span>Contact</a>
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <span class="modal-close" onclick="document.getElementById('modal1').style.display='none'">&times;</span>
+        <h2>Contact Us</h2>
+        <form action="#" method="post" class="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" placeholder="you@example.com" required>
+          <textarea name="message" rows="4" placeholder="Your Message..." required></textarea>
+          <button style="margin-top: 10px;"type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <section class="container" data-aos>
+      <h2>Our Mission</h2>
+      <p>We help early-stage startups launch quickly, iterate intelligently, and scale confidently using the power of automation and data.</p>
+
+      <h2>Meet the Team</h2>
+      <p>We're a passionate collective of engineers, designers, and startup veterans who love building scalable tech and empowering others to do the same.</p>
+    </section>
+
+    <section class="stats" data-aos>
+      <div>
+        <div class="counter" data-count="200">0</div>
+        <div class="label">Startups Launched</div>
+      </div>
+      <div>
+        <div class="counter" data-count="50000">0</div>
+        <div class="label">Users Reached</div>
+      </div>
+      <div>
+        <div class="counter" data-count="35">0</div>
+        <div class="label">Mentors & Experts</div>
+      </div>
+    </section>
+  </main>
+  <footer>&copy; 2025 Launchify</footer>
+  <button class="toggle-btn" onclick="document.body.classList.toggle('dark-mode')">🌓</button>
+
+  <script>
+    // Scroll animation
+    const elements = document.querySelectorAll("[data-aos]");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("aos-animate");
+        }
+      });
+    }, { threshold: 0.1 });
+    elements.forEach(el => observer.observe(el));
+
+    // Animated counters
+    const counters = document.querySelectorAll(".counter");
+    const animateCount = (el, to) => {
+      let current = 0;
+      const increment = Math.ceil(to / 100);
+      const update = () => {
+        current += increment;
+        if (current > to) current = to;
+        el.textContent = current.toLocaleString();
+        if (current < to) requestAnimationFrame(update);
+      };
+      update();
+    };
+    const triggerCounter = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          animateCount(el, parseInt(el.getAttribute("data-count")));
+          triggerCounter.unobserve(el);
+        }
+      });
+    }, { threshold: 1 });
+    counters.forEach(el => triggerCounter.observe(el));
+  </script>
+</body>
+</html>

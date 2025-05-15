@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CodeCon 2025 – Tech Conference</title>
+  <link rel="stylesheet" href="../CSS/event.css">
+  <link rel="stylesheet" href="../CSS/base_dark_mode.css">
+  <link rel="stylesheet" href="../CSS/modal.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+  <a href="../ExampleWebsites.html" class="back-button bottom-left" title="Back to Examples">&#8592; Back</a>
+  <header>
+    <h1>CodeCon 2025</h1>
+    <p>May 20–22 | Silicon Valley</p>
+  </header>
+  <section>
+    <h2>Why Attend?</h2>
+    <p>CodeCon brings together top developers, engineers, and thought leaders from around the world.</p>
+  </section>
+  <section>
+    <h2>Keynote Speakers</h2>
+    <p>Featuring talks from CTOs at Google, Microsoft, and GitHub.</p>
+  </section>
+  <section>
+    <h2>Schedule Overview</h2>
+    <p>Day 1: AI & Machine Learning<br>Day 2: Web & Cloud<br>Day 3: Robotics & IoT</p>
+  </section>
+  <section>
+    <h2>Join Us</h2>
+    <p>Reserve your seat and get early bird pricing until March 15.</p>
+    <button onclick="document.getElementById('modal1').style.display='block'">Register Now</button>
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <span class="modal-close" onclick="document.getElementById('modal1').style.display='none'">&times;</span>
+        <h3>Subscribe</h3>
+        <p>Enter your email to receive updates:</p>
+        <input type="email" placeholder="you@example.com" style="width: 100%; padding: 8px; margin-top: 10px;">
+        <button style="margin-top: 10px;">Subscribe</button>
+      </div>
+    </div>
+  </section>
+  <button class="toggle-btn" onclick="document.body.classList.toggle('dark-mode')">🌓</button>
+
+</body>
+</html>

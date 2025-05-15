@@ -1,0 +1,91 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f6f7;
+  color: #263238;
+  margin: 0;
+}
+
+header {
+  background: #37474f;
+  color: #ffd600;
+  padding: 2.5em;
+  text-align: center;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 2em;
+}
+
+.module {
+  background: white;
+  padding: 1.8em;
+  border-left: 6px solid #ffd600;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  margin-bottom: 2em;
+}
+
+.module h3 {
+  color: #37474f;
+}
+
+button {
+  background: #ffd600;
+  color: #263238;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #f9a825;
+}
+
+.back-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #cd7f32;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.3s;
+  z-index: 999;
+}
+
+.back-button:hover {
+  background: #b76e2a;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .products, .features {
+    grid-template-columns: 1fr !important;
+  }
+
+  header, footer {
+    padding: 1.5em 1em;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .module, .product, .feature {
+    margin: 0 auto;
+  }
+}

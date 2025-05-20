@@ -2,77 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Launchify – Startup Promo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechEdge Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="../CSS/startup.css">
-  <link rel="stylesheet" href="../CSS/base_dark_mode.css">
-  <link rel="stylesheet" href="../CSS/modal.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <script src="../script.js" defer></script>
 </head>
 <body>
   <header>
-    <h1>Launchify</h1>
-    <p>Helping Startups Scale Smarter</p>
-    <button class="cta" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
-      Get In Touch
-    </button>
+    <div class="logo">TechEdge</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+      <div class="theme-toggle">
+        <input type="checkbox" id="darkModeToggle" />
+        <label for="darkModeToggle" class="toggle-switch">
+          <span class="slider">
+            <span class="thumb"></span>
+          </span>
+        </label>
+      </div>
+    </nav>
   </header>
-  
-  <nav>
-    <a href="#"><span class="material-icons">home</span>Home</a>
-    <a href="#"><span class="material-icons">insights</span>Services</a>
-    <a onclick="document.getElementById('modal1').style.display='block'"><span class="material-icons">contact_support</span>Contact</a>
-    <div id="modal1" class="modal">
-      <div class="modal-content">
-        <span class="modal-close" onclick="document.getElementById('modal1').style.display='none'">&times;</span>
-        <h2>Contact Us</h2>
-        <form action="#" method="post" class="contact-form">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" placeholder="you@example.com" required>
-          <textarea name="message" rows="4" placeholder="Your Message..." required></textarea>
-          <button style="margin-top: 10px;"type="submit">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </nav>
 
-  <section>
-    <h2>Our Mission</h2>
-    <p>We help early-stage startups build fast, scalable web platforms with less friction.</p>
+  <section class="hero" data-aos="fade-in">
+    <h1>Innovate. Build. Transform.</h1>
+    <p>TechEdge Solutions delivers cutting-edge digital tools to power tomorrow's businesses today.</p>
   </section>
-  <section>
-    <h2>Our Services</h2>
-    <p>Launchify empowers startups with tools that grow as you grow.</p>
-    <div class="features">
-      <div class="feature">
-        <h3>📊 Analytics</h3>
-        <p>Real-time dashboards to track users, funnels, and churn.</p>
+
+  <section class="section" id="about" data-aos="fade-up">
+    <h2>About Us</h2>
+    <p>At TechEdge Solutions, we bridge the gap between innovation and implementation. Our team of tech experts works with businesses to craft tailored, efficient solutions that drive results and growth.</p>
+  </section>
+
+  <section class="section" id="products" data-aos="fade-up">
+    <h2>Our Products</h2>
+    <div class="grid">
+      <div class="card" data-aos="zoom-in">
+        <img src="../Images/icons/icons8-combo-chart.gif" alt="">
+        <h3>SmartDash</h3>
+        <p>A real-time analytics dashboard for insights and decision-making.</p>
       </div>
-      <div class="feature">
-        <h3>⚙️ Automation</h3>
-        <p>Marketing and onboarding flows that scale without extra staff.</p>
+      <div class="card" data-aos="zoom-in" data-aos-delay="100">
+        <img src="../Images/icons/icons8-lock.gif" alt="">
+        <h3>EdgeCloud</h3>
+        <p>Secure cloud storage and microservices optimized for speed and scale.</p>
       </div>
-      <div class="feature">
-        <h3>🧠 Strategy</h3>
-        <p>Expert consulting to turn your MVP into a market-ready product.</p>
+      <div class="card" data-aos="zoom-in" data-aos-delay="200">
+        <img src="../Images/icons/icons8-circular-arrows.gif" alt="">
+        <h3>CoreSync</h3>
+        <p>Integrate your existing tools with powerful automation and API support.</p>
       </div>
     </div>
   </section>
-  <!-- Netlify Contact Form -->
-  <section id="contact">
+
+  <section class="section" id="contact" data-aos="fade-up">
     <h2>Contact Us</h2>
-    <form name="contact" method="POST" data-netlify="true" class="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="4" placeholder="Your Message..." required></textarea>
+    <p>Reach out — we'd love to hear about your project.</p>
+    <form name="contact" method="POST" data-netlify="true" onsubmit="return showSuccess(event)">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Your email" required />
+      <textarea name="message" placeholder="Your message" required></textarea>
       <button type="submit">Send Message</button>
+      <p id="form-success" class="form-success" style="display:none;">Thank you! We'll be in touch soon.</p>
     </form>
   </section>
-  <a href="../ExampleWebsites.html" class="back-button bottom-left" title="Back to Examples">&#8592; Back</a>
-  <button class="toggle-btn" onclick="document.body.classList.toggle('dark-mode')">🌓</button>
+
   <footer>
-    &copy; 2025 Launchify. All rights reserved.
+    &copy; 2025 TechEdge Solutions. All rights reserved.
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function showSuccess(event) {
+      event.preventDefault();
+      document.getElementById('form-success').style.display = 'block';
+      setTimeout(() => event.target.submit(), 500);
+      return false;
+    }
+
+    const toggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    // Load saved theme
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
 </body>
 </html>

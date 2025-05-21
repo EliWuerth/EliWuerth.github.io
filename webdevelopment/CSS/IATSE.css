@@ -1,0 +1,537 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9;
+    color: #222;
+    line-height: 1.6;
+}
+
+:root {
+    --iatse-yellow: #FEBF52;
+}
+
+/* --------------------- */
+/*     Header Section    */
+/* --------------------- */
+header {
+    background-color: #2a2a2a;
+    color: white;
+    padding: 1em 0;
+}
+
+/* --------------------- */
+/*       Nav Section     */
+/* --------------------- */
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1em;
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: var(--iatse-yellow);
+}
+
+.logo img {
+    max-height: 100px;
+}
+
+.logo-text h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.logo-text a {
+    color: var(--iatse-yellow);
+    text-decoration: none;
+}
+
+.logo-text .tagline {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 0.2em;
+    line-height: 1.2;
+}
+
+nav a {
+    font-size: 1.1rem;
+    padding: 0.25em 0;
+    margin: 0 1em;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--iatse-yellow);
+}
+
+.login-button {
+    padding: 0.6em 1.2em;
+    border: 2px solid var(--iatse-yellow);
+    color: var(--iatse-yellow);
+    font-weight: bold;
+    background: transparent;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.login-button:hover {
+    background-color: var(--iatse-yellow);
+    color: black;
+}
+
+/* --------------------- */
+/*      Hero Section     */
+/* --------------------- */
+.hero-swiper {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    z-index: 0;
+}
+
+.hero-swiper .swiper-slide {
+    background-color: #111;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 0;
+}
+
+.hero-swiper .swiper-slide-active {
+    opacity: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2em;
+    z-index: 1;
+    pointer-events: none; /* Prevents interfering with Swiper slide interaction */
+}
+
+.hero-text {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2em;
+    border-radius: 10px;
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 1em;
+    padding: 0.75em 1.5em;
+    background-color: var(--iatse-yellow);
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #e0a83f;
+}
+
+@media (prefers-color-scheme: dark) {
+    .hero-overlay {
+        background-color: rgba(0, 0, 0, 0.65);
+    }
+
+    .hero-text {
+        background-color: rgba(0, 0, 0, 0.75);
+    }
+}
+
+/* --------------------- */
+/*    Feature Section    */
+/* --------------------- */
+.feature-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2em 1em;
+    background: #d4d4d4;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.feature-card {
+    background: white;
+    padding: 1em;
+    border-radius: 8px;
+    width: 30%;
+    text-align: center;
+    border-top: 5px solid var(--iatse-yellow);
+}
+
+.feature-card .placeholder {
+    height: 150px;
+    background: #ccc;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+
+/* --------------------- */
+/*     Cause Section     */
+/* --------------------- */
+.cause-section {
+    background-color: #f9f9f9;
+    padding: 4em 1em;
+}
+
+.cause-section h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 2rem;
+    color: #222;
+}
+
+.cause-columns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* gap: 1em; */
+    align-items: center;
+}
+
+.cause-column {
+    flex: 1 1 50%;
+    box-sizing: border-box;
+    padding: 1em;
+}
+
+.image-column img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+.text-column h2 {
+    font-size: 2rem;
+    margin-bottom: 1em;
+    color: #222;
+}
+
+.text-column p {
+    font-size: 1.1rem;
+    margin-bottom: 1em;
+    color: #444;
+}
+
+.text-column ul {
+    margin-bottom: 1.5em;
+    padding-left: 1.2em;
+    color: #333;
+}
+
+.text-column ul li {
+    margin-bottom: 0.5em;
+    line-height: 1.4;
+}
+
+.cause-button {
+    display: inline-block;
+    background-color: var(--iatse-yellow, #FEBF52);
+    color: black;
+    text-decoration: none;
+    padding: 0.75em 1.5em;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cause-button:hover {
+    background-color: #e0a83f;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .cause-columns {
+        flex-direction: column;
+    }
+}
+
+/* --------------------- */
+/*      News Section     */
+/* --------------------- */
+.latest-news {
+    width: 100%;
+    padding: 2em 1em;
+    box-sizing: border-box;
+}
+
+.latest-news h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 2rem;
+    color: #222;
+}
+
+.glider {
+    display: flex;
+    overflow-x: auto;
+    gap: 1em;
+    padding-bottom: 1em;
+    scroll-snap-type: x mandatory;
+}
+
+.glider-contain {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.news-card {
+    flex: 0 0 350px;
+    margin-right: 1.5em;
+    background: white;
+    padding: 1em;
+    border-radius: 8px;
+    text-align: center;
+    border-left: 5px solid var(--iatse-yellow);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease-in-out;
+}
+
+.news-card:hover {
+    transform: translateY(-4px);
+}
+
+.news-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+
+.news-card .badge {
+    background-color: var(--iatse-yellow);
+    color: black;
+    font-weight: bold;
+    padding: 0.25em 0.75em;
+    display: inline-block;
+    font-size: 0.75rem;
+    margin-bottom: 0.75em;
+    border-radius: 4px;
+}
+
+.news-card h3 {
+    font-size: 1rem;
+    color: #222;
+    margin: 0.5em 0 0.5em;
+    padding: 0 0.5em;
+    line-height: 1.4;
+}
+
+.news-card .date {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 0.5em;
+}
+
+@media (max-width: 768px) {
+    .news-card {
+        width: 90%;
+    }
+}
+
+/* --------------------- */
+/*    Sign Up Section    */
+/* --------------------- */
+.signup-section {
+    background-color: #f9f9f9;
+    padding: 4em 1em;
+    text-align: center;
+}
+
+.signup-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2em;
+}
+
+.signup-card {
+    background-color: #fff;
+    padding: 2.5em 2em;
+    border-radius: 10px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+.signup-card h2 {
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 0.25em;
+}
+
+.signup-card h4 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: #555;
+    margin-bottom: 1.5em;
+}
+
+/* Optional: Ensure Action Network form fields align */
+.signup-card input,
+.signup-card select,
+.signup-card textarea {
+    width: 100% !important;
+    max-width: 100%;
+    border: 1px solid #ccc !important;
+    border-radius: 5px !important;
+    padding: 0.75em !important;
+    font-size: 1rem;
+    margin-bottom: 1em !important;
+}
+
+.signup-card input[type="submit"] {
+    background-color: var(--iatse-yellow) !important;
+    color: black !important;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    padding: 0.75em 1.5em !important;
+    border-radius: 5px;
+}
+
+.signup-card input[type="submit"]:hover {
+    background-color: #e0a83f !important;
+}
+
+#d_sharing ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1em;
+}
+
+#d_sharing li label {
+    display: inline-flex;
+    align-items: left;
+    gap: 0.5em;
+    font-size: 0.95rem;
+    color: #222;
+    line-height: 1.4;
+}
+
+/* Force checkbox to the left of the label text */
+input[type="checkbox"] {
+    justify-self: left;
+    position: absolute;
+    margin-left: 0;
+    transform: translateY(0.1em);
+}
+
+/* --------------------- */
+/*     Footer Section    */
+/* --------------------- */
+footer {
+    background-color: #2a2a2a;
+    color: white;
+    padding: 2em 1em;
+    margin-top: 3em;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-columns div {
+    margin: 1em;
+    min-width: 200px;
+}
+
+.footer-columns .social-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 0.5em;
+}
+
+.footer-columns .social-icons a {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-size: cover;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+
+.footer-columns .social-icons a:hover {
+    filter: grayscale(0%);
+}
+
+.footer-columns .facebook {
+    background-image: url('../icons/Facebook_Logo_Secondary.png');
+}
+
+.footer-columns .twitter {
+    background-image: url('../icons/logo-white.png');
+}
+
+.footer-columns .instagram {
+    background-image: url('../icons/Instagram_Glyph_White.png');
+}
+
+.footer-columns .linkedin {
+    background-image: url('../icons/InBug-White.png');
+}
+
+.footer-columns .twitch {
+    background-image: url('../icons/glitch_flat_white.png');
+}
+
+.footer-columns .tiktok {
+    background-image: url('../icons/TikTok-logo-RGB-Horizontal-white-simplified.png');
+}

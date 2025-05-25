@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+.sidebar {
+  width: 220px;
+  background-color: #1f2937;
+  color: white;
+  padding: 1rem;
+}
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar li {
+  margin: 1rem 0;
+  cursor: pointer;
+}
+.main {
+  flex: 1;
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  overflow-y: auto;
+}
+.card-grid {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  flex: 1;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.chart-section {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+.user-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.user-table th, .user-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.user-table td button {
+  margin-right: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.activate {
+  background-color: #10b981;
+  color: white;
+}
+.deactivate {
+  background-color: #ef4444;
+  color: white;
+}
+.delete {
+  background-color: #6b7280;
+  color: white;
+}
+
+/* Page transition effect */
+.fade {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.fade.show {
+  opacity: 1;
+}

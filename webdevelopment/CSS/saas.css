@@ -1,3 +1,4 @@
+/* Layout */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -5,42 +6,47 @@ body {
     height: 100vh;
     overflow: hidden;
   }
+  
   .sidebar {
     width: 220px;
     background-color: #1f2937;
     color: white;
     padding: 1rem;
   }
+  
   .sidebar h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }
+  
   .sidebar ul {
     list-style: none;
     padding: 0;
   }
+  
   .sidebar li {
     margin: 1rem 0;
-    cursor: pointer;
   }
-  .sidebar a{
+  
+  .sidebar li a {
     color: white;
     text-decoration: none;
-    display: block;
-    font-size: 1.2rem;
-    transition: background-color 0.3s;
   }
+  
   .main {
     flex: 1;
     padding: 1.5rem;
     background-color: #f9fafb;
     overflow-y: auto;
   }
+  
+  /* Cards */
   .card-grid {
     display: flex;
     gap: 1rem;
     margin-bottom: 2rem;
   }
+  
   .card {
     background: white;
     padding: 1rem;
@@ -48,6 +54,8 @@ body {
     flex: 1;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
+  
+  /* Chart */
   .chart-section {
     background: white;
     padding: 1rem;
@@ -55,6 +63,8 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     margin-bottom: 2rem;
   }
+  
+  /* Table */
   .user-table table {
     width: 100%;
     border-collapse: collapse;
@@ -62,11 +72,14 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
-  .user-table th, .user-table td {
+  
+  .user-table th,
+  .user-table td {
     padding: 1rem;
     text-align: left;
     border-bottom: 1px solid #ddd;
   }
+  
   .user-table td button {
     margin-right: 0.5rem;
     padding: 0.3rem 0.6rem;
@@ -74,15 +87,67 @@ body {
     border-radius: 4px;
     cursor: pointer;
   }
+  
+  /* Button styles */
   .activate {
     background-color: #10b981;
     color: white;
   }
+  
   .deactivate {
     background-color: #ef4444;
     color: white;
   }
+  
   .delete {
     background-color: #6b7280;
     color: white;
-  }  
+  }
+  
+  /* Transitions */
+  .fade {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .fade.show {
+    opacity: 1;
+  }
+  
+  /* Dark mode */
+  body.dark {
+    background-color: #1f1f1f;
+    color: #e5e5e5;
+  }
+  
+  body.dark .main {
+    background-color: #2a2a2a;
+  }
+  
+  body.dark .card,
+  body.dark .chart-section,
+  body.dark .user-table table {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Toast Notification */
+  .toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #333;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  

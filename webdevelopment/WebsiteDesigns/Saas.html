@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SaaS Dashboard</title>
+  <link rel="stylesheet" href="../CSS/saas.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Analytics</h2>
+    <ul>
+      <li>Dashboard</li>
+      <li>Users</li>
+      <li>Settings</li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <header>
+      <h1>Real-Time Dashboard</h1>
+    </header>
+
+    <section class="card-grid">
+      <div class="card">
+        <h3>Active Users</h3>
+        <p id="activeUsers">0</p>
+      </div>
+      <div class="card">
+        <h3>Revenue</h3>
+        <p>$<span id="revenue">0</span></p>
+      </div>
+      <div class="card">
+        <h3>Server Load</h3>
+        <p><span id="load">0%</span></p>
+      </div>
+    </section>
+
+    <section class="chart-section">
+      <canvas id="liveChart"></canvas>
+    </section>
+
+    <section class="user-table">
+      <h2>User Management</h2>
+      <table>
+        <thead>
+          <tr><th>Name</th><th>Email</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Alice</td><td>alice@example.com</td><td>Active</td></tr>
+          <tr><td>Bob</td><td>bob@example.com</td><td>Inactive</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <script src="../CSS/Saas.js"></script>
+</body>
+</html>

@@ -1,19 +1,46 @@
+// === Updated Saas.js ===
 const userTableBody = document.querySelector("#userTable tbody");
-
 let users = JSON.parse(localStorage.getItem("users")) || [];
+let settings = JSON.parse(localStorage.getItem("settings")) || {
+  theme: "light",
+  notifications: true,
+  refreshInterval: 5000
+};
 
-// Random name/email generators
+// === Apply Theme ===
+function applySettings() {
+  document.body.className = settings.theme === "dark" ? "dark" : "";
+}
+applySettings();
+
 function getRandomName() {
-  const names = ["Alice", "Bob", "Charlie", "Dana", "Eli", "Frank", "Grace", "Hank"];
+  const names = [
+    "Alice", "Bob", "Charlie", "Dana", "Eli", "Frank", "Grace", "Hank",
+    "Tom", "Timmy", "Mary", "Dave", "Barry", "Billy", "Sara", "David",
+    "Brendon", "Mikey", "Conor", "Austin", "Danny", "Ally", "Carly",
+    "Ivy", "Jack", "Kara", "Liam", "Mona", "Nina", "Omar", "Paul",
+    "Quinn", "Rita", "Sam", "Tina", "Uma", "Vince", "Wendy", "Xander",
+    "Yara", "Zane", "Amber", "Brian", "Celia", "Derek", "Erin", "Felix",
+    "Gina", "Harold", "Isla", "Jonas", "Kylie", "Leon", "Maya", "Nate",
+    "Olga", "Perry", "Queenie", "Ray", "Sophie", "Ursula", "Victor",
+    "Willow", "Yosef"
+  ];
   return names[Math.floor(Math.random() * names.length)];
 }
 
 function getRandomEmail(name) {
-  const domains = ["example.com", "mail.com", "demo.org"];
+  const domains = [
+    "example.com", "mail.com", "demo.org", "gmail.com", "yahoo.com",
+    "outlook.com", "protonmail.com", "icloud.com", "company.org",
+    "business.net", "corpmail.co", "startup.io"
+  ];
   return `${name.toLowerCase()}@${domains[Math.floor(Math.random() * domains.length)]}`;
 }
 
-// Render and store users
+function getRandomAmountSpent() {
+  return parseFloat((Math.random() * 500 + 50).toFixed(2)); // $50 - $550
+}
+
 function renderUsers() {
   userTableBody.innerHTML = "";
   users.forEach((user, index) => {
@@ -43,47 +70,56 @@ function deleteUser(index) {
   renderUsers();
 }
 
-// Add random user every few seconds
 function autoAddUser() {
   const name = getRandomName();
   const email = getRandomEmail(name);
   const status = Math.random() > 0.5 ? "Active" : "Inactive";
-  users.push({ name, email, status });
+  const amountSpent = getRandomAmountSpent();
+  users.push({ name, email, status, amountSpent });
+  renderUsers();
+  if (settings.notifications) showToast(`New user added: ${name}`);
+}
+let autoAddUserInterval = setInterval(autoAddUser, settings.refreshInterval);
+
+// === Auto Remove Some Users ===
+function autoRemoveUsers() {
+  if (users.length === 0) return;
+  const countToRemove = Math.floor(Math.random() * 5) + 1; // Remove 1-5 users
+  users.splice(0, countToRemove);
   renderUsers();
 }
-setInterval(autoAddUser, 5000);
+setInterval(autoRemoveUsers, 10000);
 
-// Dashboard metrics
-const activeUsers = document.getElementById("activeUsers");
-const revenue = document.getElementById("revenue");
-const load = document.getElementById("load");
+const activeUsersElem = document.getElementById("activeUsers");
+const revenueElem = document.getElementById("revenue");
+const loadElem = document.getElementById("load");
 
 function simulateMetrics() {
-  const activeCount = users.filter(u => u.status === "Active").length;
-  activeUsers.textContent = activeCount;
-  if (activeCount === 0) {
-    revenue.textContent = "0.00";
-    load.textContent = "0%";
-  } else {
-    revenue.textContent = (Math.random() * 10000).toFixed(2);
-    load.textContent = `${Math.floor(Math.random() * 100)}%`;
-  }
+  const activeUsers = users.filter(u => u.status === "Active");
+  const totalRevenue = activeUsers.reduce((sum, u) => sum + u.amountSpent, 0);
+  const serverLoad = Math.min(100, (totalRevenue * 0.01).toFixed(0));
+
+  if (activeUsersElem) activeUsersElem.textContent = activeUsers.length;
+  if (revenueElem) revenueElem.textContent = totalRevenue.toFixed(2);
+  if (loadElem) loadElem.textContent = `${serverLoad}%`;
+
+  updateChart(totalRevenue);
 }
-setInterval(simulateMetrics, 2000);
+setInterval(simulateMetrics, 1000);
 
 // Chart
-const ctx = document.getElementById('liveChart').getContext('2d');
+const ctx = document.getElementById('liveChart')?.getContext('2d');
 let chartData = {
   labels: [],
   datasets: [{
-    label: 'Traffic',
+    label: 'Revenue ($)',
     borderColor: '#3b82f6',
     data: [],
     fill: false,
   }]
 };
 
-const liveChart = new Chart(ctx, {
+const liveChart = ctx ? new Chart(ctx, {
   type: 'line',
   data: chartData,
   options: {
@@ -94,19 +130,29 @@ const liveChart = new Chart(ctx, {
       y: { beginAtZero: true }
     }
   }
-});
+}) : null;
 
-function updateChart() {
+function updateChart(value) {
   const now = new Date().toLocaleTimeString();
   if (chartData.labels.length > 20) {
     chartData.labels.shift();
     chartData.datasets[0].data.shift();
   }
   chartData.labels.push(now);
-  chartData.datasets[0].data.push(Math.floor(Math.random() * 100));
-  liveChart.update();
+  chartData.datasets[0].data.push(value);
+  liveChart?.update();
 }
-setInterval(updateChart, 1000);
 
-// Initial render
+function showToast(message) {
+  const toast = document.createElement("div");
+  toast.className = "toast";
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.classList.add("show"), 100);
+  setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => toast.remove(), 300);
+  }, 3000);
+}
+
 renderUsers();

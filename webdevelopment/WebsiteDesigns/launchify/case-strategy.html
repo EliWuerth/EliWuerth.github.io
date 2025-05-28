@@ -3,25 +3,30 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Automation Case Study</title>
-  <link rel="stylesheet" href="../CSS/launchify.css"/>
-  <link rel="stylesheet" href="../CSS/modal.css">
+  <title>Strategy Case Study</title>
+  <link rel="stylesheet" href="/webdevelopment/CSS/launchify.css"/>
+  <link rel="stylesheet" href="/webdevelopment/CSS/modal.css">
+  <link rel="stylesheet" href="/webdevelopment/CSS/base_dark_mode.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="../script.js" defer></script>
   <style>
-    body { font-family: 'Segoe UI', sans-serif; }
+    body { font-family: 'Segoe UI', sans-serif; transition: background 0.3s, color 0.3s; }
     .container { max-width: 900px; margin: 2em auto; padding: 1em; text-align: center; }
-    .gallery { display: flex; flex-wrap: wrap; gap: 1.5em; justify-content: center; }
-    .chart-card { background: white; border-radius: 10px; padding: 1em; box-shadow: 0 3px 10px rgba(0,0,0,0.05); width: 300px; }
-    canvas { width: 100% !important; height: 200px; }
+    .container p{ color: black; }
+    .video iframe { width: 100%; max-width: 720px; border-radius: 10px; margin: 1em 0; }
     .testimonial { font-style: italic; background: #f5f5f5; padding: 1em; border-radius: 10px; margin-top: 2em; }
-    body.dark-mode .chart-card { background: #1f1f1f; }
-    body.dark-mode .testimonial { background: #1f1f1f; color: white; }
+    .gallery { display: flex; flex-wrap: wrap; gap: 1.5em; justify-content: center; }
+    .chart-card { background: white; border-radius: 10px; padding: 1em; box-shadow: 0 3px 10px rgba(0,0,0,0.05); width: 300px; transition: background 0.3s; }
+    canvas { width: 100% !important; height: 200px ; }
+    #metrics { max-width: 700px; margin: 3em auto; height: 400px;}
+    body.dark-mode .container p{ color: white; }
+    body.dark-mode .testimonial{ background: #1f1f1f; }
+    body.dark-mode .chart-card{ background: #1f1f1f; }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/webdevelopment/script.js" defer></script>
 </head>
 <body>
-  <header><h1>Automation Case Study</h1></header>
+  <header><h1>Strategy Case Study</h1></header>
   <nav>
     <a href='launchify.html'><span class='material-icons'>home</span>Home</a>
     <a href='about.html'><span class='material-icons'>groups</span>About</a>
@@ -40,9 +45,9 @@
       </div>
     </div>
   </nav>
-
+  
   <main class="container">
-    <p>StartSuite cut 10 hours of manual onboarding work every week using our automation builder.</p>
+    <p>MediTrack refined their messaging and grew 3x faster after our go-to-market workshops.</p>
 
     <div class="gallery">
       <div class="chart-card"><canvas id="chart1"></canvas></div>
@@ -50,10 +55,13 @@
       <div class="chart-card"><canvas id="chart3"></canvas></div>
     </div>
 
-    <div class="testimonial">“Launchify eliminated repetitive tasks across 5 departments.” — Carlos Vega, Growth Lead</div>
+    <div class="testimonial">
+      “Their framework gave us clarity and traction.” — Dana Cook, Founder at MediTrack
+    </div>
+
     <div id="metrics">
       <h2>📊 Results Over Time</h2>
-      <canvas id="chart"></canvas>
+      <canvas id="strategyChart"></canvas>
     </div>
   </main>
   <button class="toggle-btn" onclick="toggleDarkMode()">🌓</button>
@@ -61,16 +69,20 @@
 
   <script>
     const isDark = () => document.body.classList.contains("dark-mode");
-    const dataMap = {
-      chart1: [50, 100, 200, 300],
-      chart2: [30, 60, 120, 180],
-      chart3: [20, 45, 90, 130]
+
+    const chartData = {
+      chart1: [120, 300, 600, 900],
+      chart2: [40, 100, 180, 260],
+      chart3: [10, 30, 60, 100]
     };
+
     const chartRefs = {};
+
     function getChartOptions(label, data) {
       const textColor = isDark() ? '#eee' : '#111';
       const gridColor = isDark() ? '#444' : '#ccc';
       const bgColor = isDark() ? 'rgba(57,73,171,0.2)' : 'rgba(57,73,171,0.1)';
+
       return {
         type: 'line',
         data: {
@@ -87,9 +99,7 @@
         options: {
           responsive: true,
           plugins: {
-            legend: {
-              labels: { color: textColor }
-            }
+            legend: { labels: { color: textColor } }
           },
           scales: {
             x: { ticks: { color: textColor }, grid: { color: gridColor } },
@@ -98,40 +108,29 @@
         }
       };
     }
+
     function drawCharts() {
-      Object.keys(dataMap).forEach((id, idx) => {
-        const canvas = document.getElementById(id);
+      ['chart1', 'chart2', 'chart3'].forEach((id, i) => {
         if (chartRefs[id]) chartRefs[id].destroy();
-        chartRefs[id] = new Chart(canvas, getChartOptions("Metric " + (idx+1), dataMap[id]));
+        chartRefs[id] = new Chart(document.getElementById(id), getChartOptions("Metric " + (i + 1), chartData[id]));
       });
     }
+
+    async function loadStrategyMetrics() {
+      try {
+        const res = await fetch("metrics.json");
+        const data = await res.json();
+        const values = data["strategy"] || [90, 180, 270, 360];
+
+        const ctx = document.getElementById("strategyChart");
+        window.strategyChart = new Chart(ctx, getChartOptions("Users / Signups", values));
+      } catch (e) {
+        console.warn("Could not load metrics.json", e);
+      }
+    }
+
     drawCharts();
-    async function loadMetrics() {
-      const res = await fetch("metrics.json");
-      const data = await res.json();
-      const values = data["automation"];
-      new Chart(document.getElementById('chart'), {
-        type: 'line',
-        data: {
-          labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
-          datasets: [{
-            label: 'Users / Signups',
-            data: values,
-            fill: true,
-            backgroundColor: 'rgba(57,73,171,0.1)',
-            borderColor: '#3949ab',
-            tension: 0.3
-          }]
-        },
-        options: {
-          responsive: true,
-          scales: {
-            y: { beginAtZero: true }
-          }
-        }
-      });
-    }
-    loadMetrics();
+    loadStrategyMetrics();
     function toggleDarkMode() {
       document.body.classList.toggle("dark-mode");
 

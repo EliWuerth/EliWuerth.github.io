@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Settings</title>
-  <link rel="stylesheet" href="../CSS/saas.css"/>
+  <link rel="stylesheet" href="/webdevelopment/CSS/saas.css"/>
 </head>
 <body>
-  <a href="../ExampleWebsites.html" class="back-button bottom-left" title="Back to Examples">&#8592; Back</a>
+  <a href="/webdevelopment/ExampleWebsites.html" class="back-button bottom-left" title="Back to Examples">&#8592; Back</a>
   <div class="sidebar">
     <h2>Analytics</h2>
     <ul>
@@ -43,7 +43,7 @@
     const settings = JSON.parse(localStorage.getItem("settings")) || {
       theme: "light",
       notifications: true,
-      refreshInterval: 5000
+      refreshInterval: 2000
     };
 
     document.body.className = settings.theme === "dark" ? "dark" : "";

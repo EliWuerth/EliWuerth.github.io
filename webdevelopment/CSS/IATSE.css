@@ -535,3 +535,28 @@ footer {
 .footer-columns .tiktok {
     background-image: url('../icons/TikTok-logo-RGB-Horizontal-white-simplified.png');
 }
+
+/* --------------------- */
+/*      Back Button      */
+/* --------------------- */
+.back-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #2a2a2a;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.3s;
+    z-index: 999;
+}
+
+.back-button:hover {
+    background: white;
+    color: #2a2a2a;
+    transform: scale(1.05);
+}

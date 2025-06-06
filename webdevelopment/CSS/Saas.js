@@ -105,7 +105,7 @@ function simulateMetrics() {
 
   updateChart(totalRevenue);
 }
-setInterval(simulateMetrics, 1000);
+setInterval(simulateMetrics, 2000);
 
 // Chart
 const ctx = document.getElementById('liveChart')?.getContext('2d');

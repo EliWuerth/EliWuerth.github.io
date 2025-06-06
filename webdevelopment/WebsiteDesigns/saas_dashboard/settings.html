@@ -43,7 +43,7 @@
     const settings = JSON.parse(localStorage.getItem("settings")) || {
       theme: "light",
       notifications: true,
-      refreshInterval: 2000
+      refreshInterval: 5000
     };
 
     document.body.className = settings.theme === "dark" ? "dark" : "";

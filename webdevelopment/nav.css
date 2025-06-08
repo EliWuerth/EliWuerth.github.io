@@ -167,4 +167,24 @@ li.dropdown {
     .hamburger-menu-icon {
         display: flex; /* Show hamburger icon */
     }
+
+    ul.navbarul {
+        display: none;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+        padding-left: 0.5rem; /* small left padding */
+        scrollbar-width: thin; /* for Firefox */
+      }
+      /* Optional: Hide scrollbar in Webkit browsers */
+      ul.navbarul::-webkit-scrollbar {
+        height: 6px;
+      }
+      ul.navbarul::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ul.navbarul::-webkit-scrollbar-thumb {
+        background-color: rgba(100, 100, 100, 0.3);
+        border-radius: 3px;
+      }
 }

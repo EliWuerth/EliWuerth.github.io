@@ -516,7 +516,7 @@ blockquote {
     background-color: #333333;
     color: #cd7f32;
     text-decoration: none;
-    border: 2px solid #cd7f32;
+    /* border: 2px solid #cd7f32; */
     border-radius: 5px;
 }
 

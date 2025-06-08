@@ -184,160 +184,6 @@ body {
 /* ========================= */
 /*    Different Pages CSS    */
 /* ========================= */
-/* Root elements */
-html, body, main, section, nav, footer {
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-body.dark-mode,
-body.dark-mode html {
-    background-color: #1e1e1e;
-}
-
-body.dark-mode main,
-body.dark-mode section,
-body.dark-mode .index-main,
-body.dark-mode .card,
-body.dark-mode .intro-card,
-body.dark-mode .portfolio-wrapper {
-    background-color: #1e1e1e;
-    color: #f0f0f0;
-}
-
-body.dark-mode input[type="text"],
-body.dark-mode input[type="email"],
-body.dark-mode textarea {
-    background-color: #333333;
-    color: #f0f0f0;
-    border-color: #555;
-}
-
-body.dark-mode .main-content,
-body.dark-mode .project {
-    background-color: #2a2a2a;
-    color: #f0f0f0;
-}
-
-body.dark-mode table,
-body.dark-mode th,
-body.dark-mode td {
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-    border-color: #444;
-}
-
-body.dark-mode .leftcolumn-resume{
-    background-color:#2a2a2a;
-    color:#f0f0f0;
-}
-
-body.dark-mode .ulRes,
-body.dark-mode .ulRes2,
-body.dark-mode .ulRes3,
-body.dark-mode .ulRes4,
-body.dark-mode .rightcolumn-resume p
-{
-    background-color: transparent;
-    color:#ffffff;
-}
-
-body.dark-mode .resume-h2{
-    color: white;
-}
-
-body.dark-mode .rightcolumn-resume{
-    background-color: #333333;
-    color:#f0f0f0;
-}
-
-body.dark-mode .styled-table thead tr,
-body.dark-mode .styled-table tfoot tr{
-    background-color: #333333;
-    color: #cd7f32;
-}
-
-body.dark-mode .dropdown-content {
-    background-color: #222;
-}
-
-body.dark-mode .dropdown-content a {
-    color: #e0e0e0;
-}
-
-body.dark-mode .dropdown-content a:hover {
-    background-color: #333;
-}
-
-body.dark-mode .button,
-body.dark-mode .Resume-Button,
-body.dark-mode .Site-Button,
-body.dark-mode .active{
-    background-color: #cd7f32;
-    color: #e0e0e0;
-    border: none;
-}
-
-body.dark-mode .button:hover,
-body.dark-mode .Resume-Button:hover,
-body.dark-mode .Site-Button:hover{
-    background-color: #b86a2a;
-    color: white;
-}
-
-body.dark-mode .active:hover{
-    background-color: #e0e0e0; /* Light gray background on hover */
-    color: #cd7f32;
-}
-
-.dark-toggle-container {
-    margin-top: 5px;
-    padding: 5px 10px;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.theme-toggle {
-    width: 50px;
-    height: 26px;
-    position: relative;
-    display: inline-block;
-}
-
-.theme-toggle input {
-    display: none;
-}
-
-.toggle-slider {
-    background-color: #777;
-    position: absolute;
-    cursor: pointer;
-    border-radius: 26px;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transition: 0.4s;
-}
-
-.toggle-slider:before {
-    content: "";
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    border-radius: 50%;
-    transition: 0.4s;
-}
-
-.theme-toggle input:checked + .toggle-slider {
-    background-color: #cd7f32;
-}
-
-.theme-toggle input:checked + .toggle-slider:before {
-    transform: translateX(24px);
-}
 
 .index-main {
     background-color: #f0f0f0;
@@ -465,11 +311,15 @@ blockquote {
 .Resume-Button {
     text-align: center;
     padding: 10px 20px;
-    background-color: #333333;
-    color: #cd7f32;
+    background: linear-gradient(135deg, #e5bd46, #f6925c);
+    box-shadow: 0 4px 12px rgb(230 165 89 / 0.5);
+    color: white;
     text-decoration: none;
-    border: 2px solid #cd7f32;
     border-radius: 5px;
+}
+
+.Resume-Button:hover{
+    background: linear-gradient(135deg, #f6925c, #e5bd46);
 }
 
 .iframe-wrapper {
@@ -507,17 +357,24 @@ blockquote {
 }
 
 .sitebuttonpadding {
-    padding: 20px;
+    margin-top: 1.25rem;
 }
 
 .Site-Button {
-    text-align: center;
-    padding: 10px 20px;
-    background-color: #333333;
-    color: #cd7f32;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e5bd46, #f6925c);
+    color: white;
+    padding: 0.6rem 1.3rem;
+    border-radius: 0.75rem;
     text-decoration: none;
-    /* border: 2px solid #cd7f32; */
-    border-radius: 5px;
+    box-shadow: 0 4px 12px rgb(230 165 89 / 0.5);
+    transition: background 0.4s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.Site-Button:hover {
+    background: linear-gradient(135deg, #f6925c, #e5bd46);
+    transform: scale(1.05);
 }
 
 /* ========================= */
@@ -689,7 +546,7 @@ button[type="submit"]:hover {
 .button {
     display: inline-block;
     padding: 8px 12px;
-    background: #333;
+    
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -712,12 +569,17 @@ button[type="submit"]:hover {
 
 .read-more {
     cursor: pointer;
-    background-color: #007BFF;
-    /* Example color */
+    background: linear-gradient(135deg, #46a0e5, #5c5cf6);
     color: white;
     border: none;
     padding: 10px;
     border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(89, 157, 230, 0.5);
+}
+
+.read-more:hover{
+    background: linear-gradient(135deg, #5c5cf6, #46a0e5);
+    transform: scale(1.05);
 }
 
 /* ========================= */
@@ -954,6 +816,164 @@ button[type="submit"]:hover {
 .linkedIn {
     border: none;
     background: none;
+}
+
+/* ========================= */
+/*       Dark Mode CSS       */
+/* ========================= */
+
+html, body, main, section, nav, footer {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode,
+body.dark-mode html {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode main,
+body.dark-mode section,
+body.dark-mode .index-main,
+body.dark-mode .card,
+body.dark-mode .intro-card,
+body.dark-mode .portfolio-wrapper {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="email"],
+body.dark-mode textarea {
+    background-color: #333333;
+    color: #f0f0f0;
+    border-color: #555;
+}
+
+body.dark-mode .main-content,
+body.dark-mode .project {
+    background-color: #2a2a2a;
+    color: #f0f0f0;
+}
+
+body.dark-mode table,
+body.dark-mode th,
+body.dark-mode td {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode .leftcolumn-resume{
+    background-color:#2a2a2a;
+    color:#f0f0f0;
+}
+
+body.dark-mode .ulRes,
+body.dark-mode .ulRes2,
+body.dark-mode .ulRes3,
+body.dark-mode .ulRes4,
+body.dark-mode .rightcolumn-resume p
+{
+    background-color: transparent;
+    color:#ffffff;
+}
+
+body.dark-mode .resume-h2{
+    color: white;
+}
+
+body.dark-mode .rightcolumn-resume{
+    background-color: #333333;
+    color:#f0f0f0;
+}
+
+body.dark-mode .styled-table thead tr,
+body.dark-mode .styled-table tfoot tr{
+    background-color: #333333;
+    color: #cd7f32;
+}
+
+body.dark-mode .dropdown-content {
+    background-color: #222;
+}
+
+body.dark-mode .dropdown-content a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .dropdown-content a:hover {
+    background-color: #333;
+}
+
+body.dark-mode .button,
+body.dark-mode .Resume-Button,
+body.dark-mode .Site-Button,
+body.dark-mode .active{
+    background-color: #cd7f32;
+    color: #e0e0e0;
+    border: none;
+}
+
+body.dark-mode .button:hover,
+body.dark-mode .Resume-Button:hover,
+body.dark-mode .Site-Button:hover{
+    background-color: #b86a2a;
+    color: white;
+}
+
+body.dark-mode .active:hover{
+    background-color: #e0e0e0; /* Light gray background on hover */
+    color: #cd7f32;
+}
+
+.dark-toggle-container {
+    margin-top: 5px;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.theme-toggle {
+    width: 50px;
+    height: 26px;
+    position: relative;
+    display: inline-block;
+}
+
+.theme-toggle input {
+    display: none;
+}
+
+.toggle-slider {
+    background-color: #777;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 26px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.4s;
+}
+
+.toggle-slider:before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.theme-toggle input:checked + .toggle-slider {
+    background-color: #cd7f32;
+}
+
+.theme-toggle input:checked + .toggle-slider:before {
+    transform: translateX(24px);
 }
 
 /* ========================= */

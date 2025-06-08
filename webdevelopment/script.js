@@ -43,3 +43,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   elements.forEach(el => observer.observe(el));
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const toggles = document.querySelectorAll('.read-more-toggle');
+  toggles.forEach(toggle => {
+    const label = document.querySelector(`label[for="${toggle.id}"]`);
+    if (!label) return;
+    // Initialize label text (in case page loads with checked)
+    label.textContent = toggle.checked ? 'Read Less' : 'Read More';
+    toggle.addEventListener('change', () => {
+      label.textContent = toggle.checked ? 'Read Less' : 'Read More';
+    });
+  });
+});

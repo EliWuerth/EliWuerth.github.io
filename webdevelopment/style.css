@@ -1026,10 +1026,14 @@ body.dark-mode section#skills h2{
     color: #cd7f32;
 }
 
+
+body.dark-mode section#stats .stat-label,
+body.dark-mode section#skills .skill-name {
+    color: white;
+}
+
 body.dark-mode section#stats .stat-card,
-body.dark-mode section#skills .skill-card, 
-body.dark-mode section#stats p,
-body.dark-mode section#skills p{
+body.dark-mode section#skills .skill-card{
     background: #2a2a2a;
     color: white;
 }

@@ -459,7 +459,7 @@ section#projects{
 section#skills {
     padding-top: 4rem;
     padding-bottom: 5rem;
-    /* background: #f9fafb; */
+    background: none;
 }
 
 section#skills h2 {
@@ -502,7 +502,7 @@ section#skills h2 {
 
 .skill-name {
     font-weight: 700;
-    color: #111827;
+    color: #374151;
     font-size: 1.125rem;
 }
 
@@ -510,7 +510,7 @@ section#skills h2 {
 section#stats {
     padding-top: 4rem;
     padding-bottom: 5rem;
-    /* background: #ffffff; */
+    background: none;
 }
 
 section#stats h2 {
@@ -1022,6 +1022,19 @@ body.dark-mode html {
     background-color: #1e1e1e;
 }
 
+body.dark-mode section#stats h2,
+body.dark-mode section#skills h2{
+    color: #cd7f32;
+}
+
+body.dark-mode section#stats .stat-card,
+body.dark-mode section#skills .skill-card, 
+body.dark-mode section#stats p,
+body.dark-mode section#skills p{
+    background: #2a2a2a;
+    color: white;
+}
+
 body.dark-mode main,
 body.dark-mode section,
 body.dark-mode .index-main,
@@ -1101,7 +1114,7 @@ body.dark-mode .Resume-Button,
 body.dark-mode .Site-Button,
 body.dark-mode .active{
     background-color: #cd7f32;
-    color: #e0e0e0;
+    color: white;
     border: none;
 }
 

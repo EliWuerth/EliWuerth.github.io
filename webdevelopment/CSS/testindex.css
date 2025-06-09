@@ -293,6 +293,7 @@ section#projects {
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    margin-bottom: 30px;
 }
 
 section#projects h2 {
@@ -522,7 +523,7 @@ footer.site-footer .footer-column a:focus .icon {
 section#skills {
     padding-top: 4rem;
     padding-bottom: 5rem;
-    /* background: #f9fafb; */
+    background: linear-gradient(135deg, #fff8e054, #dfc3b558);
 }
 
 section#skills h2 {
@@ -573,7 +574,7 @@ section#skills h2 {
 section#stats {
     padding-top: 4rem;
     padding-bottom: 5rem;
-    /* background: #ffffff; */
+    /* background: linear-gradient(135deg, #e5bd467d, #f6925cab); */
 }
 
 section#stats h2 {
@@ -635,7 +636,7 @@ section#stats h2 {
 section#testimonials {
     padding-top: 4rem;
     padding-bottom: 5rem;
-    /* background: #f9fafb; */
+    background: linear-gradient(135deg, #fff8e054, #dfc3b558);
 }
 
 section#testimonials h2 {
@@ -643,7 +644,8 @@ section#testimonials h2 {
     margin-bottom: 3rem;
     font-weight: 800;
     font-size: 2.5rem;
-    color: #111827;
+    color: #000000;
+    
 }
 
 .testimonials-grid {
@@ -672,7 +674,7 @@ section#testimonials h2 {
     top: 1rem;
     left: 1rem;
     font-size: 5rem;
-    color: #4f46e5;
+    color: #f58447;
     opacity: 0.15;
     line-height: 1;
 }
@@ -690,7 +692,6 @@ section#testimonials h2 {
 section#contact {
     padding-top: 4rem;
     padding-bottom: 5rem;
-    /* background: #ffffff; */
     text-align: center;
 }
 
@@ -739,9 +740,9 @@ textarea {
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-    border-color: #4f46e5;
+    border-color: #f6925c;
     outline: none;
-    box-shadow: 0 0 8px rgb(79 70 229 / 0.5);
+    box-shadow: 0 0 8px rgba(229, 165, 70, 0.5);
 }
 
 button[type="submit"] {

@@ -12,8 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../nav.css">
     <title>Projects</title>
 </head>
 <body>
@@ -25,13 +25,12 @@
             <div class="slideshow-bg bg2"></div>
             <div class="slideshow-bg bg3"></div>
             <div class="header">
-                <img src="./Images/logo.png" alt="logo">
+                <img src="../Images/logo.png" alt="logo">
             </div>
         </div>
     </header>
 
     <!-- Navigation Bar -->
-    <!-- <div id="navbar-container"></div> -->
     <nav>
         <input type="checkbox" id="toggle-menu" class="hamburger-menu">
         <label for="toggle-menu" class="hamburger-menu-icon">
@@ -40,25 +39,32 @@
             <div class="line"></div>
         </label>
         <ul class="navbarul">
-            <li class="home"><a class="active" href="index.html">Home</a></li>
+            <li class="home"><a href="index.html">Home</a></li>
             <li class="about"><a href="./About.html">About Me</a></li>
             <li class="dropdown">
-                <a href="Projects.html" class="dropbtn">Projects</a>
+                <a href="Projects.html" class="active" class="dropbtn">Projects</a>
                 <div class="dropdown-content" name="nav-drop">
                     <a href="Projects.html#project1">Project 1</a>
                     <a href="Projects.html#project2">Project 2</a>
                     <a href="Projects.html#project3">Project 3</a>
                 </div>
             </li>
+            <li class="examples"><a href="ExampleWebsites.html">Example Sites</a></li>
             <li class="reflect"><a  href="Reflection.html">Reflection</a></li>
             <li class="contact"><a href="Contact.html">Contact</a></li>
+            <div class="dark-toggle-container">
+                <label class="theme-toggle">
+                <input type="checkbox" id="theme-toggle">
+                <span class="toggle-slider"></span>
+                </label>
+            </div>
         </ul>
     </nav>
 
     <!-- Main Content -->
     <main>
         <div class="project">
-            <img src="./Images/placeholder.jpg" alt="Project 1">
+            <img src="../Images/hangman.png" alt="Project 1">
             <di>
                 <h3>Project 1: Hangman</h3>
                 <p><b>Hangman Description</b></p>
@@ -94,17 +100,17 @@
         <div class="footer-container">
             <div class="footer-column">
                 <h3>Phone</h3>
-                <p><span><img src="Images/phone_icon.png" alt="Phone Icon" class="footer-icon"></span>: 812-480-4387</p>
+                <p><span><img src="../Images/icons/phone_icon.png" alt="Phone Icon" class="footer-icon"></span>: 812-480-4387</p>
             </div>
             <div class="footer-column">
                 <h3>Email</h3>
-                <p><span><img src="Images/email_icon.png" alt="Email Icon" class="footer-icon"></span>: Emwuerth216@gmail.com</p>
-                <p><span><img src="Images/email_icon.png" alt="Email Icon" class="footer-icon"></span>: Emwcd7@umsystem.edu</p>
+                <p><span><img src="../Images/icons/email_icon.png" alt="Email Icon" class="footer-icon"></span>: Emwuerth216@gmail.com</p>
+                <p><span><img src="../Images/icons/email_icon.png" alt="Email Icon" class="footer-icon"></span>: Emwcd7@umsystem.edu</p>
             </div>
             <div class="footer-column">
                 <h3>Follow Me</h3>
                 <p>
-                    <button class="linkedIn"><a href="https://www.linkedin.com/in/eliwuerth/" target="_blank"><img src="./Images/icons8-linkedin-16.png" alt="logo"></a></button>
+                    <button class="linkedIn"><a href="https://www.linkedin.com/in/eliwuerth/" target="_blank"><img src="../Images/icons/icons8-linkedin-16.png" alt="logo"></a></button>
                 </p>
             </div>
             <div class="footer-column">

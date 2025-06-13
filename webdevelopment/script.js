@@ -58,9 +58,20 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('load', function () {
-  const preloader = document.getElementById('preloader');
+  // Merge + expand after rise/fall
   setTimeout(() => {
-  preloader.style.opacity = '0';
-  setTimeout(() => preloader.style.display = 'none', 500);
-  }, 1500); // 1500 ms = 1.5 seconds delay
+    document.querySelector('.column1').classList.add('merge');
+    document.querySelector('.column2').classList.add('merge');
+    document.querySelector('.column3').classList.add('merge');
+    document.querySelector('.column4').classList.add('merge');
+  }, 1200); // after initial rise/drop
+
+  // Fade out preloader after full animation
+  setTimeout(() => {
+    const preloader = document.getElementById('preloader');
+    preloader.style.opacity = '0';
+    setTimeout(() => {
+      preloader.style.display = 'none';
+    }, 800); // matches CSS transition
+  }, 2500); // total animation duration
 });

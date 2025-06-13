@@ -570,14 +570,67 @@ section#stats h2 {
 #preloader {
     position: fixed;
     top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: radial-gradient(circle, #111 0%, #111 80%, transparent 100%);
+    width: 100vw; height: 100vh;
+    background: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     z-index: 9999;
-    animation: bgFade 4s ease-in-out forwards;
-}
+    opacity: 1;
+    transition: opacity 0.8s ease;
+  }
+  
+  /* Base column setup */
+  .column {
+    position: absolute;
+    top: 0;
+    width: 25vw;
+    height: 100vh;
+    background: #282828ce;
+    animation-fill-mode: forwards;
+  }
+  
+  /* Initial rise/drop animations */
+  .column1 { left: 0; animation: col1Up 1.2s ease forwards; }
+  .column2 { left: 25vw; animation: col2Down 1.2s ease forwards; }
+  .column3 { left: 50vw; animation: col3Up 1.2s ease forwards; }
+  .column4 { left: 75vw; animation: col4Down 1.2s ease forwards; }
+  
+  @keyframes col1Up {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+  }
+  @keyframes col2Down {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+  }
+  @keyframes col3Up {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+  }
+  @keyframes col4Down {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+  }
+  
+  /* Merge + Expand animation */
+  @keyframes mergeAndExpandLeft {
+    0%   { left: 0; width: 25vw; }
+    50%  { left: 25vw; width: 25vw; }
+    100% { left: 0; width: 50vw; }
+  }
+  @keyframes mergeAndExpandRight {
+    0%   { left: 75vw; width: 25vw; }
+    50%  { left: 50vw; width: 25vw; }
+    100% { left: 50vw; width: 50vw; }
+  }
+  
+  /* Merge classes triggered in JS */
+  .column1.merge { animation: mergeAndExpandLeft 1.2s ease forwards; }
+  .column2.merge { display: none; }
+  .column3.merge { animation: mergeAndExpandRight 1.2s ease forwards; }
+  .column4.merge { display: none; }
 
 .preloader-logo {
     width: 0;
@@ -764,6 +817,52 @@ section#stats h2 {
     margin-top: 10px;
 }
 
+/* Container label inside modal */
+.switch-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-top: 12px;
+  }
+  
+  /* Hide the checkbox */
+  .toggle-switch {
+    display: none;
+  }
+  
+  /* Slider background */
+  .slider {
+    position: relative;
+    width: 42px;
+    height: 22px;
+    background-color: #ccc;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  /* Slider knob */
+  .slider::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Move knob + change color if checked */
+  .toggle-switch:checked + .slider {
+    background-color: #28a745;
+  }
+  
+  .toggle-switch:checked + .slider::before {
+    transform: translateX(20px);
+  }
 /* ========================= */
 /*        Resume CSS         */
 /* ========================= */

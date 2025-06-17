@@ -1,16 +1,12 @@
-function incrementCount() {
-    if (localStorage.getItem('visits')) {
-        localStorage.setItem('visits', parseInt(localStorage.getItem('visits')) + 1);
-    } else {
-        localStorage.setItem('visits', 1);
-    }
-    document.getElementById('count').textContent = localStorage.getItem('visits');
-}
-
-// Update visitor count when the page loads
-document.addEventListener('DOMContentLoaded', function () {
-    incrementCount();
-});
+fetch('https://api.countapi.xyz/hit/eliwuerth-portfolio/visits')
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('count').textContent = data.value;
+  })
+  .catch(err => {
+    console.error('CountAPI Error:', err);
+    document.getElementById('count').textContent = 'N/A';
+  });
 
 const toggle = document.getElementById('theme-toggle');
 const body = document.body;

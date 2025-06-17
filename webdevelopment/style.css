@@ -569,8 +569,10 @@ section#stats h2 {
 
 #preloader {
     position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     background: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
@@ -579,58 +581,130 @@ section#stats h2 {
     z-index: 9999;
     opacity: 1;
     transition: opacity 0.8s ease;
-  }
-  
-  /* Base column setup */
-  .column {
+}
+
+/* Base column setup */
+.column {
     position: absolute;
     top: 0;
     width: 25vw;
     height: 100vh;
     background: #282828ce;
     animation-fill-mode: forwards;
-  }
-  
-  /* Initial rise/drop animations */
-  .column1 { left: 0; animation: col1Up 1.2s ease forwards; }
-  .column2 { left: 25vw; animation: col2Down 1.2s ease forwards; }
-  .column3 { left: 50vw; animation: col3Up 1.2s ease forwards; }
-  .column4 { left: 75vw; animation: col4Down 1.2s ease forwards; }
-  
-  @keyframes col1Up {
-    0% { transform: translateY(100%); }
-    100% { transform: translateY(0); }
-  }
-  @keyframes col2Down {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(0); }
-  }
-  @keyframes col3Up {
-    0% { transform: translateY(100%); }
-    100% { transform: translateY(0); }
-  }
-  @keyframes col4Down {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(0); }
-  }
-  
-  /* Merge + Expand animation */
-  @keyframes mergeAndExpandLeft {
-    0%   { left: 0; width: 25vw; }
-    50%  { left: 25vw; width: 25vw; }
-    100% { left: 0; width: 50vw; }
-  }
-  @keyframes mergeAndExpandRight {
-    0%   { left: 75vw; width: 25vw; }
-    50%  { left: 50vw; width: 25vw; }
-    100% { left: 50vw; width: 50vw; }
-  }
-  
-  /* Merge classes triggered in JS */
-  .column1.merge { animation: mergeAndExpandLeft 1.2s ease forwards; }
-  .column2.merge { display: none; }
-  .column3.merge { animation: mergeAndExpandRight 1.2s ease forwards; }
-  .column4.merge { display: none; }
+}
+
+/* Initial rise/drop animations */
+.column1 {
+    left: 0;
+    animation: col1Up 1.2s ease forwards;
+}
+
+.column2 {
+    left: 25vw;
+    animation: col2Down 1.2s ease forwards;
+}
+
+.column3 {
+    left: 50vw;
+    animation: col3Up 1.2s ease forwards;
+}
+
+.column4 {
+    left: 75vw;
+    animation: col4Down 1.2s ease forwards;
+}
+
+@keyframes col1Up {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes col2Down {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes col3Up {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes col4Down {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Merge + Expand animation */
+@keyframes mergeAndExpandLeft {
+    0% {
+        left: 0;
+        width: 25vw;
+    }
+
+    50% {
+        left: 25vw;
+        width: 25vw;
+    }
+
+    100% {
+        left: 0;
+        width: 50vw;
+    }
+}
+
+@keyframes mergeAndExpandRight {
+    0% {
+        left: 75vw;
+        width: 25vw;
+    }
+
+    50% {
+        left: 50vw;
+        width: 25vw;
+    }
+
+    100% {
+        left: 50vw;
+        width: 50vw;
+    }
+}
+
+/* Merge classes triggered in JS */
+.column1.merge {
+    animation: mergeAndExpandLeft 1.2s ease forwards;
+}
+
+.column2.merge {
+    display: none;
+}
+
+.column3.merge {
+    animation: mergeAndExpandRight 1.2s ease forwards;
+}
+
+.column4.merge {
+    display: none;
+}
 
 .preloader-logo {
     width: 0;
@@ -684,12 +758,14 @@ section#stats h2 {
     padding: 2rem 1rem 4rem 1rem;
     border-radius: 12px;
 }
+
 /* Project list grid */
 .example-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
+
 /* Each project card styling */
 .example {
     /* background: #fff; */
@@ -703,24 +779,76 @@ section#stats h2 {
     transform: translateY(20px);
     animation: fadeSlideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
+
 /* Stagger animation delay for each project */
-.example:nth-child(1) { animation-delay: 2.6s; }
-.example:nth-child(2) { animation-delay: 2.7s; }
-.example:nth-child(3) { animation-delay: 2.8s; }
-.example:nth-child(4) { animation-delay: 2.9s; }
-.example:nth-child(5) { animation-delay: 3s; }
-.example:nth-child(6) { animation-delay: 3.1s; }
-.example:nth-child(7) { animation-delay: 3.2s; }
-.example:nth-child(8) { animation-delay: 3.3s; }
-.example:nth-child(9) { animation-delay: 3.4s; }
-.example:nth-child(10) { animation-delay: 3.5s; }
-.example:nth-child(11) { animation-delay: 3.6s; }
-.example:nth-child(12) { animation-delay: 3.7s; }
-.example:nth-child(13) { animation-delay: 3.8s; }
-.example:nth-child(14) { animation-delay: 3.9s; }
-.example:nth-child(15) { animation-delay: 4s; }
-.example:nth-child(16) { animation-delay: 4.1s; }
-.example:nth-child(17) { animation-delay: 4.2s; }
+.example:nth-child(1) {
+    animation-delay: 2.6s;
+}
+
+.example:nth-child(2) {
+    animation-delay: 2.7s;
+}
+
+.example:nth-child(3) {
+    animation-delay: 2.8s;
+}
+
+.example:nth-child(4) {
+    animation-delay: 2.9s;
+}
+
+.example:nth-child(5) {
+    animation-delay: 3s;
+}
+
+.example:nth-child(6) {
+    animation-delay: 3.1s;
+}
+
+.example:nth-child(7) {
+    animation-delay: 3.2s;
+}
+
+.example:nth-child(8) {
+    animation-delay: 3.3s;
+}
+
+.example:nth-child(9) {
+    animation-delay: 3.4s;
+}
+
+.example:nth-child(10) {
+    animation-delay: 3.5s;
+}
+
+.example:nth-child(11) {
+    animation-delay: 3.6s;
+}
+
+.example:nth-child(12) {
+    animation-delay: 3.7s;
+}
+
+.example:nth-child(13) {
+    animation-delay: 3.8s;
+}
+
+.example:nth-child(14) {
+    animation-delay: 3.9s;
+}
+
+.example:nth-child(15) {
+    animation-delay: 4s;
+}
+
+.example:nth-child(16) {
+    animation-delay: 4.1s;
+}
+
+.example:nth-child(17) {
+    animation-delay: 4.2s;
+}
+
 /* Animate fade and slide up */
 @keyframes fadeSlideIn {
     to {
@@ -728,12 +856,14 @@ section#stats h2 {
         transform: translateY(0);
     }
 }
+
 /* Project card hover effect */
 .example:hover {
     transform: scale(1.03);
     box-shadow: 0 12px 25px rgb(0 0 0 / 0.15);
     cursor: pointer;
 }
+
 /* Project headings */
 .example h3 {
     font-family: 'Poppins', sans-serif;
@@ -742,6 +872,7 @@ section#stats h2 {
     margin-bottom: 0.5rem;
     /* dark slate */
 }
+
 /* Project paragraphs */
 .example p {
     font-family: 'Inter', sans-serif;
@@ -750,17 +881,21 @@ section#stats h2 {
     line-height: 1.5;
     flex-grow: 1;
 }
+
 /* Responsive tweaks */
 @media (max-width: 480px) {
     .examples-container {
         padding: 1rem 1rem 3rem 1rem;
     }
+
     .example {
         padding: 1rem 1.25rem;
     }
+
     .example h3 {
         font-size: 1.25rem;
     }
+
     .Site-Button {
         font-size: 0.9rem;
         padding: 0.5rem 1rem;
@@ -773,7 +908,7 @@ section#stats h2 {
     padding: 20px;
     background: white;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .legend,
@@ -825,25 +960,25 @@ section#stats h2 {
     font-size: 0.95rem;
     cursor: pointer;
     margin-top: 12px;
-  }
-  
-  /* Hide the checkbox */
-  .toggle-switch {
+}
+
+/* Hide the checkbox */
+.toggle-switch {
     display: none;
-  }
-  
-  /* Slider background */
-  .slider {
+}
+
+/* Slider background */
+.slider {
     position: relative;
     width: 42px;
     height: 22px;
     background-color: #ccc;
     border-radius: 20px;
     transition: background-color 0.3s;
-  }
-  
-  /* Slider knob */
-  .slider::before {
+}
+
+/* Slider knob */
+.slider::before {
     content: "";
     position: absolute;
     top: 2px;
@@ -853,16 +988,17 @@ section#stats h2 {
     background: white;
     border-radius: 50%;
     transition: transform 0.3s ease;
-  }
-  
-  /* Move knob + change color if checked */
-  .toggle-switch:checked + .slider {
+}
+
+/* Move knob + change color if checked */
+.toggle-switch:checked+.slider {
     background-color: #28a745;
-  }
-  
-  .toggle-switch:checked + .slider::before {
+}
+
+.toggle-switch:checked+.slider::before {
     transform: translateX(20px);
-  }
+}
+
 /* ========================= */
 /*        Resume CSS         */
 /* ========================= */

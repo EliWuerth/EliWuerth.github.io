@@ -85,7 +85,7 @@
         </ul>
     </nav>
 
-    
+    <div id="particles-js"></div>
 
     <!-- Main Content -->
     <main class="index-main">
@@ -164,9 +164,7 @@
                 </div>
             </div>
         </section>
-      </section>
     </main>
-    
     
     <!-- Footer -->
     <footer class="footer">
@@ -200,7 +198,7 @@
         </div>
         </div>
     </footer>
-    <div id="particles-js"></div>
+    
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 <script>
   particlesJS.load('particles-js', 'particles.json', function() {
@@ -241,16 +239,6 @@
         }
 
         typeEffect();
-
-        fetch('https://api.countapi.xyz/hit/eliwuerth-portfolio/visits')
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById('count').textContent = data.value;
-    })
-    .catch(err => {
-      console.error('CountAPI Error:', err);
-      document.getElementById('count').textContent = 'N/A';
-    });
     </script>
 </body>
 </html>

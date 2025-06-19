@@ -1,0 +1,540 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+  /* Modern AI Assistant Styles */
+  #ai-assistant-container {
+    --primary: #cd7f32; /* Your bronze color */
+    --primary-dark: #b76e2a;
+    --light: #f8f8f8;
+    --lighter: #fffefc;
+    --dark: #333;
+    --darker: #111;
+    --text: #333;
+    --bg-chat: #ffffff;
+    --bg-input: #ffffff;
+    --bg-user: #cd7f32;
+    --bg-assistant: #ffffff;
+    --shadow: 0 10px 30px rgba(0,0,0,0.1);
+    --radius: 12px;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  /* Dark Mode Overrides */
+  #ai-assistant-container[data-theme="dark"] {
+    --light: #1a1a1a;
+    --lighter: #111111;
+    --dark: #f0f0f0;
+    --darker: #ffffff;
+    --text: #f0f0f0;
+    --bg-chat: #1e1e1e;
+    --bg-input: #2a2a2a;
+    --bg-user: #cd7f32;
+    --bg-assistant: #2e2e2e;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Floating Action Button */
+  #assistantToggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    border: none;
+    z-index: 1000;
+    transition: var(--transition);
+  }
+  
+  #assistantToggle:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: var(--primary-dark);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  }
+  
+  /* Chat Window */
+  #assistantWindow {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 380px;
+    max-width: calc(100% - 60px);
+    height: 600px;
+    max-height: 70vh;
+    background: var(--bg-chat);
+    color: var(--text);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    z-index: 999;
+    transition: var(--transition);
+  }
+  
+  /* Header */
+  .assistant-header {
+    background: var(--primary);
+    color: white;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .assistant-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .assistant-avatar {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .assistant-message button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    margin: 5px 4px 0 0;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .assistant-message button:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.05);
+  }
+  
+  /* Close Button */
+  #closeAssistant {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  #closeAssistant:hover {
+    background: rgba(255,255,255,0.2);
+    transform: rotate(90deg);
+  }
+  
+  /* Chat Messages */
+  #chatMessages {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    background: var(--light);
+  }
+  
+  .message {
+    padding: 12px 16px;
+    border-radius: 18px;
+    margin-bottom: 12px;
+    max-width: 80%;
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+    line-height: 1.4;
+  }
+  
+  .assistant-message {
+    background: var(--bg-assistant);
+    color: var(--text);
+    border-bottom-left-radius: 4px;
+    align-self: flex-start;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .user-message {
+    background: var(--bg-user);
+    color: #fff;
+    border-bottom-right-radius: 4px;
+    align-self: flex-end;
+  }
+  
+  /* Input Area */
+  .input-area {
+    padding: 16px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    background: var(--bg-chat);
+  }
+  
+  .input-row {
+    display: flex;
+    gap: 8px;
+  }
+  
+  #userInput {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #666;
+    background: var(--bg-input);
+    color: var(--text);
+    border-radius: 24px;
+    font-size: 14px;
+    outline: none;
+    transition: var(--transition);
+  }
+
+  #userInput::placeholder {
+    color: #999;
+  }
+
+  #userInput:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(205,127,50,0.2);
+  }
+  
+  /* Send Button */
+  #sendMessage {
+    width: 48px;
+    height: 48px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  #sendMessage:hover {
+    background: var(--primary-dark);
+    transform: scale(1.05);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Typing Indicator */
+  .typing-indicator span {
+    display: inline-block;
+    animation: bounce 1.5s infinite ease-in-out;
+  }
+  
+  .typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+</style>
+
+<div id="ai-assistant-container">
+  <!-- Floating Button -->
+  <button id="assistantToggle" aria-label="Open AI Assistant">
+    <i class="fas fa-robot"></i>
+  </button>
+
+  <!-- Chat Window -->
+  <div id="assistantWindow">
+    <!-- Header -->
+    <div class="assistant-header">
+      <div class="assistant-title">
+        <div class="assistant-avatar" aria-hidden="true">
+          <i class="fas fa-robot"></i>
+        </div>
+        <div>
+          <h3 style="margin:0;font-size:16px">Portfolio Assistant</h3>
+          <p style="margin:0;font-size:12px;opacity:0.8">I'm here to help!</p>
+        </div>
+      </div>
+      <button id="closeAssistant" aria-label="Close chat">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <!-- Chat Messages -->
+    <div id="chatMessages">
+      <div class="message assistant-message">
+        <p>Hello! I'm your AI assistant. Ask me about projects, skills, or anything else!</p>
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="input-area">
+      <div class="input-row">
+        <input type="text" id="userInput" placeholder="Type your message..." autocomplete="off">
+        <button id="sendMessage" aria-label="Send message">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const toggleBtn = document.getElementById('assistantToggle');
+  const windowEl = document.getElementById('assistantWindow');
+  const closeBtn = document.getElementById('closeAssistant');
+  const messagesEl = document.getElementById('chatMessages');
+  const userInput = document.getElementById('userInput');
+  const sendBtn = document.getElementById('sendMessage');
+
+  // Toggle chat window
+  document.getElementById('assistantToggle').addEventListener('click', function() {
+    const windowEl = document.getElementById('assistantWindow');
+    windowEl.style.display = windowEl.style.display === 'flex' ? 'none' : 'flex';
+    document.getElementById('assistantToggle').style.display = 'none';
+    if (windowEl.style.display === 'flex') {
+      const userInput = document.getElementById('userInput');
+      userInput.focus();
+    }
+  });
+
+  // Close chat window
+  closeBtn.addEventListener('click', function() {
+    windowEl.style.display = 'none';
+    document.getElementById('assistantToggle').style.display = 'flex';
+  });
+
+  // Click outside to close
+  document.addEventListener('click', function(e) {
+    if (!windowEl.contains(e.target) && e.target !== toggleBtn) {
+      windowEl.style.display = 'none';
+      document.getElementById('assistantToggle').style.display = 'flex';
+    }
+  });
+
+  // Send message function
+  sendBtn.addEventListener('click', sendMessage);
+  userInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') sendMessage();
+  });
+
+  function sendMessage() {
+    const text = userInput.value.trim();
+    if (!text) return;
+
+    // Add user message
+    const userMsg = document.createElement('div');
+    userMsg.className = 'message user-message';
+    userMsg.innerHTML = `<p>${text}</p>`;
+    messagesEl.appendChild(userMsg);
+
+    userInput.value = '';
+    scrollToBottom();
+
+    // Show typing indicator
+    const typing = document.createElement('div');
+    typing.className = 'message assistant-message typing-indicator';
+    typing.innerHTML = '<p><span>.</span><span>.</span><span>.</span></p>';
+    messagesEl.appendChild(typing);
+    scrollToBottom();
+
+    // Simulate response
+    setTimeout(() => {
+      typing.remove();
+      const response = generateResponse(text);
+      const assistantMsg = document.createElement('div');
+      assistantMsg.className = 'message assistant-message';
+      assistantMsg.innerHTML = `<p>${response}</p>`;
+      messagesEl.appendChild(assistantMsg);
+      scrollToBottom();
+    }, 1000 + Math.random() * 1000);
+  }
+
+  function scrollToBottom() {
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  function getMemory() {
+    const stored = localStorage.getItem('chatMemory');
+    return stored ? new Set(JSON.parse(stored)) : new Set();
+  }
+
+  function saveMemory(memorySet) {
+    localStorage.setItem('chatMemory', JSON.stringify([...memorySet]));
+  }
+
+  let chatMemory = {
+    topics: getMemory()
+  };
+
+  function generateResponse(message) {
+    const lowerMsg = message.toLowerCase();
+
+    // === Track memory topics ===
+    const memoryMap = {
+      react: 'React',
+      python: 'Python',
+      drone: 'Drone',
+      spot: 'Drone',
+      robot: 'Drone',
+      resume: 'Resume',
+      cv: 'Resume',
+      certificates: 'Certificates',
+      certificate: 'Certificates',
+      github: 'GitHub',
+      linkedin: 'LinkedIn',
+      project: 'Projects',
+      work: 'Projects',
+      website: 'Portfolio',
+      portfolio: 'Portfolio',
+      skill: 'Skills',
+      experience: 'Skills',
+      school: 'Education',
+      education: 'Education'
+    };
+
+    for (const keyword in memoryMap) {
+      if (lowerMsg.includes(keyword)) {
+        chatMemory.topics.add(memoryMap[keyword]);
+      }
+    }
+
+    // Persist memory
+    saveMemory(chatMemory.topics);
+
+    // === Memory-based context recall ===
+    if (lowerMsg.includes('more') || lowerMsg.includes('what else')) {
+      if (chatMemory.topics.has('React')) {
+        return `Since you're interested in React, check out some of my frontend projects using it.<br>
+          <button onclick="navigateTo('projects')">React Projects</button>`;
+      }
+      if (chatMemory.topics.has('Drone')) {
+        return `You mentioned drones earlier. Here's the full story behind my Spot + drone integration.<br>
+          <button onclick="navigateTo('project3')">View Drone Project</button>`;
+      }
+      if (chatMemory.topics.has('Resume')) {
+        return `Want to know more about my resume or work experience?<br>
+          <button onclick="navigateTo('resume')">Resume</button>`;
+      }
+      if (chatMemory.topics.has('Portfolio')) {
+        return `You were checking out the site! Want to view some example layouts?<br>
+          <button onclick="navigateTo('examples')">See Example Websites</button>`;
+      }
+    }
+
+    // === Standard responses ===
+    if (lowerMsg.includes('hello') || lowerMsg.includes('hi')) {
+      return `Hi there! What would you like to know about my portfolio?<br>
+        <button onclick="navigateTo('projects')">See Projects</button>
+        <button onclick="navigateTo('about')">About Me</button>`;
+    } else if (lowerMsg.includes('project') || lowerMsg.includes('work')) {
+      return `I've worked on several exciting projects. Would you like to see them?<br>
+        <button onclick="navigateTo('projects')">View Projects</button>`;
+    } else if (lowerMsg.includes('skill') || lowerMsg.includes('experience')) {
+      return `My skills include frontend development, Python, UI/UX, and more. Here's where you can explore further:<br>
+        <button onclick="navigateTo('skills')">My Skills</button>`;
+    } else if (lowerMsg.includes('resume') || lowerMsg.includes('cv')) {
+      return `You can download or view my resume here:<br>
+        <button onclick="window.open('https://EliWuerth.github.io/webdevelopment/Images/FrontendResume.pdf', '_blank')">Download Resume</button>`;
+    } else if (lowerMsg.includes('contact')) {
+      return `You can reach me anytime via email or the contact page:<br>
+        <button onclick="navigateTo('contact')">Go to Contact Page</button>`;
+    } else if (lowerMsg.includes('linkedin')) {
+      return `Here's my LinkedIn profile:<br>
+        <button onclick="window.open('https://www.linkedin.com/in/eliwuerth/', '_blank')">Visit LinkedIn</button>`;
+    } else if (lowerMsg.includes('github')) {
+      return `You can find my projects here:<br>
+        <button onclick="window.open('https://github.com/EliWuerth', '_blank')">Visit GitHub</button>`;
+    } else if (lowerMsg.includes('school') || lowerMsg.includes('university')) {
+      return `I'm studying IT at the University of Missouri, graduating May 2025.<br>
+        <button onclick="navigateTo('about')">More About Me</button>`;
+    } else if (lowerMsg.includes('certificate')) {
+      return `I've earned 3 tech certificates.<br>
+        <button onclick="navigateTo('resume')">View Resume Section</button>`;
+    } else if (lowerMsg.includes('current') && lowerMsg.includes('project')) {
+      return `I'm building an AI drone that lands on a moving robot dog (Boston Dynamics Spot).<br>
+        <button onclick="navigateTo('projects3')">View Project</button>`;
+    } else if (lowerMsg.includes('example') && lowerMsg.includes('website')) {
+      return `I've created several example websites to showcase different design styles and use cases.<br>
+        <button onclick="navigateTo('examples')">View Example Sites</button>
+        <button onclick="navigateTo('projects')">Back to Projects</button>`;
+    } else if (lowerMsg.includes('certificates') || lowerMsg.includes('certifications')) {
+      return `I've earned certificates in Media Technology Design, Web & Mobile App Development, and Info Systems & Tech.<br>
+        <button onclick="navigateTo('resume')">View Resume</button>`;
+    } else if (lowerMsg.includes('school') || lowerMsg.includes('education')) {
+      return `I'm currently studying Information Technology at the University of Missouri. Expected graduation: May 2025.<br>
+        <button onclick="navigateTo('about')">More About Me</button>`;
+    } else if (lowerMsg.includes('spot') || lowerMsg.includes('drone') || lowerMsg.includes('robot')) {
+      return `Yes! I'm working on a drone that autonomously lands on Boston Dynamics’ Spot robot using OpenCV and Python.<br>
+        <button onclick="navigateTo('project3')">See the Project</button>`;
+    } else if (lowerMsg.includes('hobbies') || lowerMsg.includes('interests')) {
+      return `Besides tech, I enjoy motion graphics, drone tinkering, and creative design. I blend logic with creativity in everything I do.<br>
+        <button onclick="navigateTo('about')">About Me</button>`;
+    } else if (lowerMsg.includes('tools') || lowerMsg.includes('frameworks')) {
+      return `I work with HTML, CSS, JavaScript, React, Python, Django, and tools like Git, Figma, and Xcode.<br>
+        <button onclick="navigateTo('skills')">View Skills</button>`;
+    } else if (lowerMsg.includes('video') && lowerMsg.includes('resume')) {
+      return `You can watch my animated resume on YouTube!<br>
+        <button onclick="window.open('https://www.youtube.com/embed/FJVNyUF6XeM', '_blank')">Watch Resume Video</button>`;
+    } else if (lowerMsg.includes('portfolio') || lowerMsg.includes('website')) {
+      return `This site showcases who I am, what I've done, and where I'm heading. Feel free to explore each section:<br>
+        <button onclick="navigateTo('projects')">Projects</button>
+        <button onclick="navigateTo('resume')">Resume</button>
+        <button onclick="navigateTo('contact')">Contact</button>`;
+    } else if (lowerMsg.includes('fun') || lowerMsg.includes('joke')) {
+      return `Sure! Here's one: Why do developers hate nature? Too many bugs. 😅<br>
+        <button onclick="sendMessageAuto('Tell me another joke')">😂 Again!</button>`;
+    } else {
+      const responses = [
+        `That's interesting! Could you tell me more?<br>
+          <button onclick="navigateTo('contact')">Send a Message</button>`,
+        `Happy to help! Choose where to explore:<br>
+          <button onclick="navigateTo('projects')">Projects</button> <button onclick="navigateTo('about')">About</button>`,
+        `Great question! I cover it here:<br>
+          <button onclick="navigateTo('resume')">Resume</button>`,
+      ];
+      return responses[Math.floor(Math.random() * responses.length)];
+    }
+  }
+
+  function sendMessageAuto(text) {
+    document.getElementById('userInput').value = text;
+    sendMessage();
+  }
+
+  function navigateTo(sectionId) {
+    const pageMap = {
+      about: 'About.html',
+      resume: 'Resume.html',
+      contact: 'Contact.html',
+      projects: 'Projects_Combined.html',
+      projects3: 'Projects_Combined.html#projects3',
+      examples: 'Projects_Combined.html#exampleslist',
+      skills: 'index.html#skills'
+    };
+
+    const url = pageMap[sectionId];
+    if (url) window.location.href = url;
+  }
+</script>

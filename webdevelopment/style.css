@@ -1,6 +1,46 @@
 /* ========================= */
 /*      BASE STYLES          */
 /* ========================= */
+:root {
+    /* Brand Colors */
+    --color-primary: #cd7f32;
+    /* bronze */
+    --color-primary-dark: #b76e2a;
+    --color-accent: #df8a36;
+    --color-light: #f0f0f0;
+    --color-background: #fffefc;
+    --color-white: #ffffff;
+    --color-black: #111111;
+    --color-text: #333333;
+    --color-muted: #666666;
+
+    /* Hover + Active Colors */
+    --color-hover-bg: #e0e0e0;
+    --color-hover-text: var(--color-primary);
+    --color-active-bg: var(--color-primary);
+    --color-active-text: var(--color-black);
+
+    /* Font Stack */
+    --font-body: 'Arial', sans-serif;
+    --font-heading: 'PTSerif-Regular', serif;
+    --font-serif-bold: 'PTSerif-Bold', serif;
+    --font-serif-italic: 'PTSerif-Italic', serif;
+
+    /* Layout & Spacing */
+    --max-width: 1200px;
+    --border-radius: 8px;
+    --transition-fast: 0.3s ease-in-out;
+    --box-shadow-default: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+    /* Form Fields */
+    --input-border: 1px solid #ccc;
+    --input-radius: 5px;
+
+    /* Breakpoints */
+    --breakpoint-sm: 480px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+}
 
 * {
     box-sizing: border-box;
@@ -186,7 +226,8 @@ body {
 /* ========================= */
 
 .index-main {
-    background-color: #f0f0f0;
+    max-width: 100%;
+    min-width: 100%;
 }
 
 .styled-table {
@@ -375,48 +416,6 @@ blockquote {
 .Site-Button:hover {
     background: linear-gradient(135deg, #f6925c, #e5bd46);
     transform: scale(1.05);
-}
-
-section#projects{
-    padding: 20px 20px;
-    text-align: center;
-}
-
-.featured-projects h2 {
-    font-size: 2em;
-    color: #cd7f32;
-    margin-bottom: 20px;
-    text-align: justify center;
-}
-
-.projects-scroll {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    justify-content: center;
-    padding: 10px 20px;
-    scroll-snap-type: x mandatory;
-    scroll-padding: 20px;
-}
-
-.projects-scroll a.card {
-    flex: 0 0 auto;
-    width: 280px;
-    min-height: 160px;
-    background: linear-gradient(to bottom right, #fff, #f4f4f4);
-    color: #333;
-    text-decoration: none;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    scroll-snap-align: start;
-    transition: transform 0.3s;
-    font-weight: bold;
-}
-
-.projects-scroll a.card:hover {
-    transform: translateY(-5px);
-    background: #fff9f2;
 }
 
 #hero-text {
@@ -998,6 +997,10 @@ section#stats h2 {
 .toggle-switch:checked+.slider::before {
     transform: translateX(20px);
 }
+
+/* ========================= */
+/*     AI Assistant CSS      */
+/* ========================= */
 
 /* ========================= */
 /*        Resume CSS         */

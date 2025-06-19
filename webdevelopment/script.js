@@ -12,12 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
     incrementCount();
 });
 
-fetch('https://api.countapi.xyz/hit/eliwuerth-site/visits')
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById('count').textContent = data.value;
-    });
-    
 const toggle = document.getElementById('theme-toggle');
 const body = document.body;
 

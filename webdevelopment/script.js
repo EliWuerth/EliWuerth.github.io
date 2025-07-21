@@ -75,3 +75,14 @@ window.addEventListener('load', function () {
     }, 800); // matches CSS transition
   }, 2500); // total animation duration
 });
+
+let currentSlide = 0;
+const track = document.querySelector('.carousel-track');
+const items = document.querySelectorAll('.carousel-item');
+
+function slideCarousel(direction) {
+  const visibleCount = Math.floor(track.offsetWidth / 640); // assumes 300px item + margin
+  const maxSlide = items.length - visibleCount;
+  currentSlide = Math.max(0, Math.min(currentSlide + direction, maxSlide));
+  track.style.transform = `translateX(-${currentSlide * 640}px)`;
+}

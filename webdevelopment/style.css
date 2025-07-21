@@ -90,6 +90,195 @@ body {
 }
 
 /* ========================= */
+/*         Preloader         */
+/* ========================= */
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.8s ease;
+}
+
+/* Base column setup */
+.column {
+    position: absolute;
+    top: 0;
+    width: 25vw;
+    height: 100vh;
+    background: #282828ce;
+    animation-fill-mode: forwards;
+}
+
+/* Initial rise/drop animations */
+.column1 {
+    left: 0;
+    animation: col1Up 1.2s ease forwards;
+}
+
+.column2 {
+    left: 25vw;
+    animation: col2Down 1.2s ease forwards;
+}
+
+.column3 {
+    left: 50vw;
+    animation: col3Up 1.2s ease forwards;
+}
+
+.column4 {
+    left: 75vw;
+    animation: col4Down 1.2s ease forwards;
+}
+
+@keyframes col1Up {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes col2Down {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes col3Up {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes col4Down {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Merge + Expand animation */
+@keyframes mergeAndExpandLeft {
+    0% {
+        left: 0;
+        width: 25vw;
+    }
+
+    50% {
+        left: 25vw;
+        width: 25vw;
+    }
+
+    100% {
+        left: 0;
+        width: 50vw;
+    }
+}
+
+@keyframes mergeAndExpandRight {
+    0% {
+        left: 75vw;
+        width: 25vw;
+    }
+
+    50% {
+        left: 50vw;
+        width: 25vw;
+    }
+
+    100% {
+        left: 50vw;
+        width: 50vw;
+    }
+}
+
+/* Merge classes triggered in JS */
+.column1.merge {
+    animation: mergeAndExpandLeft 1.2s ease forwards;
+}
+
+.column2.merge {
+    display: none;
+}
+
+.column3.merge {
+    animation: mergeAndExpandRight 1.2s ease forwards;
+}
+
+.column4.merge {
+    display: none;
+}
+
+.preloader-logo {
+    width: 0;
+    opacity: 0;
+    animation: growPulseFade 4s ease-in-out forwards;
+}
+
+@keyframes growPulseFade {
+    0% {
+        transform: scale(0.1) rotate(0deg);
+        opacity: 0;
+        width: 0;
+    }
+
+    30% {
+        transform: scale(1) rotate(720deg);
+        opacity: 1;
+        width: 200px;
+    }
+
+    50% {
+        transform: scale(1.2) rotate(720deg);
+    }
+
+    70% {
+        transform: scale(1) rotate(720deg);
+    }
+
+    100% {
+        transform: scale(0.1) rotate(0deg);
+        opacity: 0;
+    }
+}
+
+@keyframes bgFade {
+    0% {
+        opacity: 1;
+        background: radial-gradient(circle, #111 0%, #111 80%, transparent 100%);
+    }
+
+    100% {
+        opacity: 0;
+        background: radial-gradient(circle, transparent 0%, transparent 100%);
+    }
+}
+
+
+/* ========================= */
 /*          Header           */
 /* ========================= */
 
@@ -566,190 +755,6 @@ section#stats h2 {
     font-size: 1.125rem;
 }
 
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgb(0, 0, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    z-index: 9999;
-    opacity: 1;
-    transition: opacity 0.8s ease;
-}
-
-/* Base column setup */
-.column {
-    position: absolute;
-    top: 0;
-    width: 25vw;
-    height: 100vh;
-    background: #282828ce;
-    animation-fill-mode: forwards;
-}
-
-/* Initial rise/drop animations */
-.column1 {
-    left: 0;
-    animation: col1Up 1.2s ease forwards;
-}
-
-.column2 {
-    left: 25vw;
-    animation: col2Down 1.2s ease forwards;
-}
-
-.column3 {
-    left: 50vw;
-    animation: col3Up 1.2s ease forwards;
-}
-
-.column4 {
-    left: 75vw;
-    animation: col4Down 1.2s ease forwards;
-}
-
-@keyframes col1Up {
-    0% {
-        transform: translateY(100%);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes col2Down {
-    0% {
-        transform: translateY(-100%);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes col3Up {
-    0% {
-        transform: translateY(100%);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes col4Down {
-    0% {
-        transform: translateY(-100%);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
-
-/* Merge + Expand animation */
-@keyframes mergeAndExpandLeft {
-    0% {
-        left: 0;
-        width: 25vw;
-    }
-
-    50% {
-        left: 25vw;
-        width: 25vw;
-    }
-
-    100% {
-        left: 0;
-        width: 50vw;
-    }
-}
-
-@keyframes mergeAndExpandRight {
-    0% {
-        left: 75vw;
-        width: 25vw;
-    }
-
-    50% {
-        left: 50vw;
-        width: 25vw;
-    }
-
-    100% {
-        left: 50vw;
-        width: 50vw;
-    }
-}
-
-/* Merge classes triggered in JS */
-.column1.merge {
-    animation: mergeAndExpandLeft 1.2s ease forwards;
-}
-
-.column2.merge {
-    display: none;
-}
-
-.column3.merge {
-    animation: mergeAndExpandRight 1.2s ease forwards;
-}
-
-.column4.merge {
-    display: none;
-}
-
-.preloader-logo {
-    width: 0;
-    opacity: 0;
-    animation: growPulseFade 4s ease-in-out forwards;
-}
-
-@keyframes growPulseFade {
-    0% {
-        transform: scale(0.1) rotate(0deg);
-        opacity: 0;
-        width: 0;
-    }
-
-    30% {
-        transform: scale(1) rotate(720deg);
-        opacity: 1;
-        width: 200px;
-    }
-
-    50% {
-        transform: scale(1.2) rotate(720deg);
-    }
-
-    70% {
-        transform: scale(1) rotate(720deg);
-    }
-
-    100% {
-        transform: scale(0.1) rotate(0deg);
-        opacity: 0;
-    }
-}
-
-@keyframes bgFade {
-    0% {
-        opacity: 1;
-        background: radial-gradient(circle, #111 0%, #111 80%, transparent 100%);
-    }
-
-    100% {
-        opacity: 0;
-        background: radial-gradient(circle, transparent 0%, transparent 100%);
-    }
-}
-
 /* Container max-width and centering */
 .examples-container {
     max-width: 1200px;
@@ -783,67 +788,51 @@ section#stats h2 {
 .example:nth-child(1) {
     animation-delay: 2.6s;
 }
-
 .example:nth-child(2) {
     animation-delay: 2.7s;
 }
-
 .example:nth-child(3) {
     animation-delay: 2.8s;
 }
-
 .example:nth-child(4) {
     animation-delay: 2.9s;
 }
-
 .example:nth-child(5) {
     animation-delay: 3s;
 }
-
 .example:nth-child(6) {
     animation-delay: 3.1s;
 }
-
 .example:nth-child(7) {
     animation-delay: 3.2s;
 }
-
 .example:nth-child(8) {
     animation-delay: 3.3s;
 }
-
 .example:nth-child(9) {
     animation-delay: 3.4s;
 }
-
 .example:nth-child(10) {
     animation-delay: 3.5s;
 }
-
 .example:nth-child(11) {
     animation-delay: 3.6s;
 }
-
 .example:nth-child(12) {
     animation-delay: 3.7s;
 }
-
 .example:nth-child(13) {
     animation-delay: 3.8s;
 }
-
 .example:nth-child(14) {
     animation-delay: 3.9s;
 }
-
 .example:nth-child(15) {
     animation-delay: 4s;
 }
-
 .example:nth-child(16) {
     animation-delay: 4.1s;
 }
-
 .example:nth-child(17) {
     animation-delay: 4.2s;
 }
@@ -951,7 +940,6 @@ section#stats h2 {
     margin-top: 10px;
 }
 
-/* Container label inside modal */
 .switch-label {
     display: flex;
     align-items: center;
@@ -961,12 +949,10 @@ section#stats h2 {
     margin-top: 12px;
 }
 
-/* Hide the checkbox */
 .toggle-switch {
     display: none;
 }
 
-/* Slider background */
 .slider {
     position: relative;
     width: 42px;
@@ -976,7 +962,6 @@ section#stats h2 {
     transition: background-color 0.3s;
 }
 
-/* Slider knob */
 .slider::before {
     content: "";
     position: absolute;
@@ -989,7 +974,6 @@ section#stats h2 {
     transition: transform 0.3s ease;
 }
 
-/* Move knob + change color if checked */
 .toggle-switch:checked+.slider {
     background-color: #28a745;
 }
@@ -998,9 +982,63 @@ section#stats h2 {
     transform: translateX(20px);
 }
 
-/* ========================= */
-/*     AI Assistant CSS      */
-/* ========================= */
+section#example-carousel h2{
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: #111827;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.carousel-item {
+    width: 640px;
+    height: 640px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #cd7f32;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.carousel-btn.left {
+    left: 0;
+}
+
+.carousel-btn.right {
+    right: 0;
+}
 
 /* ========================= */
 /*        Resume CSS         */

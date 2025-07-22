@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="/webdevelopment/CSS/launchify.css">
   <link rel="stylesheet" href="/webdevelopment/CSS/modal.css">
   <link rel="stylesheet" href="/webdevelopment/CSS/aos.css">
-  <link rel="stylesheet" href="/webdevelopment/CSS/base_dark_mode.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <script src="/webdevelopment/script.js" defer></script>
   <style>
@@ -54,6 +53,14 @@
           </form>
         </div>
       </div>
+    <div class="theme-toggle">
+      <input type="checkbox" id="darkModeToggle" />
+      <label for="darkModeToggle" class="toggle-switch">
+        <span class="slider">
+          <span class="thumb"></span>
+        </span>
+      </label>
+    </div>
   </nav>
 
   <main>
@@ -69,11 +76,29 @@
 
   <footer>&copy; 2025 Launchify</footer>
   <a href="/webdevelopment/Projects_Combined.html" class="back-button bottom-left" title="Back to Examples">&#8592; Back</a>
-  <button class="toggle-btn" onclick="document.body.classList.toggle('dark-mode')">🌓</button>
   <script>
     const entries = document.querySelectorAll("[data-aos]");
     const observer = new IntersectionObserver((e)=>{e.forEach(x=>x.isIntersecting && x.target.classList.add("aos-animate"));},{threshold:0.1});
     entries.forEach(el=>observer.observe(el));
+
+    const toggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    // Load saved theme
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    });
   </script>
 </body>
 </html>

@@ -1,3 +1,21 @@
+:root{
+  --cta-bg: white;
+  --text-color: white;
+  --bg-color: linear-gradient(to right, #3949ab, #1a237e);
+  --nav-bg: #1a237e;
+  --bg:#1a237e;
+  --accent-color: #90caf9;
+  --bg-color-d: #121212;
+  --nav-bg-d: #2c2c2c;
+  --text-d: #ffca28;
+  --header-footer: #1f1f1f;
+  --a-text: #ffcc80;
+  --body-bg: #1e1e1e;
+  --body-text: #e0e0e0;
+  --form-color: #eee;
+  --border: #555;
+}
+
 html{
   height: 100%;
   margin: 0;
@@ -22,8 +40,8 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 header {
-  background: linear-gradient(to right, #3949ab, #1a237e);
-  color: white;
+  background: var(--bg-color);
+  color: var(--text-color);
   text-align: center;
   padding: 3em 1em;
 }
@@ -31,12 +49,12 @@ nav {
   display: flex;
   justify-content: center;
   gap: 1.5em;
-  background: #1a237e;
+  background: var(--nav-bg);
   padding: 1em;
   flex-wrap: wrap;
 }
 nav a {
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -44,7 +62,7 @@ nav a {
   font-weight: bold;
 }
 nav a:hover {
-  color: #90caf9;
+  color: var(--accent-color);
 }
 section {
   min-height: 70vh;
@@ -98,42 +116,117 @@ footer {
   cursor: pointer;
 }
 .contact-form button:hover {
-  background: #1a237e;
+  background: var(--bg);
 }
-.toggle-btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: #424242;
-  color: white;
-  padding: 10px 14px;
-  border-radius: 4px;
-  border: none;
+
+.theme-toggle input{
+  display: none;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  margin-left: 1.5em;
+}
+
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
   cursor: pointer;
-  z-index: 999;
+}
+
+.toggle-switch input {
+  display: none;
+}
+
+.slider {
+  width: 50px;
+  height: 26px;
+  background: var(--cta-bg);
+  border-radius: 50px;
+  position: relative;
+  transition: background 0.4s ease;
+}
+
+.thumb {
+  width: 22px;
+  height: 22px;
+  background: var(--cta-bg);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.toggle-switch .icon {
+  font-size: 18px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+/* Move thumb and change background on checked */
+#darkModeToggle:checked + .toggle-switch .slider {
+  background: var(--a-text);
+}
+
+#darkModeToggle:checked + .toggle-switch .thumb {
+  transform: translateX(24px);
+}
+.dark-mode .slider {
+  background: var(--cta-bg);
+}
+#darkModeToggle:checked + .toggle-switch .thumb {
+  background: url('../Images/icons/moon-icon.png') center/cover no-repeat;
+}
+#darkModeToggle:not(:checked) + .toggle-switch .thumb {
+  background: url('../Images/icons/sun-icon.png') center/cover no-repeat;
 }
 body.dark-mode {
-  background: #191919;
-  color: #e0e0e0;
+  background: var(--bg-color-d);
+  color: var(--body-text);
+}
+body.dark-mode nav{
+  background: var(--nav-bg-d);
 }
 body.dark-mode header,
-body.dark-mode nav,
 body.dark-mode footer {
-  background: #0d1117;
-  color: #ffcc80;
+  background: var(--header-footer);
+  color: var(--text-d);
+}
+body.dark-mode a{
+  color: var(--a-text);
+}
+body.dark-mode a:hover{
+  color: var(--body-text);
 }
 body.dark-mode .feature,
 body.dark-mode .contact-form input,
 body.dark-mode .contact-form textarea {
-  background: #1f1f1f;
-  color: #eee;
-  border: 1px solid #555;
+  background: var(--header-footer);
+  color: var(--body-text);
+  border: 1px solid var(--border);
 }
+body.dark-mode .cta{
+  background: var(--text-d);
+  color:var(--header-footer);
+}
+body.dark-mode .cta:hover{
+  background: var(--nav-bg-d);
+  color:var(--body-text);
+}
+
 .hero {
   padding: 4em 1.5em;
   text-align: center;
-  background: linear-gradient(to right, #3949ab, #1a237e);
-  color: white;
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 .hero h1 {
   font-size: 2.5em;
@@ -144,8 +237,8 @@ body.dark-mode .contact-form textarea {
   margin-bottom: 1.5em;
 }
 .cta {
-  background: white;
-  color: #1a237e;
+  background: var(--cta-bg);
+  color: var(--bg);
   font-weight: bold;
   padding: 12px 28px;
   font-size: 1em;
@@ -155,6 +248,8 @@ body.dark-mode .contact-form textarea {
   transition: transform 0.2s ease;
 }
 .cta:hover {
+  background: #1a237e;
+  color: white;
   transform: scale(1.05);
 }
 
@@ -162,8 +257,8 @@ body.dark-mode .contact-form textarea {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background: #cd7f32;
-  color: white;
+  background: white;
+  color: #1a237e;
   padding: 10px 18px;
   border-radius: 30px;
   text-decoration: none;
@@ -175,7 +270,8 @@ body.dark-mode .contact-form textarea {
 }
 
 .back-button:hover {
-  background: #b76e2a;
+  background: #1a237e;
+  color: white;
   transform: scale(1.05);
 }
 

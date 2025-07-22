@@ -76,12 +76,23 @@
             <li class="calendar"><a href="Calendar.html">Calendar</a></li>
             <li class="reflect"><a  href="Reflection.html">Reflection</a></li>
             <li class="contact"><a href="Contact.html">Contact</a></li>
+            <li class="lang-dropdown">
+                <a class="dropbtn">🌐 Language ▼</a>
+                <div class="lang-content" name="lang-drop">
+                    <a href="#" data-lang="en"><img src="https://flagcdn.com/16x12/us.png" srcset="https://flagcdn.com/32x24/us.png 2x, https://flagcdn.com/48x36/us.png 3x" width="16" height="12" alt="United States"> English</a>
+                    <a href="#" data-lang="es"><img src="https://flagcdn.com/16x12/es.png" srcset="https://flagcdn.com/32x24/es.png 2x, https://flagcdn.com/48x36/es.png 3x" width="16" height="12" alt="Spain"> Español</a>
+                    <a href="#" data-lang="fr"><img src="https://flagcdn.com/16x12/fr.png" srcset="https://flagcdn.com/32x24/fr.png 2x, https://flagcdn.com/48x36/fr.png 3x" width="16" height="12" alt="France"> Français</a>
+                    <a href="#" data-lang="de"><img src="https://flagcdn.com/16x12/de.png" srcset="https://flagcdn.com/32x24/de.png 2x, https://flagcdn.com/48x36/de.png 3x" width="16" height="12" alt="Germany"> Deutsch</a>
+                </div>
+            </li>
+            <div id="google_translate_element" style="display:none;"></div>
             <div class="dark-toggle-container">
                 <label class="theme-toggle">
                 <input type="checkbox" id="theme-toggle">
                 <span class="toggle-slider"></span>
                 </label>
             </div>
+            
         </ul>
     </nav>
 
@@ -173,12 +184,17 @@
                     <a href="WebsiteDesigns/site_4.html" class="carousel-item"><img src="Images/modern.png" alt="Modern"></a>
                     <a href="WebsiteDesigns/site_5.html" class="carousel-item"><img src="Images/creative.png" alt="Creative"></a>
                     <a href="WebsiteDesigns/site_6.html" class="carousel-item"><img src="Images/minimal.png" alt="Minimal"></a>
+                    <a href="WebsiteDesigns/IATSE.html" class="carousel-item"><img src="Images/iatse.png" alt="IATSE"></a>
+                    <a href="https://pizza-palace-revamp.lovable.app/" class="carousel-item" alt="_blank"><img src="Images/pizza.png" alt="Pizza"></a>
+                    <a href="WebsiteDesigns/startup.html" class="carousel-item" ><img src="Images/techedge.png" alt="TechEdge"></a>
+                    <a href="https://tgitcsolutions.lovable.app/" class="carousel-item" alt="_blank"><img src="Images/tgitc.png" alt="TGITC"></a>
+                    <a href="WebsiteDesigns/launchify/launchify.html" class="carousel-item" ><img src="Images/launchify.png" alt="Launchify"></a>
                 </div>
                 <button class="carousel-btn right" onclick="slideCarousel(1)">&#10095;</button>
             </div>
         </section>
     </main>
-    
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-slideshow-container">
@@ -211,7 +227,7 @@
         </div>
         </div>
     </footer>
-    
+
     <script>
         const phrases = [
             "Welcome to my Portfolio!",
@@ -246,9 +262,46 @@
         }
 
         typeEffect();
+
+        // Initialize Google Translate
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+        }
+
+        // Change language on click
+        document.querySelectorAll('.lang-content a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                const select = document.querySelector('.goog-te-combo');
+                if (select) {
+                    select.value = lang;
+                    select.dispatchEvent(new Event('change'));
+                }
+            });
+        });
+
+        function forceRemoveGoogleBar() {
+            // Remove banner iframe
+            const banner = document.querySelector('.goog-te-banner-frame');
+            if (banner) banner.remove();
+
+            // Remove tooltip popup
+            const tooltip = document.getElementById('goog-gt-tt');
+            if (tooltip) tooltip.remove();
+
+            // Reset body position
+            document.body.style.top = '0px; z-index: -1';
+        }
+
+        // Keep checking every 500ms because Google reinjects
+        setInterval(forceRemoveGoogleBar, 500);
     </script>
     <!-- Load the assistant -->
     <script src="load-assistant.js"></script>
     <!-- Sync assistant theme with navbar toggle -->
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

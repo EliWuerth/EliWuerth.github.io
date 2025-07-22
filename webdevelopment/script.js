@@ -86,3 +86,23 @@ function slideCarousel(direction) {
   currentSlide = Math.max(0, Math.min(currentSlide + direction, maxSlide));
   track.style.transform = `translateX(-${currentSlide * 640}px)`;
 }
+
+// Initialize Google Translate
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+      pageLanguage: 'en'
+  }, 'google_translate_element');
+}
+
+// Change language on click
+document.querySelectorAll('.lang-menu a').forEach(link => {
+  link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const lang = this.getAttribute('data-lang');
+      const select = document.querySelector('.goog-te-combo');
+      if (select) {
+          select.value = lang;
+          select.dispatchEvent(new Event('change'));
+      }
+  });
+});

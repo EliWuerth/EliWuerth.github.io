@@ -44,16 +44,20 @@ li a,
 }
 
 li a:hover,
-.dropdown:hover .dropbtn {
+.dropdown:hover .dropbtn,
+.lang-dropdown:hover .dropbtn
+{
     background-color: #e0e0e0; /* Light gray background on hover */
     color: #cd7f32; /* Change text color to bronze on hover */
 }
 
-li.dropdown {
+li.dropdown,
+li.lang-dropdown{
     display: inline-block;
 }
 
-.dropdown-content {
+.dropdown-content,
+.lang-content {
     display: none;
     position: absolute;
     background-color: #ffffff; /* White background for dropdown */
@@ -62,7 +66,8 @@ li.dropdown {
     z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown-content a,
+.lang-content a{
     color: #cd7f32; /* Dark text color for dropdown links */
     padding: 12px 16px;
     text-decoration: none;
@@ -70,16 +75,19 @@ li.dropdown {
     text-align: left;
 }
 
-.dropdown-content a:hover  {
+.dropdown-content a:hover,
+.lang-content a:hover{
     background-color: #f1f1f1; /* Light gray background on hover for dropdown links */
     color: #cd7f32; /* Change text color to bronze on hover */
 }
 
-.dropdown:hover .dropdown-content{
+.dropdown:hover .dropdown-content,
+.lang-dropdown:hover .lang-content{
     display: block; /* Show dropdown on hover */
 }
 
-.dropbtn_menu-icon, .dropdown .dropbtn_menu-icon, .dropdown-content_menu, .dropdown:hover .dropdown-content_menu, .dropdown-content_menu a:hover, .dropdown-content_menu a{
+.dropbtn_menu-icon, .dropdown .dropbtn_menu-icon, .dropdown-content_menu, .dropdown:hover .dropdown-content_menu, .dropdown-content_menu a:hover, .dropdown-content_menu a,
+.lang-dropbtn_menu-icon, .lang-dropdown .dropbtn_menu-icon, .lang-dropdown-content_menu, .lang-dropdown:hover .lang-dropdown-content_menu, .lang-dropdown-content_menu a:hover, .lang-dropdown-content_menu a{
     display: none; /* hide menu icon */
 }
 
@@ -130,6 +138,30 @@ li.dropdown {
 .hamburger-menu:checked ~ .navbarul li {
     display: block; /* Show each list item */
     width: 100%; /* Full width for each item */
+}
+
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+html, body {
+    top: 0px !important;
+}
+
+/* Hide tooltip popup */
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-te-menu-frame {
+    display: none !important;
+}
+
+/* Hide "Powered by Google" widget */
+.goog-logo-link, .goog-te-gadget span, .goog-te-gadget-simple img {
+    display: none !important;
+}
+
+#skiptranslate{
+    opacity: 0;
+    display: none;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {

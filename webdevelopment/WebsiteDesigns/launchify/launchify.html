@@ -75,7 +75,7 @@
   </main>
 
   <footer>&copy; 2025 Launchify</footer>
-  <a href="/webdevelopment/Projects_Combined.html" class="back-button bottom-left" title="Back to Examples">&#8592; Back</a>
+  <button class="back-btn" onclick="goBack()">← Back</button>
   <script>
     const entries = document.querySelectorAll("[data-aos]");
     const observer = new IntersectionObserver((e)=>{e.forEach(x=>x.isIntersecting && x.target.classList.add("aos-animate"));},{threshold:0.1});

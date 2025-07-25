@@ -17,7 +17,7 @@ body.dark-mode {
 
 * {margin: 0; padding: 0; box-sizing: border-box;}
 
-.back-button {
+.back-btn {
   position: fixed;
   bottom: 20px;
   left: 20px;
@@ -29,11 +29,11 @@ body.dark-mode {
   font-weight: bold;
   font-size: 1em;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s, transform 0.3s;
+  transition: background 0.3s ease, transform 0.2s ease;
   z-index: 999;
 }
 
-.back-button:hover {
+.back-btn:hover {
   background: var(--nav-color);
   color: var(--card-bg);
   transform: scale(1.05);

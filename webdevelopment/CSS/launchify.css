@@ -253,25 +253,25 @@ body.dark-mode .cta:hover{
   transform: scale(1.05);
 }
 
-.back-button {
+.back-btn {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background: white;
-  color: #1a237e;
+  background: var(--accent-color);
+  color: var(--text-color);
   padding: 10px 18px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
   font-size: 1em;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s, transform 0.3s;
+  transition: background 0.3s ease, transform 0.2s ease;
   z-index: 999;
 }
 
-.back-button:hover {
-  background: #1a237e;
-  color: white;
+.back-btn:hover {
+  background: var(--nav-bg);
+  color: var(--text-color);
   transform: scale(1.05);
 }
 

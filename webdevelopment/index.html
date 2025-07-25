@@ -76,16 +76,6 @@
             <li class="calendar"><a href="Calendar.html">Calendar</a></li>
             <li class="reflect"><a  href="Reflection.html">Reflection</a></li>
             <li class="contact"><a href="Contact.html">Contact</a></li>
-            <li class="lang-dropdown">
-                <a class="dropbtn">🌐 Language ▼</a>
-                <div class="lang-content" name="lang-drop">
-                    <a href="#" data-lang="en"><img src="https://flagcdn.com/16x12/us.png" srcset="https://flagcdn.com/32x24/us.png 2x, https://flagcdn.com/48x36/us.png 3x" width="16" height="12" alt="United States"> English</a>
-                    <a href="#" data-lang="es"><img src="https://flagcdn.com/16x12/es.png" srcset="https://flagcdn.com/32x24/es.png 2x, https://flagcdn.com/48x36/es.png 3x" width="16" height="12" alt="Spain"> Español</a>
-                    <a href="#" data-lang="fr"><img src="https://flagcdn.com/16x12/fr.png" srcset="https://flagcdn.com/32x24/fr.png 2x, https://flagcdn.com/48x36/fr.png 3x" width="16" height="12" alt="France"> Français</a>
-                    <a href="#" data-lang="de"><img src="https://flagcdn.com/16x12/de.png" srcset="https://flagcdn.com/32x24/de.png 2x, https://flagcdn.com/48x36/de.png 3x" width="16" height="12" alt="Germany"> Deutsch</a>
-                </div>
-            </li>
-            <div id="google_translate_element" style="display:none;"></div>
             <div class="dark-toggle-container">
                 <label class="theme-toggle">
                 <input type="checkbox" id="theme-toggle">
@@ -173,7 +163,7 @@
             </div>
         </section>
         
-        <section id="example-carousel" style="margin: 4rem auto; max-width: 1200px; text-align: center;">
+        <section id="example-carousel" aria-label="Personal Projects">
             <h2>My Website Designs</h2>
             <div class="carousel-container">
                 <button class="carousel-btn left" onclick="slideCarousel(-1)">&#10094;</button>
@@ -194,6 +184,20 @@
             </div>
         </section>
     </main>
+
+    <!-- Floating Language Selector -->
+    <div class="floating-lang-btn">
+        <i class="fas fa-globe"></i>
+        <div class="floating-lang-menu">
+            <a href="#" data-lang="en"><img src="https://flagcdn.com/16x12/us.png" srcset="https://flagcdn.com/32x24/us.png 2x, https://flagcdn.com/48x36/us.png 3x" width="16" height="12" alt="United States"> English</a>
+            <a href="#" data-lang="es"><img src="https://flagcdn.com/16x12/es.png" srcset="https://flagcdn.com/32x24/es.png 2x, https://flagcdn.com/48x36/es.png 3x" width="16" height="12" alt="Spain"> Español</a>
+            <a href="#" data-lang="fr"><img src="https://flagcdn.com/16x12/fr.png" srcset="https://flagcdn.com/32x24/fr.png 2x, https://flagcdn.com/48x36/fr.png 3x" width="16" height="12" alt="France"> Français</a>
+            <a href="#" data-lang="de"><img src="https://flagcdn.com/16x12/de.png" srcset="https://flagcdn.com/32x24/de.png 2x, https://flagcdn.com/48x36/de.png 3x" width="16" height="12" alt="Germany"> Deutsch</a>
+        </div>
+    </div>
+
+    <!-- Hidden Google Translate -->
+    <div id="google_translate_element" style="display:none;"></div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -224,7 +228,18 @@
                 <h3>Copyright</h3>
                 <p>&copy; 2025 Eli Wuerth. All rights reserved.</p>
             </div>
-        </div>
+            <!-- <div class="footer-column">
+                <li class="lang-dropdown">
+                    <a class="dropbtn">🌐 Language ▼</a>
+                    <div class="lang-content" name="lang-drop">
+                        <a href="#" data-lang="en"><img src="https://flagcdn.com/16x12/us.png" srcset="https://flagcdn.com/32x24/us.png 2x, https://flagcdn.com/48x36/us.png 3x" width="16" height="12" alt="United States"> English</a>
+                        <a href="#" data-lang="es"><img src="https://flagcdn.com/16x12/es.png" srcset="https://flagcdn.com/32x24/es.png 2x, https://flagcdn.com/48x36/es.png 3x" width="16" height="12" alt="Spain"> Español</a>
+                        <a href="#" data-lang="fr"><img src="https://flagcdn.com/16x12/fr.png" srcset="https://flagcdn.com/32x24/fr.png 2x, https://flagcdn.com/48x36/fr.png 3x" width="16" height="12" alt="France"> Français</a>
+                        <a href="#" data-lang="de"><img src="https://flagcdn.com/16x12/de.png" srcset="https://flagcdn.com/32x24/de.png 2x, https://flagcdn.com/48x36/de.png 3x" width="16" height="12" alt="Germany"> Deutsch</a>
+                    </div>
+                </li>
+                <div id="google_translate_element" style="display:none;"></div>
+            </div> -->
         </div>
     </footer>
 
@@ -265,13 +280,11 @@
 
         // Initialize Google Translate
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en'
-            }, 'google_translate_element');
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
         }
 
-        // Change language on click
-        document.querySelectorAll('.lang-content a').forEach(link => {
+        // Handle language change
+        document.querySelectorAll('.floating-lang-menu a').forEach(link => {
             link.addEventListener('click', function (e) {
                 e.preventDefault();
                 const lang = this.getAttribute('data-lang');
@@ -283,21 +296,15 @@
             });
         });
 
-        function forceRemoveGoogleBar() {
-            // Remove banner iframe
-            const banner = document.querySelector('.goog-te-banner-frame');
-            if (banner) banner.remove();
-
-            // Remove tooltip popup
+        // Remove Google Translate banner completely
+        function removeGoogleBar() {
+            const frame = document.querySelector('.goog-te-banner-frame');
+            if (frame) frame.remove();
+            document.body.style.top = '0px';
             const tooltip = document.getElementById('goog-gt-tt');
             if (tooltip) tooltip.remove();
-
-            // Reset body position
-            document.body.style.top = '0px; z-index: -1';
         }
-
-        // Keep checking every 500ms because Google reinjects
-        setInterval(forceRemoveGoogleBar, 500);
+        setInterval(removeGoogleBar, 500);
     </script>
     <!-- Load the assistant -->
     <script src="load-assistant.js"></script>

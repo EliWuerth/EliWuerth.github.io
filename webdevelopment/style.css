@@ -1040,6 +1040,65 @@ section#example-carousel h2{
     right: 0;
 }
 
+/* Floating Button */
+.floating-lang-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    background: #cd7f32; /* bronze color */
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1;
+    font-size: 24px;
+}
+
+.floating-lang-btn:hover .floating-lang-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.floating-lang-menu {
+    position: absolute;
+    bottom: 70px;
+    left: 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.floating-lang-menu a {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.floating-lang-menu a img {
+    margin-right: 10px;
+    width: 20px;
+    height: 14px;
+}
+
+.floating-lang-menu a:hover {
+    background: #f2f2f2;
+}
+
 /* ========================= */
 /*        Resume CSS         */
 /* ========================= */
@@ -1496,7 +1555,8 @@ body.dark-mode html {
 }
 
 body.dark-mode section#stats h2,
-body.dark-mode section#skills h2{
+body.dark-mode section#skills h2,
+body.dark-mode section#example-carousel h2{
     color: #cd7f32;
 }
 
@@ -1655,6 +1715,14 @@ body.dark-mode .active:hover{
 
 .theme-toggle input:checked + .toggle-slider:before {
     transform: translateX(24px);
+}
+
+#darkModeToggle:checked + .toggle-switch .thumb {
+    background: url('../Images/icons/moon-icon.png') center/cover no-repeat;
+}
+
+#darkModeToggle:not(:checked) + .toggle-switch .thumb {
+    background: url('../Images/icons/sun-icon.png') center/cover no-repeat;
 }
 
 /* ========================= */

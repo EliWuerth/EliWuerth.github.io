@@ -92,7 +92,6 @@ body {
 /* ========================= */
 /*         Preloader         */
 /* ========================= */
-
 #preloader {
     position: fixed;
     top: 0;
@@ -109,7 +108,6 @@ body {
     transition: opacity 0.8s ease;
 }
 
-/* Base column setup */
 .column {
     position: absolute;
     top: 0;
@@ -119,7 +117,6 @@ body {
     animation-fill-mode: forwards;
 }
 
-/* Initial rise/drop animations */
 .column1 {
     left: 0;
     animation: col1Up 1.2s ease forwards;
@@ -180,7 +177,6 @@ body {
     }
 }
 
-/* Merge + Expand animation */
 @keyframes mergeAndExpandLeft {
     0% {
         left: 0;
@@ -215,7 +211,6 @@ body {
     }
 }
 
-/* Merge classes triggered in JS */
 .column1.merge {
     animation: mergeAndExpandLeft 1.2s ease forwards;
 }
@@ -281,7 +276,6 @@ body {
 /* ========================= */
 /*          Header           */
 /* ========================= */
-
 #slideshow-container {
     position: relative;
     width: 100%;
@@ -413,7 +407,6 @@ body {
 /* ========================= */
 /*    Different Pages CSS    */
 /* ========================= */
-
 .index-main {
     max-width: 100%;
     min-width: 100%;
@@ -643,7 +636,9 @@ blockquote {
     transform: scale(1.05);
 }
 
-/* Skills Section */
+/* ========================= */
+/*         Skill CSS         */
+/* ========================= */
 section#skills {
     padding-top: 4rem;
     padding-bottom: 5rem;
@@ -693,7 +688,9 @@ section#skills h2 {
     font-size: 1.125rem;
 }
 
-/* Statistics Section */
+/* ========================= */
+/*         Stats CSS         */
+/* ========================= */
 section#stats {
     padding-top: 4rem;
     padding-bottom: 5rem;
@@ -755,7 +752,9 @@ section#stats h2 {
     font-size: 1.125rem;
 }
 
-/* Container max-width and centering */
+/* ========================= */
+/*    Example Cards CSS      */
+/* ========================= */
 .examples-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -763,14 +762,12 @@ section#stats h2 {
     border-radius: 12px;
 }
 
-/* Project list grid */
 .example-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
-/* Each project card styling */
 .example {
     /* background: #fff; */
     border-radius: 12px;
@@ -784,7 +781,6 @@ section#stats h2 {
     animation: fadeSlideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* Stagger animation delay for each project */
 .example:nth-child(1) {
     animation-delay: 2.6s;
 }
@@ -837,7 +833,6 @@ section#stats h2 {
     animation-delay: 4.2s;
 }
 
-/* Animate fade and slide up */
 @keyframes fadeSlideIn {
     to {
         opacity: 1;
@@ -845,14 +840,12 @@ section#stats h2 {
     }
 }
 
-/* Project card hover effect */
 .example:hover {
     transform: scale(1.03);
     box-shadow: 0 12px 25px rgb(0 0 0 / 0.15);
     cursor: pointer;
 }
 
-/* Project headings */
 .example h3 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
@@ -861,7 +854,6 @@ section#stats h2 {
     /* dark slate */
 }
 
-/* Project paragraphs */
 .example p {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -870,7 +862,6 @@ section#stats h2 {
     flex-grow: 1;
 }
 
-/* Responsive tweaks */
 @media (max-width: 480px) {
     .examples-container {
         padding: 1rem 1rem 3rem 1rem;
@@ -890,6 +881,9 @@ section#stats h2 {
     }
 }
 
+/* ========================= */
+/*       Calendar CSS        */
+/* ========================= */
 #calendar {
     max-width: 900px;
     margin: 60px auto;
@@ -982,7 +976,10 @@ section#stats h2 {
     transform: translateX(20px);
 }
 
-section#example-carousel h2{
+/* ========================= */
+/*   Projects Carousel CSS   */
+/* ========================= */
+section#gallery-container h2{
     text-align: center;
     margin-bottom: 3rem;
     font-weight: 800;
@@ -990,57 +987,86 @@ section#example-carousel h2{
     color: #111827;
 }
 
-.carousel-container {
-    position: relative;
-    overflow: hidden;
-    margin: 2rem auto;
+.gallery-container {
     max-width: 1200px;
+    margin: auto;
+    position: relative;
 }
 
-.carousel-track {
-    display: flex;
-    transition: transform 0.4s ease-in-out;
+.mySlides {
+    display: none;
 }
 
-.carousel-item {
-    width: 640px;
-    height: 640px;
-    border-radius: 12px;
-    overflow: hidden;
-    flex-shrink: 0;
+img {
+    vertical-align: middle;
 }
 
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.carousel-btn {
+.nav-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: #cd7f32;
-    border: none;
+    background-color: var(--color-primary);
     color: white;
     font-size: 2rem;
-    padding: 0 10px;
+    border: none;
+    padding: 10px 14px;
     cursor: pointer;
+    user-select: none;
     z-index: 10;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    transition: background-color 0.3s ease;
 }
 
-.carousel-btn.left {
-    left: 0;
+.nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.85);
 }
 
-.carousel-btn.right {
-    right: 0;
+.nav-btn.prev {
+    left: 16px;
+    border-radius: 0 3px 3px 0;
 }
 
-/* Floating Button */
+.nav-btn.next {
+    right: 16px;
+    border-radius: 3px 0 0 3px;
+}
+
+.caption-container {
+    text-align: center;
+    background-color: #111;
+    padding: 1rem;
+    color: white;
+    font-size: 1rem;
+}
+
+.thumbnail-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.thumbnail-col {
+    flex: 0 0 80px;
+    margin: 0 5px;
+}
+
+.thumbnail-col img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    opacity: 0.6;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.thumbnail-col img.active,
+.thumbnail-col img:hover {
+    opacity: 1;
+}
+
+/* ========================= */
+/*       Language CSS        */
+/* ========================= */
 .floating-lang-btn {
     position: fixed;
     bottom: 30px;
@@ -1102,7 +1128,6 @@ section#example-carousel h2{
 /* ========================= */
 /*        Resume CSS         */
 /* ========================= */
-
 .leftcolumn-resume {
     background-color: #e3e3e3;
     float: left;
@@ -1176,7 +1201,6 @@ section#example-carousel h2{
 /* ========================= */
 /*        Contact CSS        */
 /* ========================= */
-
 .main-content {
     max-width: 800px;
     margin: 50px auto;
@@ -1224,7 +1248,6 @@ button[type="submit"]:hover {
 /* ========================= */
 /*        Projects CSS       */
 /* ========================= */
-
 .projects-container {
     width: 100%;
     padding-bottom: 20px;
@@ -1308,7 +1331,6 @@ button[type="submit"]:hover {
 /* ========================= */
 /*       Reflection CSS      */
 /* ========================= */
-
 #reflection p::first-letter {
     font-size: 1.5em;
     font-weight: bold;
@@ -1335,7 +1357,6 @@ button[type="submit"]:hover {
 /* ========================= */
 /*          Footer           */
 /* ========================= */
-
 .footer-slideshow-container {
     position: absolute;
     top: 0;
@@ -1544,7 +1565,6 @@ button[type="submit"]:hover {
 /* ========================= */
 /*       Dark Mode CSS       */
 /* ========================= */
-
 html, body, main, section, nav, footer {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -1799,7 +1819,6 @@ body.dark-mode .active:hover{
 }
 
 @media (min-width: 871px) and (max-width: 1024px) {
-
     .leftcolumn,
     .rightcolumn {
         display: block;
@@ -1904,7 +1923,6 @@ body.dark-mode .active:hover{
 }
 
 @media (min-width: 768px) and (max-width:870px) {
-
     .leftcolumn,
     .rightcolumn {
         display: block;
@@ -2022,10 +2040,13 @@ body.dark-mode .active:hover{
         white-space: nowrap;
         font-size: 0.95rem;
     }
+
+    section#gallery-container h2 {
+        font-size: 2.2rem;
+    }
 }
 
 @media (max-width: 767px) {
-
     .leftcolumn,
     .rightcolumn {
         display: block;
@@ -2163,6 +2184,34 @@ body.dark-mode .active:hover{
     .footer.fixed {
         position: relative;
     }
+
+    .carousel-item {
+        width: 420px;
+        height: 420px;
+    }
+    
+    .carousel-btn {
+        font-size: 1.8rem;
+    }
+    
+    section#gallery-container h2,
+    section#skills h2,
+    section#stats h2{
+        font-size: 2rem;
+    }
+
+    .prev, .next {
+        font-size: 1.5rem;
+        padding: 12px;
+    }
+    
+    .caption-container {
+        font-size: 0.9rem;
+    }
+    
+    .thumbnail-col {
+        flex: 0 0 60px;
+    }
 }
 
 @media (max-width: 490px) {
@@ -2170,7 +2219,24 @@ body.dark-mode .active:hover{
         overflow-x: auto;
         white-space: nowrap;
         font-size: xx-small;
+    }
+    
+    section#gallery-container h2,
+    section#skills h2,
+    section#stats h2{
+        font-size: 1.75rem;
+    }
 
+    .thumbnail-row {
+        gap: 4px;
+    }
+    
+    .thumbnail-col {
+        flex: 0 0 50px;
+    }
+    
+    .caption-container {
+        font-size: 0.8rem;
     }
 }
 
@@ -2263,6 +2329,12 @@ body.dark-mode .active:hover{
         font-size: 10px;
         /* Adjust button font size */
     }
+
+    section#gallery-container h2,
+    section#skills h2,
+    section#stats h2 {
+        font-size: 1.5rem;
+    }
 }
 
 @media print {
@@ -2281,5 +2353,19 @@ body.dark-mode .active:hover{
         color: black;
         font-family: 'PTSerif-Regular', serif;
         page-break-inside: avoid;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-btn {
+        font-size: 1.5rem;
+        padding: 8px 10px;
+    }
+
+    .nav-btn.prev {
+        left: 8px;
+    }
+    .nav-btn.next {
+        right: 8px;
     }
 }

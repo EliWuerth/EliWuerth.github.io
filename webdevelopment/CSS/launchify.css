@@ -257,8 +257,8 @@ body.dark-mode .cta:hover{
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background: var(--accent-color);
-  color: var(--text-color);
+  background: var(--cta-bg);
+  color: var(--bg);
   padding: 10px 18px;
   border-radius: 30px;
   text-decoration: none;
@@ -270,7 +270,7 @@ body.dark-mode .cta:hover{
 }
 
 .back-btn:hover {
-  background: var(--nav-bg);
+  background: var(--accent-color);
   color: var(--text-color);
   transform: scale(1.05);
 }

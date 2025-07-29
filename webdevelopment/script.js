@@ -76,17 +76,50 @@ window.addEventListener('load', function () {
   }, 2500); // total animation duration
 });
 
-let currentSlide = 0;
+let cSlide = 0;
 const track = document.querySelector('.carousel-track');
 const items = document.querySelectorAll('.carousel-item');
 
 function slideCarousel(direction) {
-  const visibleCount = Math.floor(track.offsetWidth / 640); // assumes 300px item + margin
+  const visibleCount = Math.floor(track.offsetWidth / 640); // assumes 640px item + margin
   const maxSlide = items.length - visibleCount;
-  currentSlide = Math.max(0, Math.min(currentSlide + direction, maxSlide));
-  track.style.transform = `translateX(-${currentSlide * 640}px)`;
+  cSlide = Math.max(0, Math.min(cSlide + direction, maxSlide));
+  track.style.transform = `translateX(-${cSlide * 640}px)`;
 }
 
 function goBack() {
   window.history.back();
+}
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let thumbs = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  for (i = 0; i < thumbs.length; i++) {
+    thumbs[i].className = thumbs[i].className.replace(" active", "");
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+  thumbs[slideIndex - 1].className += " active";
+  captionText.innerHTML = thumbs[slideIndex - 1].alt;
 }

@@ -1576,7 +1576,7 @@ body.dark-mode html {
 
 body.dark-mode section#stats h2,
 body.dark-mode section#skills h2,
-body.dark-mode section#example-carousel h2{
+body.dark-mode section#gallery-container h2{
     color: #cd7f32;
 }
 

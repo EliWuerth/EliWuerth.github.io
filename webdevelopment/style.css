@@ -835,6 +835,9 @@ section#stats h2 {
 .example:nth-child(18) {
     animation-delay: 4.3s;
 }
+.example:nth-child(19) {
+    animation-delay: 4.4s;
+}
 
 @keyframes fadeSlideIn {
     to {

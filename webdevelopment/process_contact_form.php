@@ -20,7 +20,7 @@
             "Portfolio/Professional Website Contact" : "Educational Website Contact";
 
         // Prepare email headers
-        $to = "emwcd7@umsystem.edu"; // Change to your email address
+        $to = "emwuerth216@gmail.com"; // Change to your email address
         $subjectEncoded = '=?UTF-8?B?' . base64_encode($subject) . '?';
         $headers = "From: $email\r\nReply-To: $email\r\nContent-type: text/plain; charset=UTF-8";
 
